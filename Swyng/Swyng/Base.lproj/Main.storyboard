@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swyng" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swyng_logo" translatesAutoresizingMaskIntoConstraints="NO" id="vXB-9h-48y">
+                                <rect key="frame" x="47" y="274.5" width="281" height="118"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="diamond_logo" translatesAutoresizingMaskIntoConstraints="NO" id="OPQ-2c-5gV">
+                                <rect key="frame" x="0.0" y="389.5" width="284.5" height="277.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OPQ-2c-5gV" secondAttribute="height" multiplier="284:277" id="Fhv-BH-uBK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="themeBlue"/>
+                        <constraints>
+                            <constraint firstItem="OPQ-2c-5gV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.758667" id="6aw-I8-lPq"/>
+                            <constraint firstItem="vXB-9h-48y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MXR-Hv-myq"/>
+                            <constraint firstItem="vXB-9h-48y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RSL-HZ-QnK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OPQ-2c-5gV" secondAttribute="bottom" id="Xg6-wO-3iA"/>
+                            <constraint firstItem="OPQ-2c-5gV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lrm-bG-Q3f"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133" y="102"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="diamond_logo" width="284.5" height="277"/>
+        <image name="swyng_logo" width="281" height="118"/>
+        <namedColor name="themeBlue">
+            <color red="0.25882352941176473" green="0.52156862745098043" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

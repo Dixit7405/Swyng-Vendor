@@ -1,0 +1,18 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '11.0'
+
+target 'Swyng' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'Alamofire'
+  pod 'KDCircularProgress'
+  pod "KingfisherWebP"
+  pod 'NVActivityIndicatorView'
+  pod 'IQKeyboardManagerSwift'
+  pod 'SnapKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources', '~> 4.0'
+
+end
