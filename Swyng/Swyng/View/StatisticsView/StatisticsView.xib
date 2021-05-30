@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatisticsView" customModule="Swyng" customModuleProvider="target">
+            <connections>
+                <outlet property="lblTitle" destination="INh-U4-6h1" id="m0f-UC-C06"/>
+                <outlet property="lblValue" destination="0DO-Wb-HlA" id="fN9-QJ-rmH"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ce0-It-uwx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QXv-yt-VQJ" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="268"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="D1y-vo-SrK">
+                            <rect key="frame" x="5" y="110.5" width="310" height="47.5"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Slots" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="INh-U4-6h1">
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="19"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
+                                    <color key="textColor" name="textBlack"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DO-Wb-HlA">
+                                    <rect key="frame" x="0.0" y="24" width="310" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                                    <color key="textColor" name="textBlack"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="D1y-vo-SrK" firstAttribute="leading" secondItem="QXv-yt-VQJ" secondAttribute="leading" constant="5" id="Nwj-pO-Fys"/>
+                        <constraint firstItem="D1y-vo-SrK" firstAttribute="centerY" secondItem="QXv-yt-VQJ" secondAttribute="centerY" id="gAp-Vz-qVS"/>
+                        <constraint firstAttribute="trailing" secondItem="D1y-vo-SrK" secondAttribute="trailing" constant="5" id="qRR-rZ-ieW"/>
+                        <constraint firstItem="D1y-vo-SrK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QXv-yt-VQJ" secondAttribute="top" constant="5" id="zeD-ra-G7i"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QXv-yt-VQJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="97b-3l-rDB"/>
+                <constraint firstAttribute="bottom" secondItem="QXv-yt-VQJ" secondAttribute="bottom" id="T8z-sv-q63"/>
+                <constraint firstAttribute="trailing" secondItem="QXv-yt-VQJ" secondAttribute="trailing" id="Tlh-Zt-etl"/>
+                <constraint firstItem="QXv-yt-VQJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="yFK-wt-8Ff"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="131.25" y="-92.957746478873247"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="textBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

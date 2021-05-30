@@ -18,17 +18,17 @@ class ApplicationManager {
         }
     }
     
-//    static var profileData:Profile?{
-//        set{
-//            if let profile = newValue{
-//                DefaultsManager.saveData(data: profile, type: Profile.self, key: DefaultsManager.DefaultKeys.userData)
-//            }
-//        }
-//        get{
-//
-//            return DefaultsManager.getData(type: Profile.self, key: DefaultsManager.DefaultKeys.userData)
-//        }
-//    }
+    static var profileData:Profile?{
+        set{
+            if let profile = newValue{
+                DefaultsManager.saveData(data: profile, type: Profile.self, key: DefaultsManager.DefaultKeys.userData)
+            }
+        }
+        get{
+
+            return DefaultsManager.getData(type: Profile.self, key: DefaultsManager.DefaultKeys.userData)
+        }
+    }
     
     static var firebaseToken = ""
     

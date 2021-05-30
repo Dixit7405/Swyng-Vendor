@@ -30,17 +30,27 @@ struct Parameters {
     static let emergencyContactName = "emergencyContactName"
     static let emergencyContactNumber = "emergencyContactNumber"
     static let cityId = "cityId"
+    static let tournamentResult = "tournamentResult"
+    static let fixerAndSchedulePdf = "fixerAndSchedulePdf"
+    static let image = "image"
 }
 
 struct EndPoints {
-    static let registerUser = "account/user/signup"
+    static let registerUser = "mobile/vendor/signUp"
     static let getCities = "city/getAll"
-    static let sendOTP = "account/user/otp/send"
-    static let resendOTP = "account/user/otp/resend"
-    static let verifyOTP = "account/user/otp/verify"
-    static let getProfile = "account/user/getProfile"
-    static let updateProfile = "account/user/updateProfile"
+    static let updateEmail = "mobile/vendor/update/email"
+    static let sendOTP = "account/vendor/otp/send"
+    static let resendOTP = "account/vendor/otp/resend"
+    static let verifyOTP = "account/vendor/otp/verify"
+    static let getProfile = "mobile/vendor/getProfile"
+    static let updateProfile = "account/vendor/updateProfile"
     static let getTournaments = "tournament/getAll"
+    static let getAllSports = "sport/getAllSports"
+    static let createParticipant = "tournament/create/tournamentParticipants"
+    static let uploadTournamentResult = "tournament/update/tournamentResult"
+    static let uploadTournamentFixture = "tournament/update/tournamentFixerSchedule"
+    static let uploadTournamentGallery = "tournament/update/tournamentGallery"
+    static let getTournamentTypes = "tournamentCategory/getAll"
 }
 
 class Webservices {
@@ -155,7 +165,7 @@ class Webservices {
                     success(resp)
                 }
                 catch{
-                    debugPrint(error.localizedDescription)
+                    debugPrint(error)
                     failer(error.localizedDescription)
                 }
             }
@@ -177,13 +187,13 @@ class Webservices {
         
         AF.upload(multipartFormData: { multipartFormData in
             for (key, value) in params{
-                if let data = value as? Data, key == "image"{
+                if let data = value as? Data/*, key == "image"*/{
                     multipartFormData.append(data, withName: key, fileName: "\(Date()).jpg", mimeType: "image/png")
-                }else if let data = value as? Data, key == "video"{
+                }/*else if let data = value as? Data, key == "video"{
                     multipartFormData.append(data, withName: "file", fileName: "\(Date()).mp4", mimeType: "video/mp4")
                 }else if let data = value as? Data, key == "music"{
                     multipartFormData.append(data, withName: "file", fileName: "\(Date()).mp3", mimeType: "audio/mpeg")
-                }
+                }*/
                 else{
                     let data = String(describing: value)
                     multipartFormData.append(Data((data).utf8), withName: key)
