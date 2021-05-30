@@ -89,6 +89,7 @@ extension TournamentsParticipantsVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 4{
             let vc:AddParticipantVC = AddParticipantVC.controller()
+            vc.arrCategories = arrCategories
             navigationController?.pushViewController(vc, animated: true)
         }
     }

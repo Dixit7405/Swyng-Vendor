@@ -28,7 +28,7 @@ class OTPVC: UIViewController {
     }
     
     @IBAction func btnResendPressed(_ sender:UIButton){
-        resendOTP()
+        sendOTP()
     }
 }
 
@@ -58,10 +58,10 @@ extension OTPVC{
         }
     }
     
-    private func resendOTP(){
+    private func sendOTP(){
         startActivityIndicator()
         let params:[String:Any] = [Parameters.mobileNo:mobileNumber]
-        Webservices().request(with: params, method: .post, endPoint: EndPoints.resendOTP, type: CommonResponse<Register>.self, failer: failureBlock()) {[weak self] (success) in
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.sendOTP, type: CommonResponse<Register>.self, failer: failureBlock()) {[weak self] (success) in
             guard let self = self else {return}
             self.stopActivityIndicator()
             guard let response = success as? CommonResponse<Register> else {return}

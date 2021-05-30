@@ -33,6 +33,7 @@ struct Parameters {
     static let tournamentResult = "tournamentResult"
     static let fixerAndSchedulePdf = "fixerAndSchedulePdf"
     static let image = "image"
+    static let id = "id"
 }
 
 struct EndPoints {
@@ -51,13 +52,25 @@ struct EndPoints {
     static let uploadTournamentFixture = "tournament/update/tournamentFixerSchedule"
     static let uploadTournamentGallery = "tournament/update/tournamentGallery"
     static let getTournamentTypes = "tournamentCategory/getAll"
+    static let paymentPolicy = "rules/paymentPolicy/getAll"
+    static let aboutSwyng = "rules/aboutSwyng/getAll"
+    static let partnerWithSwyng = "rules/partnerWithUs/getAll"
+    static let cancellationRules = "rules/cancelation/getAll"
+    static let privacyPolicy = "rules/privacyAndPolicy/getAll"
+    static let termsOfUse = "rules/termsOfUse/getAll"
 }
 
 class Webservices {
+    
     var base = ""
     var request: Alamofire.Request?
     var progress = KDCircularProgress()
     var progressLabel = UILabel()
+    
+    enum MimeType:String {
+        case pdf = "application/pdf"
+        case image = "image/png"
+    }
     init() {
         base = baseURL
         guard let view = AppUtilities.getMainWindow() else {return}
@@ -172,7 +185,7 @@ class Webservices {
         }
     }
     
-    func upload<T:Decodable>(with params:[String:Any], method:HTTPMethod, endPoint:String, type:T.Type, showProgress:Bool = false, failer:@escaping(String) -> Void, success:@escaping(Any) -> Void){
+    func upload<T:Decodable>(with params:[String:Any], method:HTTPMethod, endPoint:String, type:T.Type, mimeType:MimeType = .image, showProgress:Bool = false, failer:@escaping(String) -> Void, success:@escaping(Any) -> Void){
         
         var headers:HTTPHeaders = [:]
         
@@ -188,7 +201,7 @@ class Webservices {
         AF.upload(multipartFormData: { multipartFormData in
             for (key, value) in params{
                 if let data = value as? Data/*, key == "image"*/{
-                    multipartFormData.append(data, withName: key, fileName: "\(Date()).jpg", mimeType: "image/png")
+                    multipartFormData.append(data, withName: key, fileName: mimeType == .pdf ? "\(Date()).pdf" : "\(Date()).jpg", mimeType: mimeType.rawValue)
                 }/*else if let data = value as? Data, key == "video"{
                     multipartFormData.append(data, withName: "file", fileName: "\(Date()).mp4", mimeType: "video/mp4")
                 }else if let data = value as? Data, key == "music"{

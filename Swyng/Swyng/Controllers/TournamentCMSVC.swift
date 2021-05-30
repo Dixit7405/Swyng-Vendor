@@ -23,6 +23,7 @@ class TournamentCMSVC: UIViewController {
     }
     
     var pageType:PageType = .fixture
+    var tournament:Tournaments?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -105,10 +106,39 @@ extension TournamentCMSVC: UIDocumentPickerDelegate{
         })
         if let url = urls.first{
             webView.load(URLRequest(url: url))
+            do{
+                if let data = try? Data(contentsOf: url){
+                    uploadPDFFiles(data: data)
+                }
+                
+            }
         }
     }
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+//MARK: - API SERVICES
+extension TournamentCMSVC{
+    private func uploadPDFFiles(data:Data){
+        startActivityIndicator()
+        var params:[String:Any] = [Parameters.id:tournament?.tournamentId ?? 10]
+        var endPoint = ""
+        if pageType == .fixture{
+            params[Parameters.fixerAndSchedulePdf] = data
+            endPoint = EndPoints.uploadTournamentFixture
+        }
+        else if pageType == .results{
+            params[Parameters.tournamentResult] = data
+            endPoint = EndPoints.uploadTournamentResult
+        }
+        Webservices().upload(with: params, method: .post, endPoint: endPoint, type: CommonResponse<Tournaments>.self, mimeType:.pdf, failer: failureBlock()) {[weak self] success in
+            guard let self = self else {return}
+            self.stopActivityIndicator()
+            guard let response = success as? CommonResponse<Tournaments> else {return}
+            self.showAlertWith(message: response.message ?? "")
+        }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B55F2EC2658D64700626A23 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55F2EB2658D64700626A23 /* Dashboard.storyboard */; };
+		1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ED9FD266406F8005FBC6F /* CMSData.swift */; };
 		1B659B8626615A9600B6AF9A /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B659B8526615A9600B6AF9A /* Sports.swift */; };
 		1B704432265A158A00EE0FCF /* TournamentStatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B704431265A158A00EE0FCF /* TournamentStatisticsVC.swift */; };
 		1B704435265A24E100EE0FCF /* AddParticipantVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B704434265A24E100EE0FCF /* AddParticipantVC.swift */; };
@@ -96,6 +97,7 @@
 /* Begin PBXFileReference section */
 		1B38A6F7265A4F4700592622 /* Swyng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Swyng.entitlements; sourceTree = "<group>"; };
 		1B55F2EB2658D64700626A23 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
+		1B5ED9FD266406F8005FBC6F /* CMSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSData.swift; sourceTree = "<group>"; };
 		1B659B8526615A9600B6AF9A /* Sports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
 		1B704431265A158A00EE0FCF /* TournamentStatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentStatisticsVC.swift; sourceTree = "<group>"; };
 		1B704434265A24E100EE0FCF /* AddParticipantVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddParticipantVC.swift; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B5ED9FD266406F8005FBC6F /* CMSData.swift */,
 				1B659B8526615A9600B6AF9A /* Sports.swift */,
 				1BFA54F3265775C3008BCC57 /* City.swift */,
 				1BFA54F4265775C3008BCC57 /* CommonResponse.swift */,
@@ -564,6 +567,7 @@
 				1B7ADC092659720E00C4AEF9 /* EventMenuFooter.swift in Sources */,
 				1B7ADBF82659715700C4AEF9 /* CMSVC.swift in Sources */,
 				1BF2B7DF265A9FDD00570756 /* TournamentGridVC.swift in Sources */,
+				1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */,
 				1BF44C312656DB3700A2E75E /* ShadowView.swift in Sources */,
 				1BF2B7E6265ACAB800570756 /* UINavigationController+Extension.swift in Sources */,
 				1BF44C1B2656DB1600A2E75E /* UIViewController+Extension.swift in Sources */,

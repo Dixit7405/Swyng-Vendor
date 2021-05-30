@@ -8,21 +8,21 @@
 import UIKit
 
 class AddParticipantVC: UIViewController {
-    @IBOutlet weak var btnMensOpen:UIButton!
-    @IBOutlet weak var btnWomensOpen:UIButton!
-    @IBOutlet weak var btnMixedOpen:UIButton!
     @IBOutlet weak var stackParticipant2:UIStackView!
     @IBOutlet weak var lblParticipant1Header:UILabel!
+    @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var nslcCollectionHeight:NSLayoutConstraint!
     enum SelectedTournaments {
         case mens
         case woments
         case mixed
     }
     
-    var selected:SelectedTournaments = .mens
+    var selected = 0
+    var arrCategories:[TournamentsType] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnMensOpen(btnMensOpen)
+        collectionView.addObserver(self, forKeyPath: #keyPath(UICollectionView.contentSize), options: .new, context: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -30,36 +30,37 @@ class AddParticipantVC: UIViewController {
 
 }
 
-//MARK: - ACTION METHODS
-extension AddParticipantVC{
-    @IBAction func btnMensOpen(_ sender:UIButton){
-        selected = .mens
-        setButtonSelected(btn: sender)
+//MARK: - COLLECTIONVIEW DELEGATES
+extension AddParticipantVC:UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        nslcCollectionHeight.constant = collectionView.contentSize.height
     }
     
-    @IBAction func btnWomensOpen(_ sender:UIButton){
-        selected = .woments
-        setButtonSelected(btn: sender)
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return arrCategories.count
     }
     
-    @IBAction func btnMixedOpen(_ sender:UIButton){
-        selected = .mixed
-        setButtonSelected(btn: sender)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OptionsCell", for: indexPath) as! OptionsCell
+        cell.optionView.lblTitle.text = arrCategories[indexPath.item].name
+        cell.optionView.selected = indexPath.item == selected
+        return cell
     }
     
-    @IBAction func btnAddParticipant(_ sender:UIButton){
-        navigationController?.popViewController(animated: true)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selected = indexPath.item
+        collectionView.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (UIScreen.main.bounds.size.width - 32)/2
+        return CGSize(width: width, height: 70)
     }
 }
 
-//MARK: - CUSTOM METHODS
+//MARK: - API SERVICES
 extension AddParticipantVC{
-    private func setButtonSelected(btn:UIButton){
-        btnMensOpen.setSelected(selected: false)
-        btnMixedOpen.setSelected(selected: false)
-        btnWomensOpen.setSelected(selected: false)
-        btn.setSelected(selected: true)
-        stackParticipant2.isHidden = btn != btnMixedOpen
-        lblParticipant1Header.isHidden = btn != btnMixedOpen
+    private func addParticipant(){
+        
     }
 }
