@@ -138,9 +138,9 @@ extension String {
 
 //MARK: - UIIMAGEVIEW
 extension UIImageView{
-    func setImage(from path:String?){
-        if let urlString = path?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string:imageBase + urlString){
-            self.kf.setImage(with: url)
+    func setImage(from path:String?, base:ImageBaseURL = .tournamentImage){
+        if let urlString = path?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string:base.value + urlString){
+            self.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "Bleh2"))
         }
     }
 }

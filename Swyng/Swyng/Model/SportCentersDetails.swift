@@ -10,7 +10,7 @@ struct SportCentersDetails : Codable {
         let courtDetails : [CourtDetail]?
         let gallery : [Gallery]?
         let getVendorsDetails : [GetVendorsDetail]?
-        let sport : Sports?
+        let sport : Sport?
         let timingAndPricing : [TimingAndPricing]?
 
         enum CodingKeys: String, CodingKey {
@@ -26,7 +26,7 @@ struct SportCentersDetails : Codable {
                 courtDetails = try values.decodeIfPresent([CourtDetail].self, forKey: .courtDetails)
                 gallery = try values.decodeIfPresent([Gallery].self, forKey: .gallery)
                 getVendorsDetails = try values.decodeIfPresent([GetVendorsDetail].self, forKey: .getVendorsDetails)
-                sport = try Sports(from: decoder)
+                sport = try values.decodeIfPresent(Sport.self, forKey: .sport)
                 timingAndPricing = try values.decodeIfPresent([TimingAndPricing].self, forKey: .timingAndPricing)
         }
 
@@ -59,7 +59,7 @@ struct CourtDetail : Codable {
         createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
         id = try values.decodeIfPresent(Int.self, forKey: .id)
         noOfCourt = try values.decodeIfPresent(Int.self, forKey: .noOfCourt)
-        sport = try Sports(from: decoder)
+        sport = try values.decodeIfPresent(Sports.self, forKey: .sport)
         sportCenterId = try values.decodeIfPresent(Int.self, forKey: .sportCenterId)
         sportId = try values.decodeIfPresent(Int.self, forKey: .sportId)
         typesOfCourt = try values.decodeIfPresent(String.self, forKey: .typesOfCourt)
@@ -108,7 +108,7 @@ struct TimingAndPricing : Codable {
         init(from decoder: Decoder) throws {
                 let values = try decoder.container(keyedBy: CodingKeys.self)
                 slotsDetails = try values.decodeIfPresent([SlotsDetail].self, forKey: .slotsDetails)
-                timing = try Timing(from: decoder)
+                timing = try values.decodeIfPresent(Timing.self, forKey: .timing)
         }
 
 }
@@ -137,7 +137,7 @@ struct Timing : Codable {
    
        init(from decoder: Decoder) throws {
                let values = try decoder.container(keyedBy: CodingKeys.self)
-               court = try Court(from: decoder)
+               court = try values.decodeIfPresent(Court.self, forKey: .court)
                courtId = try values.decodeIfPresent(Int.self, forKey: .courtId)
                courtName = try values.decodeIfPresent(String.self, forKey: .courtName)
                courtPricingDetail = try values.decodeIfPresent(String.self, forKey: .courtPricingDetail)
@@ -176,7 +176,7 @@ struct Court : Codable{
                 createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
                 id = try values.decodeIfPresent(Int.self, forKey: .id)
                 noOfCourt = try values.decodeIfPresent(Int.self, forKey: .noOfCourt)
-                sport = try Sports(from: decoder)
+                sport = try values.decodeIfPresent(Sports.self, forKey: .sport)
                 sportCenterId = try values.decodeIfPresent(Int.self, forKey: .sportCenterId)
                 sportId = try values.decodeIfPresent(Int.self, forKey: .sportId)
                 typesOfCourt = try values.decodeIfPresent(String.self, forKey: .typesOfCourt)
@@ -203,7 +203,7 @@ struct SlotsDetail : Codable {
                 let values = try decoder.container(keyedBy: CodingKeys.self)
                 fromDay = try values.decodeIfPresent(String.self, forKey: .fromDay)
                 price = try values.decodeIfPresent(String.self, forKey: .price)
-                time = try Time(from: decoder)
+                time = try values.decodeIfPresent(Time.self, forKey: .time)
                 toDay = try values.decodeIfPresent(String.self, forKey: .toDay)
         }
 

@@ -44,7 +44,6 @@ extension TournamentsParticipantsVC{
         var fullName = ""
         if let fname = participant.fname{fullName.append(fname); fullName.append(" ")}
         if let lname = participant.lname{fullName.append(lname)}
-        print(fullName)
         return fullName
     }
     

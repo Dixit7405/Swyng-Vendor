@@ -12,7 +12,19 @@ import KDCircularProgress
 
 var authorization = ""
 let baseURL = "http://ec2-54-234-213-111.compute-1.amazonaws.com/"
-let imageBase = "http://goocab.com/admin/"
+let imageBase = "http://ec2-54-234-213-111.compute-1.amazonaws.com/"
+
+enum ImageBaseURL:String{
+    case tournamentImage = "tournamentsFiles/tournamentImage/"
+    case tournamentResult = "tournamentsFiles/tournamentResult/"
+    case tournamentFixture = "tournamentsFiles/tournamentFixerAndSchedule/"
+    
+    var value: String {
+            get {
+                return imageBase + self.rawValue
+            }
+        }
+}
 
 typealias FailureBlock = ((String, Int?) -> Void)
 

@@ -40,6 +40,7 @@
 		1B7ADC03265971CA00C4AEF9 /* EventMenuSectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ADC01265971CA00C4AEF9 /* EventMenuSectionData.swift */; };
 		1B7ADC082659720E00C4AEF9 /* EventMenuFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7ADC062659720D00C4AEF9 /* EventMenuFooter.xib */; };
 		1B7ADC092659720E00C4AEF9 /* EventMenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ADC072659720E00C4AEF9 /* EventMenuFooter.swift */; };
+		1B8043AB2667FA52003F8012 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8043AA2667FA51003F8012 /* Sport.swift */; };
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
 		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
 		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
@@ -149,6 +150,7 @@
 		1B7ADC01265971CA00C4AEF9 /* EventMenuSectionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuSectionData.swift; sourceTree = "<group>"; };
 		1B7ADC062659720D00C4AEF9 /* EventMenuFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMenuFooter.xib; sourceTree = "<group>"; };
 		1B7ADC072659720E00C4AEF9 /* EventMenuFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuFooter.swift; sourceTree = "<group>"; };
+		1B8043AA2667FA51003F8012 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		1B8C28AE265C1269008ABA9B /* RegisterParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParams.swift; sourceTree = "<group>"; };
 		1BA0DAD6266654AF008E85B1 /* SwyngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwyngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B8043AA2667FA51003F8012 /* Sport.swift */,
 				1BEFE64726655EA9004A2965 /* Gallery.swift */,
 				1B1E552D26669DBF008C8A1E /* Participants.swift */,
 				1BEFE64526655E2E004A2965 /* SportCentersDetails.swift */,
@@ -752,6 +755,7 @@
 				1BFA54E9265772D3008BCC57 /* OTPVC.swift in Sources */,
 				1BF44C292656DB3700A2E75E /* Constants.swift in Sources */,
 				1BFA54F9265775C3008BCC57 /* CommonResponse.swift in Sources */,
+				1B8043AB2667FA52003F8012 /* Sport.swift in Sources */,
 				1B7ADBC72659509400C4AEF9 /* StatisticsView.swift in Sources */,
 				1B1E552E26669DBF008C8A1E /* Participants.swift in Sources */,
 				1B7ADBF92659715700C4AEF9 /* AccountMenuVC.swift in Sources */,

@@ -58,12 +58,12 @@ struct Participants : Codable {
         lname1 = try values.decodeIfPresent(String.self, forKey: .lname1)
         mobileNo = try values.decodeIfPresent(String.self, forKey: .mobileNo)
         mobileNo1 = try values.decodeIfPresent(String.self, forKey: .mobileNo1)
-        tournamentCategory = try TournamentCategory(from: decoder)
+        tournamentCategory = try values.decodeIfPresent(TournamentCategory.self, forKey: .tournamentCategory)
         tournamentCategoryId = try values.decodeIfPresent(Int.self, forKey: .tournamentCategoryId)
         tournamentId = try values.decodeIfPresent(Int.self, forKey: .tournamentId)
         updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
         updatedBy = try values.decodeIfPresent(Int.self, forKey: .updatedBy)
-        updatedByTblUser = try UpdatedByTblUser(from: decoder)
+        updatedByTblUser = try values.decodeIfPresent(UpdatedByTblUser.self, forKey: .updatedByTblUser)
     }
     
 }
