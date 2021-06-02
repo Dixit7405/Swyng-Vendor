@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1E552E26669DBF008C8A1E /* Participants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1E552D26669DBF008C8A1E /* Participants.swift */; };
 		1B55F2EC2658D64700626A23 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55F2EB2658D64700626A23 /* Dashboard.storyboard */; };
 		1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ED9FD266406F8005FBC6F /* CMSData.swift */; };
 		1B659B8626615A9600B6AF9A /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B659B8526615A9600B6AF9A /* Sports.swift */; };
@@ -40,8 +41,16 @@
 		1B7ADC082659720E00C4AEF9 /* EventMenuFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B7ADC062659720D00C4AEF9 /* EventMenuFooter.xib */; };
 		1B7ADC092659720E00C4AEF9 /* EventMenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ADC072659720E00C4AEF9 /* EventMenuFooter.swift */; };
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
+		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
+		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
 		1BC19BF92663733F007A6D93 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BF82663733F007A6D93 /* OptionsCell.swift */; };
 		1BC19BFB26639EDA007A6D93 /* TournamentsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */; };
+		1BEFE63E266551D1004A2965 /* AllSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE63D266551D1004A2965 /* AllSportsVC.swift */; };
+		1BEFE640266551FD004A2965 /* AllSportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE63F266551FD004A2965 /* AllSportsCell.swift */; };
+		1BEFE642266552CB004A2965 /* SportsCenterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE641266552CB004A2965 /* SportsCenterDetailsVC.swift */; };
+		1BEFE644266558C4004A2965 /* SportCenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE643266558C4004A2965 /* SportCenters.swift */; };
+		1BEFE64626655E2E004A2965 /* SportCentersDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE64526655E2E004A2965 /* SportCentersDetails.swift */; };
+		1BEFE64826655EA9004A2965 /* Gallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE64726655EA9004A2965 /* Gallery.swift */; };
 		1BF2B7DF265A9FDD00570756 /* TournamentGridVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2B7DE265A9FDD00570756 /* TournamentGridVC.swift */; };
 		1BF2B7E2265AA00500570756 /* TournamentGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2B7E1265AA00500570756 /* TournamentGridCell.swift */; };
 		1BF2B7E6265ACAB800570756 /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF2B7E5265ACAB800570756 /* UINavigationController+Extension.swift */; };
@@ -91,10 +100,22 @@
 		1BFA54F8265775C3008BCC57 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA54F3265775C3008BCC57 /* City.swift */; };
 		1BFA54F9265775C3008BCC57 /* CommonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA54F4265775C3008BCC57 /* CommonResponse.swift */; };
 		1BFA54FC26577667008BCC57 /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFA54FB26577667008BCC57 /* CityCell.swift */; };
+		8CEF1EBA6A6794E9E4A1C75B /* Pods_SwyngTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1090DB167A15F0630487634 /* Pods_SwyngTests.framework */; };
 		B8F4EB1D7EE22AC694A9328C /* Pods_Swyng.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31ECF40D7FB15A9FE0F38AA6 /* Pods_Swyng.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1BA0DADB266654AF008E85B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BF44BDB2656D1DD00A2E75E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BF44BE22656D1DD00A2E75E;
+			remoteInfo = Swyng;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1B1E552D26669DBF008C8A1E /* Participants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Participants.swift; sourceTree = "<group>"; };
 		1B38A6F7265A4F4700592622 /* Swyng.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Swyng.entitlements; sourceTree = "<group>"; };
 		1B55F2EB2658D64700626A23 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1B5ED9FD266406F8005FBC6F /* CMSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSData.swift; sourceTree = "<group>"; };
@@ -129,8 +150,18 @@
 		1B7ADC062659720D00C4AEF9 /* EventMenuFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventMenuFooter.xib; sourceTree = "<group>"; };
 		1B7ADC072659720E00C4AEF9 /* EventMenuFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMenuFooter.swift; sourceTree = "<group>"; };
 		1B8C28AE265C1269008ABA9B /* RegisterParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParams.swift; sourceTree = "<group>"; };
+		1BA0DAD6266654AF008E85B1 /* SwyngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwyngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
+		1BA0DADA266654AF008E85B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngCMSUnitTest.swift; sourceTree = "<group>"; };
 		1BC19BF82663733F007A6D93 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsType.swift; sourceTree = "<group>"; };
+		1BEFE63D266551D1004A2965 /* AllSportsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSportsVC.swift; sourceTree = "<group>"; };
+		1BEFE63F266551FD004A2965 /* AllSportsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSportsCell.swift; sourceTree = "<group>"; };
+		1BEFE641266552CB004A2965 /* SportsCenterDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsCenterDetailsVC.swift; sourceTree = "<group>"; };
+		1BEFE643266558C4004A2965 /* SportCenters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportCenters.swift; sourceTree = "<group>"; };
+		1BEFE64526655E2E004A2965 /* SportCentersDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportCentersDetails.swift; sourceTree = "<group>"; };
+		1BEFE64726655EA9004A2965 /* Gallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gallery.swift; sourceTree = "<group>"; };
 		1BF2B7DE265A9FDD00570756 /* TournamentGridVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentGridVC.swift; sourceTree = "<group>"; };
 		1BF2B7E1265AA00500570756 /* TournamentGridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentGridCell.swift; sourceTree = "<group>"; };
 		1BF2B7E5265ACAB800570756 /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
@@ -183,11 +214,22 @@
 		1BFA54F4265775C3008BCC57 /* CommonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonResponse.swift; sourceTree = "<group>"; };
 		1BFA54FB26577667008BCC57 /* CityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
 		31ECF40D7FB15A9FE0F38AA6 /* Pods_Swyng.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swyng.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		644BD39526A157A5AEDA4A97 /* Pods-SwyngTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwyngTests.debug.xcconfig"; path = "Target Support Files/Pods-SwyngTests/Pods-SwyngTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8DF1EF0599CDE5AC6F96EFF /* Pods-Swyng.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swyng.release.xcconfig"; path = "Target Support Files/Pods-Swyng/Pods-Swyng.release.xcconfig"; sourceTree = "<group>"; };
 		F0314751455C1A1E360F23D0 /* Pods-Swyng.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swyng.debug.xcconfig"; path = "Target Support Files/Pods-Swyng/Pods-Swyng.debug.xcconfig"; sourceTree = "<group>"; };
+		F1090DB167A15F0630487634 /* Pods_SwyngTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwyngTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDC1D2C71E6111979549C865 /* Pods-SwyngTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwyngTests.release.xcconfig"; path = "Target Support Files/Pods-SwyngTests/Pods-SwyngTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1BA0DAD3266654AF008E85B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CEF1EBA6A6794E9E4A1C75B /* Pods_SwyngTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF44BE02656D1DD00A2E75E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +246,8 @@
 			children = (
 				F0314751455C1A1E360F23D0 /* Pods-Swyng.debug.xcconfig */,
 				E8DF1EF0599CDE5AC6F96EFF /* Pods-Swyng.release.xcconfig */,
+				644BD39526A157A5AEDA4A97 /* Pods-SwyngTests.debug.xcconfig */,
+				FDC1D2C71E6111979549C865 /* Pods-SwyngTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -241,6 +285,7 @@
 				1B7ADC05265971FD00C4AEF9 /* EventMenuFooter */,
 				1B7ADBE226596C1700C4AEF9 /* UpcommingCourtBookingCell.swift */,
 				1B7ADBEB26596D2500C4AEF9 /* ParticipantCell.swift */,
+				1BEFE63F266551FD004A2965 /* AllSportsCell.swift */,
 				1B7ADBEE26596D3200C4AEF9 /* TournamentRegisterCell.swift */,
 			);
 			path = TableViewCells;
@@ -276,10 +321,21 @@
 			path = EventMenuFooter;
 			sourceTree = "<group>";
 		};
+		1BA0DAD7266654AF008E85B1 /* SwyngTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */,
+				1BA0DADA266654AF008E85B1 /* Info.plist */,
+				1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */,
+			);
+			path = SwyngTests;
+			sourceTree = "<group>";
+		};
 		1BF44BDA2656D1DD00A2E75E = {
 			isa = PBXGroup;
 			children = (
 				1BF44BE52656D1DD00A2E75E /* Swyng */,
+				1BA0DAD7266654AF008E85B1 /* SwyngTests */,
 				1BF44BE42656D1DD00A2E75E /* Products */,
 				12FB0D4388F3AB6036EBCB70 /* Pods */,
 				D5343F90F3CB91888395E4AE /* Frameworks */,
@@ -290,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				1BF44BE32656D1DD00A2E75E /* Swyng.app */,
+				1BA0DAD6266654AF008E85B1 /* SwyngTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -320,6 +377,10 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BEFE64726655EA9004A2965 /* Gallery.swift */,
+				1B1E552D26669DBF008C8A1E /* Participants.swift */,
+				1BEFE64526655E2E004A2965 /* SportCentersDetails.swift */,
+				1BEFE643266558C4004A2965 /* SportCenters.swift */,
 				1B5ED9FD266406F8005FBC6F /* CMSData.swift */,
 				1B659B8526615A9600B6AF9A /* Sports.swift */,
 				1BFA54F3265775C3008BCC57 /* City.swift */,
@@ -361,6 +422,8 @@
 				1B7ADBF22659715500C4AEF9 /* SportsFilterVC.swift */,
 				1BFA54E2265772D3008BCC57 /* OTPVC.swift */,
 				1B7ADBD626596BCD00C4AEF9 /* TournamentCMSVC.swift */,
+				1BEFE63D266551D1004A2965 /* AllSportsVC.swift */,
+				1BEFE641266552CB004A2965 /* SportsCenterDetailsVC.swift */,
 				1B7ADBD926596BCE00C4AEF9 /* TournamentConfirmationVC.swift */,
 				1B7ADBD526596BCD00C4AEF9 /* TournamentDetailsVC.swift */,
 				1B7ADBD726596BCD00C4AEF9 /* TournamentGalleryVC.swift */,
@@ -427,6 +490,7 @@
 			isa = PBXGroup;
 			children = (
 				31ECF40D7FB15A9FE0F38AA6 /* Pods_Swyng.framework */,
+				F1090DB167A15F0630487634 /* Pods_SwyngTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -434,6 +498,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1BA0DAD5266654AF008E85B1 /* SwyngTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BA0DADF266654AF008E85B1 /* Build configuration list for PBXNativeTarget "SwyngTests" */;
+			buildPhases = (
+				1AB4AAC844C174E965E4EABE /* [CP] Check Pods Manifest.lock */,
+				1BA0DAD2266654AF008E85B1 /* Sources */,
+				1BA0DAD3266654AF008E85B1 /* Frameworks */,
+				1BA0DAD4266654AF008E85B1 /* Resources */,
+				50527A3BA5FFB508C5470006 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BA0DADC266654AF008E85B1 /* PBXTargetDependency */,
+			);
+			name = SwyngTests;
+			productName = SwyngTests;
+			productReference = 1BA0DAD6266654AF008E85B1 /* SwyngTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1BF44BE22656D1DD00A2E75E /* Swyng */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1BF44BF72656D1DE00A2E75E /* Build configuration list for PBXNativeTarget "Swyng" */;
@@ -459,9 +543,13 @@
 		1BF44BDB2656D1DD00A2E75E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
+					1BA0DAD5266654AF008E85B1 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 1BF44BE22656D1DD00A2E75E;
+					};
 					1BF44BE22656D1DD00A2E75E = {
 						CreatedOnToolsVersion = 12.3;
 					};
@@ -481,11 +569,19 @@
 			projectRoot = "";
 			targets = (
 				1BF44BE22656D1DD00A2E75E /* Swyng */,
+				1BA0DAD5266654AF008E85B1 /* SwyngTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1BA0DAD4266654AF008E85B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF44BE12656D1DD00A2E75E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -516,6 +612,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1AB4AAC844C174E965E4EABE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwyngTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		36C6D42C55BA47208686BE54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -538,6 +656,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		50527A3BA5FFB508C5470006 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwyngTests/Pods-SwyngTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SwyngTests/Pods-SwyngTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SwyngTests/Pods-SwyngTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		709F266D831F0AB5F5C29512 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -558,6 +693,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1BA0DAD2266654AF008E85B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */,
+				1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1BF44BDF2656D1DD00A2E75E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -570,12 +714,15 @@
 				1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */,
 				1BF44C312656DB3700A2E75E /* ShadowView.swift in Sources */,
 				1BF2B7E6265ACAB800570756 /* UINavigationController+Extension.swift in Sources */,
+				1BEFE640266551FD004A2965 /* AllSportsCell.swift in Sources */,
 				1BF44C1B2656DB1600A2E75E /* UIViewController+Extension.swift in Sources */,
 				1BFA54EC265772D3008BCC57 /* GetStartedVC.swift in Sources */,
 				1B704432265A158A00EE0FCF /* TournamentStatisticsVC.swift in Sources */,
 				1B7ADBDB26596BCE00C4AEF9 /* TournamentRegisterVC.swift in Sources */,
 				1BFA54F5265775C3008BCC57 /* Register.swift in Sources */,
 				1B704435265A24E100EE0FCF /* AddParticipantVC.swift in Sources */,
+				1BEFE63E266551D1004A2965 /* AllSportsVC.swift in Sources */,
+				1BEFE64826655EA9004A2965 /* Gallery.swift in Sources */,
 				1BF44C182656DB1600A2E75E /* CustomField.swift in Sources */,
 				1BFA54EA265772D3008BCC57 /* EmailVC.swift in Sources */,
 				1B7ADBE326596C1800C4AEF9 /* UpcommingCourtBookingCell.swift in Sources */,
@@ -588,9 +735,11 @@
 				1B7ADBDF26596BCE00C4AEF9 /* TournamentsParticipantsVC.swift in Sources */,
 				1BFA54FC26577667008BCC57 /* CityCell.swift in Sources */,
 				1B7ADBFA2659715700C4AEF9 /* AccountInfoVC.swift in Sources */,
+				1BEFE64626655E2E004A2965 /* SportCentersDetails.swift in Sources */,
 				1B7ADBDA26596BCE00C4AEF9 /* TournamentListVC.swift in Sources */,
 				1B7ADC02265971CA00C4AEF9 /* CMSViewModel.swift in Sources */,
 				1BFA54ED265772D3008BCC57 /* LastNameVC.swift in Sources */,
+				1BEFE642266552CB004A2965 /* SportsCenterDetailsVC.swift in Sources */,
 				1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */,
 				1B7ADBF62659715700C4AEF9 /* PartnerWithUsVC.swift in Sources */,
 				1B7ADBDC26596BCE00C4AEF9 /* TournamentDetailsVC.swift in Sources */,
@@ -604,6 +753,7 @@
 				1BF44C292656DB3700A2E75E /* Constants.swift in Sources */,
 				1BFA54F9265775C3008BCC57 /* CommonResponse.swift in Sources */,
 				1B7ADBC72659509400C4AEF9 /* StatisticsView.swift in Sources */,
+				1B1E552E26669DBF008C8A1E /* Participants.swift in Sources */,
 				1B7ADBF92659715700C4AEF9 /* AccountMenuVC.swift in Sources */,
 				1BFA54F7265775C3008BCC57 /* Profile.swift in Sources */,
 				1BF44BE92656D1DD00A2E75E /* SceneDelegate.swift in Sources */,
@@ -624,12 +774,21 @@
 				1BFA54E8265772D3008BCC57 /* FirstNameVC.swift in Sources */,
 				1B7ADBE926596D0500C4AEF9 /* SportGalleryCell.swift in Sources */,
 				1BF44C282656DB3700A2E75E /* FirstResponderField.swift in Sources */,
+				1BEFE644266558C4004A2965 /* SportCenters.swift in Sources */,
 				1B7ADBFD2659719100C4AEF9 /* AccountMenuCell.swift in Sources */,
 				1B7ADBE026596BCE00C4AEF9 /* TournamentConfirmationVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BA0DADC266654AF008E85B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BF44BE22656D1DD00A2E75E /* Swyng */;
+			targetProxy = 1BA0DADB266654AF008E85B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1BF44BEC2656D1DD00A2E75E /* Main.storyboard */ = {
@@ -651,6 +810,50 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1BA0DADD266654AF008E85B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 644BD39526A157A5AEDA4A97 /* Pods-SwyngTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A288Y32693;
+				INFOPLIST_FILE = SwyngTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.developer.SwyngTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swyng.app/Swyng";
+			};
+			name = Debug;
+		};
+		1BA0DADE266654AF008E85B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC1D2C71E6111979549C865 /* Pods-SwyngTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A288Y32693;
+				INFOPLIST_FILE = SwyngTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.developer.SwyngTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swyng.app/Swyng";
+			};
+			name = Release;
+		};
 		1BF44BF52656D1DE00A2E75E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -814,6 +1017,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1BA0DADF266654AF008E85B1 /* Build configuration list for PBXNativeTarget "SwyngTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BA0DADD266654AF008E85B1 /* Debug */,
+				1BA0DADE266654AF008E85B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1BF44BDE2656D1DD00A2E75E /* Build configuration list for PBXProject "Swyng" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

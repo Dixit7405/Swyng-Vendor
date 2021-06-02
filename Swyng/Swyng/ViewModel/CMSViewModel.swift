@@ -45,7 +45,7 @@ struct CMSViewModel {
         case .aboutSwyng:
             endPoints = EndPoints.aboutSwyng
         }
-        Webservices().request(with: [:], method: .get, endPoint: endPoints, type: CommonResponse<[CMSData]>.self) { failure in
+        Webservices().request(with: [:], method: .get, endPoint: endPoints, type: CommonResponse<[CMSData]>.self) { failure,status  in
             alert.accept(failure)
             completion()
         } success: { success in

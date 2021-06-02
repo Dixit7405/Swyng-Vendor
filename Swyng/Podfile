@@ -16,3 +16,11 @@ target 'Swyng' do
   pod 'RxDataSources', '~> 4.0'
 
 end
+
+target 'SwyngTests' do
+  use_frameworks!
+  
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources', '~> 4.0'
+end

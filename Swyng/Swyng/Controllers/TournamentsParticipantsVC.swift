@@ -19,8 +19,9 @@ class TournamentsParticipantsVC: UIViewController {
         case woments
         case mixed
     }
-    
+    var tournamentId = 9
     var selected = 0
+    var arrParticipants:[Participants] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,29 @@ class TournamentsParticipantsVC: UIViewController {
         collectionView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         getTournamentCategories()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getParticipantList()
+    }
+}
+
+//MARK: - CUSTOM METHODS
+extension TournamentsParticipantsVC{
+    func getFullname(participant:Participants) -> String{
+        var fullName = ""
+        if let fname = participant.fname{fullName.append(fname); fullName.append(" ")}
+        if let lname = participant.lname{fullName.append(lname)}
+        print(fullName)
+        return fullName
+    }
+    
+    func getFullname1(participant:Participants) -> String{
+        var fullName = ""
+        if let fname = participant.fname1{fullName.append(fname); fullName.append(" ")}
+        if let lname = participant.lname1{fullName.append(lname)}
+        return fullName
     }
 }
 
@@ -64,13 +88,13 @@ extension TournamentsParticipantsVC:UICollectionViewDelegate, UICollectionViewDa
 //MARK: - TABLEVIEW DELEGATE
 extension TournamentsParticipantsVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return arrParticipants.count+1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ParticipantCell", for: indexPath) as! ParticipantCell
         
-        if indexPath.row == 4{
+        if indexPath.row == arrParticipants.count{
             cell.viewParticipant2.isHidden = true
             cell.lblParticipant1.textColor = UIColor.white
             cell.viewParticipant1.backgroundColor = UIColor.AppColor.themeColor
@@ -78,16 +102,19 @@ extension TournamentsParticipantsVC:UITableViewDelegate,UITableViewDataSource{
             cell.lblParticipant1.text = "Add A Participant"
         }
         else{
+            let participant = arrParticipants[indexPath.row]
             cell.viewParticipant1.backgroundColor = UIColor.white
-            cell.viewParticipant2.isHidden = false//selected != .mixed
+            cell.lblParticipant1.textColor = UIColor.AppColor.appBlack
+            cell.viewParticipant2.isHidden = participant.fname1 == "" && participant.lname1 == ""
             cell.lblIndex.text = "\(indexPath.row + 1)"
-            cell.lblParticipant1.text = "Andy Roddick"
+            cell.lblParticipant1.text = getFullname(participant: participant)
+            cell.lblParticipant2.text = getFullname1(participant: participant)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 4{
+        if indexPath.row == arrParticipants.count{
             let vc:AddParticipantVC = AddParticipantVC.controller()
             vc.arrCategories = arrCategories
             navigationController?.pushViewController(vc, animated: true)
@@ -106,6 +133,19 @@ extension TournamentsParticipantsVC{
             if let data = self.successBlock(response: response){
                 self.arrCategories = data
                 self.collectionView.reloadData()
+            }
+        }
+    }
+    
+    private func getParticipantList(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
+                                   Parameters.id:tournamentId]
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.getParticipantList, type: CommonResponse<[Participants]>.self, failer: failureBlock()) {[weak self] success in
+            guard let self = self else {return}
+            if let response = success as? CommonResponse<[Participants]>, let data = self.successBlock(response: response){
+                self.arrParticipants = data
+                self.tableView.reloadData()
             }
         }
     }

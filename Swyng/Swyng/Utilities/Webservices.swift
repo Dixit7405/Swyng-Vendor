@@ -14,13 +14,17 @@ var authorization = ""
 let baseURL = "http://ec2-54-234-213-111.compute-1.amazonaws.com/"
 let imageBase = "http://goocab.com/admin/"
 
-typealias FailureBlock = ((String) -> Void)
+typealias FailureBlock = ((String, Int?) -> Void)
 
 struct Parameters {
     static let fname = "fname"
     static let lname = "lname"
     static let email = "email"
     static let mobileNo = "mobileNo"
+    static let fname1 = "fname1"
+    static let lname1 = "lname1"
+    static let email1 = "email1"
+    static let mobileNo1 = "mobileNo1"
     static let otp = "OTP"
     static let token = "token"
     static let dateOfBirth = "dateOfBirth"
@@ -34,6 +38,8 @@ struct Parameters {
     static let fixerAndSchedulePdf = "fixerAndSchedulePdf"
     static let image = "image"
     static let id = "id"
+    static let key = "key"
+    static let tournamentCategoryId = "tournament_category_id"
 }
 
 struct EndPoints {
@@ -58,6 +64,11 @@ struct EndPoints {
     static let cancellationRules = "rules/cancelation/getAll"
     static let privacyPolicy = "rules/privacyAndPolicy/getAll"
     static let termsOfUse = "rules/termsOfUse/getAll"
+    static let getSportCenters = "mobile/vendor/getSportCenter"
+    static let getSportCenterDetails = "mobile/sport-center/getById"
+    static let searchSportCenter = "mobile/sport-center/search"
+    static let getParticipantList = "mobile/tournament/get/tournamentParticipants"
+    static let addPartipant = "mobile/tournament/create/tournamentParticipants"
 }
 
 class Webservices {
@@ -133,22 +144,10 @@ class Webservices {
         }
         AF.request(request).responseDecodable(of: type.self) { response in
             
-            if response.response?.statusCode == 400, let data = response.data{
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any], let data = json["data"] as? [String:Any]{
-                    debugPrint(json)
-                    for (_,value) in data{
-                        if let val = value as? [String], let str = val.first{
-                            failer(str)
-                            break
-                        }
-                    }
-                }
-                return
-            }
             if let error = response.error{
                 print(error)
                 debugPrint(error.localizedDescription)
-                failer(error.localizedDescription)
+                failer(error.localizedDescription, nil)
             }
             
             if let data = response.data{
@@ -159,15 +158,16 @@ class Webservices {
                     let resp = try decoder.decode(type, from: data)
                     if let jsn = json as? [String:Any]{
                         if let message = jsn["message"] as? String{
-                            if let status = jsn["status"] as? String, status == "0"{
-                                failer(message)
+                            if let status = jsn["status"] as? Int, status != 200{
+                                failer(message, status)
+                                
                             }
                             else{
                                 success(resp)
                             }
                         }else{
-                            if let status = jsn["status"] as? String, status == "0"{
-                                failer("Something went wrong")
+                            if let status = jsn["status"] as? Int, status != 200{
+                                failer("Something went wrong", status)
                             }
                             else{
                                 success(resp)
@@ -179,13 +179,13 @@ class Webservices {
                 }
                 catch{
                     debugPrint(error)
-                    failer(error.localizedDescription)
+                    failer(error.localizedDescription, nil)
                 }
             }
         }
     }
     
-    func upload<T:Decodable>(with params:[String:Any], method:HTTPMethod, endPoint:String, type:T.Type, mimeType:MimeType = .image, showProgress:Bool = false, failer:@escaping(String) -> Void, success:@escaping(Any) -> Void){
+    func upload<T:Decodable>(with params:[String:Any], method:HTTPMethod, endPoint:String, type:T.Type, mimeType:MimeType = .image, showProgress:Bool = false, failer:@escaping FailureBlock, success:@escaping(Any) -> Void){
         
         var headers:HTTPHeaders = [:]
         
@@ -227,20 +227,9 @@ class Webservices {
         .responseDecodable(of: type.self) { response in
             debugPrint("Response: \(response)")
             self.progress.superview?.isHidden = true
-            if response.response?.statusCode == 400, let data = response.data{
-                if let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any]{
-                    for (_,value) in json{
-                        if let val = value as? [String], let str = val.first{
-                            failer(str)
-                            break
-                        }
-                    }
-                }
-                return
-            }
             if let error = response.error{
                 debugPrint(error.localizedDescription)
-                failer(error.localizedDescription)
+                failer(error.localizedDescription, nil)
             }
             if let data = response.data{
                 do{
@@ -248,11 +237,29 @@ class Webservices {
                     print(json ?? "")
                     let decoder = JSONDecoder()
                     let resp = try decoder.decode(type, from: data)
+                    if let jsn = json as? [String:Any]{
+                        if let message = jsn["message"] as? String{
+                            if let status = jsn["status"] as? Int, status != 200{
+                                failer(message, status)
+                            }
+                            else{
+                                success(resp)
+                            }
+                        }else{
+                            if let status = jsn["status"] as? Int, status != 200{
+                                failer("Something went wrong", status)
+                            }
+                            else{
+                                success(resp)
+                            }
+                        }
+                        return
+                    }
                     success(resp)
                 }
                 catch{
                     debugPrint(error.localizedDescription)
-                    failer(error.localizedDescription)
+                    failer(error.localizedDescription, nil)
                 }
             }
             

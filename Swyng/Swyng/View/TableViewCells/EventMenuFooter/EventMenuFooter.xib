@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -107,24 +107,24 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH4-iP-r9U" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="160" width="341" height="80"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="swyng_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-kD-qc1">
-                                    <rect key="frame" x="10" y="-19" width="100" height="118"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="swyng_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-kD-qc1">
+                                    <rect key="frame" x="10" y="-19" width="99" height="118"/>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFP-Ib-et8">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFP-Ib-et8">
                                     <rect key="frame" x="301" y="25" width="30" height="30"/>
                                     <state key="normal" image="share"/>
                                 </button>
-                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="79M-qQ-vCp">
-                                    <rect key="frame" x="120" y="18.5" width="115" height="43"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="79M-qQ-vCp">
+                                    <rect key="frame" x="119" y="18.5" width="177" height="43"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Try Out A Sport." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XCq-L8-k1f">
-                                            <rect key="frame" x="0.0" y="0.0" width="115" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="114.5" height="19"/>
                                             <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="16"/>
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share it with your friends." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="I9C-Lj-VVA">
-                                            <rect key="frame" x="0.0" y="24" width="115" height="19"/>
+                                            <rect key="frame" x="0.0" y="24" width="177" height="19"/>
                                             <fontDescription key="fontDescription" name="Roboto-Italic" family="Roboto" pointSize="16"/>
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>
@@ -158,6 +158,9 @@
                                     <state key="normal" title="Logout">
                                         <color key="titleColor" name="textBlack"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnLogoutPressed:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="gb4-b5-vOL"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

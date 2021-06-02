@@ -30,10 +30,23 @@ extension UIViewController{
     }
     
     func failureBlock() -> FailureBlock{
-        return { [weak self] failure in
+        return { [weak self] failure,status  in
             guard let self = self else {return}
             self.stopActivityIndicator()
-            self.showAlertWith(message: failure)
+            if status == nil{
+                self.showAlertWith(message: failure)
+            }
+            else{
+                self.showAlertWith(message: failure) {
+                    ApplicationManager.authToken = nil
+                    ApplicationManager.profileData = nil
+                    
+                    AppUtilities.setRootController()
+                } cancelPressed: {
+                    
+                }
+
+            }
         }
     }
     

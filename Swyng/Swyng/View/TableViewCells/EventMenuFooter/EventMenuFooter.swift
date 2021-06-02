@@ -14,4 +14,10 @@ class EventMenuFooter: UICollectionReusableView {
         // Initialization code
     }
     
+    @IBAction func btnLogoutPressed(_ sender:UIButton){
+        ApplicationManager.authToken = nil
+        ApplicationManager.profileData = nil
+        AppUtilities.setRootController()
+    }
+    
 }
