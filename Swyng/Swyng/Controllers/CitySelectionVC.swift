@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CitySelectionVC: UIViewController {
+class CitySelectionVC: BaseVC {
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var nslcCollectionHeight:NSLayoutConstraint!
     @IBOutlet weak var viewBg:UIView!

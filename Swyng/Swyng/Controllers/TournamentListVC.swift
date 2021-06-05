@@ -7,15 +7,21 @@
 
 import UIKit
 
-class TournamentListVC: UIViewController {
+class TournamentListVC: BaseVC {
     @IBOutlet weak var lblSelectedTab:UILabel!
     @IBOutlet weak var lblNonSelectedTab:UILabel!
-    
+    let isTournament = ApplicationManager.sportType == .tournaments
+    var pastName = ""
+    var upcomming = ""
     var isUpcoming = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        pastName = isTournament ? "Past Tournaments" : "Past Runs"
+        upcomming = isTournament ? "Upcomming Tournaments" : "Upcomming Runs"
+        lblSelectedTab.text = upcomming
+        lblNonSelectedTab.text = pastName
         // Do any additional setup after loading the view.
     }
 
@@ -27,12 +33,12 @@ extension TournamentListVC{
         sender.isSelected = !sender.isSelected
         isUpcoming = !sender.isSelected
         if sender.isSelected{
-            lblSelectedTab.text = "Past Tournaments"
-            lblNonSelectedTab.text = "Upcomming Tournaments"
+            lblSelectedTab.text = pastName
+            lblNonSelectedTab.text = upcomming
         }
         else{
-            lblNonSelectedTab.text = "Past Tournaments"
-            lblSelectedTab.text = "Upcomming Tournaments"
+            lblNonSelectedTab.text = pastName
+            lblSelectedTab.text = upcomming
         }
     }
     

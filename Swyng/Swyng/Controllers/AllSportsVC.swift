@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import RxDataSources
 
-class AllSportsVC: UIViewController {
+class AllSportsVC: BaseVC {
     @IBOutlet weak var tblAllSports:UITableView!
     @IBOutlet weak var tblSelectedCenters:UITableView!
     @IBOutlet weak var searchField:UITextField!

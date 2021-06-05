@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: BaseVC {
     @IBOutlet weak var txtfMobileNumber:FirstResponderField!
     
     var fromRegister = false

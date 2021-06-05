@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AccountInfoVC: UIViewController {
+class AccountInfoVC: BaseVC {
     @IBOutlet weak var txtfFirstName:CustomField!
     @IBOutlet weak var txtfLastName:CustomField!
     @IBOutlet weak var txtfMobile:CustomField!

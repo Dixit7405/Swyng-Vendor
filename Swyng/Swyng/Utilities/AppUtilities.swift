@@ -51,9 +51,9 @@ class AppUtilities{
     static func setRootController(){
         guard let window = AppUtilities.getMainWindow() else {return}
         if ApplicationManager.authToken != nil{
-            
-            let vc = UIStoryboard(name: StoryboardIds.dashboard, bundle: nil)
-            window.rootViewController = vc.instantiateInitialViewController()
+            ApplicationManager.sportType = .run
+            let vc = TabbarVC()
+            window.rootViewController = vc
             
         }
         else{

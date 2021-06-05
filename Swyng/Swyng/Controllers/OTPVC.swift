@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OTPVC: UIViewController {
+class OTPVC: BaseVC {
     @IBOutlet weak var txtfOTP:FirstResponderField!
 
     var mobileNumber = ""

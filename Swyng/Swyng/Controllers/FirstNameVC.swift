@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FirstNameVC: UIViewController {
+class FirstNameVC: BaseVC {
     @IBOutlet weak var txtfFirstName:FirstResponderField!
     
     override func viewDidLoad() {

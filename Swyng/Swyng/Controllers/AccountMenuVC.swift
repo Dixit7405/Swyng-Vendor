@@ -14,7 +14,7 @@ protocol AccountMenuDelegate:AnyObject {
     func didSelectMenu(option:EventMenuOptions)
 }
 
-class AccountMenuVC: UIViewController {
+class AccountMenuVC: BaseVC {
     @IBOutlet weak var collectionView:UICollectionView!
     
     var arrOptions:[EventMenuOptions] = [.home,
@@ -55,10 +55,17 @@ extension AccountMenuVC{
             cell.titleLabel.text = item.rawValue
             return cell
             
-          }) { (datasource, collectionView, item, indexPath) -> UICollectionReusableView in
-            
-            let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "EventMenuFooter", for: indexPath) as! EventMenuFooter
-            return cell
+          }) { (datasource, collectionView, kind, indexPath) -> UICollectionReusableView in
+            if kind == UICollectionView.elementKindSectionHeader{
+                let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "EventMenuFooter", for: indexPath) as! EventMenuFooter
+                cell.kind = kind
+                return cell
+            }
+            else{
+                let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "EventMenuFooter", for: indexPath) as! EventMenuFooter
+                cell.kind = kind
+                return cell
+            }
             
         }
 
@@ -75,6 +82,7 @@ extension AccountMenuVC{
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSize(width: (UIScreen.main.bounds.size.width-20)/2, height: 80)
         flowLayout.footerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width, height: 350)
+        flowLayout.headerReferenceSize = CGSize(width: UIScreen.main.bounds.size.width, height: 100)
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
         collectionView.setCollectionViewLayout(flowLayout, animated: false)
@@ -128,7 +136,10 @@ extension AccountMenuVC:UICollectionViewDelegate,UICollectionViewDelegateFlowLay
             let vc:PartnerWithUsVC = PartnerWithUsVC.controller()
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true, completion: nil)
-            
+        case .manageCenters:
+            let vc:ManageCenterVC = ManageCenterVC.controller()
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
         default:
             self.dismissLeft(){ [unowned self] in
                 self.delegate?.didSelectMenu(option: arrOptions[indexPath.item])

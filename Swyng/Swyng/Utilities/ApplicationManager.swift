@@ -31,5 +31,10 @@ class ApplicationManager {
     }
     
     static var firebaseToken = ""
+    enum SportType {
+        case tournaments
+        case run
+    }
     
+    static var sportType:SportType = .tournaments
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TournamentsParticipantsVC: UIViewController {
+class TournamentsParticipantsVC: BaseVC {
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var nslcCollectionHeight:NSLayoutConstraint!
@@ -25,6 +25,7 @@ class TournamentsParticipantsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament Participants" : "Swyng WTF Run Participants"
         collectionView.addObserver(self, forKeyPath: #keyPath(UICollectionView.contentSize), options: .new, context: nil)
         tableView.addObserver(self, forKeyPath: #keyPath(UITableView.contentSize), options: .new, context: nil)
         collectionView.contentInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)

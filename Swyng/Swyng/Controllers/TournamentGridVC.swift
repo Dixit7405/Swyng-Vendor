@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TournamentGridVC: UIViewController {
+class TournamentGridVC: BaseVC {
     @IBOutlet weak var collectionView:UICollectionView!
     
     var tournaments:[Tournaments] = []

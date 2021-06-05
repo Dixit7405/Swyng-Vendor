@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PartnerWithUsVC: UIViewController {
+class PartnerWithUsVC: BaseVC {
     @IBOutlet weak var lblContent:UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

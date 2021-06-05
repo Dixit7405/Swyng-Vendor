@@ -250,19 +250,20 @@ extension UIViewController{
     }
     
     func dropdownPressed(){
+        let tournament = ApplicationManager.sportType == .tournaments
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let participant = UIAlertAction(title: "Participants", style: .default) { (button) in
             let vc:TournamentsParticipantsVC = TournamentsParticipantsVC.controller()
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        let fixture = UIAlertAction(title: "Fixtures & Schedule", style: .default) { (button) in
+        let fixture = UIAlertAction(title: tournament ? "Fixtures & Schedule" : "Schedule", style: .default) { (button) in
             let vc:TournamentCMSVC = TournamentCMSVC.controller()
             vc.pageType = .fixture
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        let tournaments = UIAlertAction(title: "Tournament Results", style: .default) { (button) in
+        let tournaments = UIAlertAction(title: tournament ? "Tournament Results" : "Results", style: .default) { (button) in
             let vc:TournamentCMSVC = TournamentCMSVC.controller()
             vc.pageType = .results
             self.navigationController?.pushViewController(vc, animated: true)
@@ -274,7 +275,7 @@ extension UIViewController{
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        let published = UIAlertAction(title: "Tournament Published", style: .default) { (button) in
+        let published = UIAlertAction(title: tournament ? "Tournament Published" : "Published", style: .default) { (button) in
         }
         
         let export = UIAlertAction(title: "Export to Mail", style: .default) { (button) in

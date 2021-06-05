@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TournamentRegisterVC: UIViewController {
+class TournamentRegisterVC: BaseVC {
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var nslcTableHeight:NSLayoutConstraint!
     

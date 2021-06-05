@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddParticipantVC: UIViewController {
+class AddParticipantVC: BaseVC {
     @IBOutlet weak var stackParticipant2:UIStackView!
     @IBOutlet weak var lblParticipant1Header:UILabel!
     @IBOutlet weak var stackParticipant1:UIStackView!
@@ -35,6 +35,7 @@ class AddParticipantVC: UIViewController {
     var arrCategories:[TournamentsType] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament Participants" : "Swyng WTF Run Participants"
         collectionView.addObserver(self, forKeyPath: #keyPath(UICollectionView.contentSize), options: .new, context: nil)
         // Do any additional setup after loading the view.
     }

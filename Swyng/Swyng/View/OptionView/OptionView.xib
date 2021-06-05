@@ -29,9 +29,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bjG-sv-uPZ" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bt-MS-Vkc">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9bt-MS-Vkc">
                             <rect key="frame" x="5" y="0.0" width="310" height="100"/>
-                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                             <color key="textColor" name="textBlack"/>
                             <nil key="highlightedColor"/>
                         </label>

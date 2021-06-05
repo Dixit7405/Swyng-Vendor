@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class CMSVC: UIViewController {
+class CMSVC: BaseVC {
     @IBOutlet weak var lblPageTitle:UILabel!
     @IBOutlet weak var txtvContent:UITextView!
     @IBOutlet weak var imgHeader:UIImageView!

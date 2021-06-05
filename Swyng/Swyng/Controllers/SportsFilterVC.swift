@@ -18,7 +18,7 @@ import UIKit
     func didApplyFilter(filter:Filter)
 }
 
-class SportsFilterVC: UIViewController {
+class SportsFilterVC: BaseVC {
     @IBOutlet weak var collectionView:UICollectionView!
     @IBOutlet weak var btnApplySelection:UIButton!
     @IBOutlet weak var nslcCollectionHeight:NSLayoutConstraint!

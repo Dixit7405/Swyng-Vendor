@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SportsCenterDetailsVC: UIViewController {
+class SportsCenterDetailsVC: BaseVC {
     @IBOutlet weak var collectionGallery:UICollectionView!
     @IBOutlet weak var lblAddress:UILabel!
     @IBOutlet weak var btnMapDirection:UIButton!

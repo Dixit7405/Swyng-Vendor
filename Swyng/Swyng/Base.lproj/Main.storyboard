@@ -60,22 +60,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSp-Kc-n5F">
-                                <rect key="frame" x="297" y="16" width="62" height="44"/>
-                                <color key="backgroundColor" name="appBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="0YC-nY-4jX"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                <state key="normal" title="Skip">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="22"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCO-4J-CYj">
                                 <rect key="frame" x="35" y="80" width="111" height="19"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
@@ -108,12 +92,10 @@
                             <constraint firstItem="pCO-4J-CYj" firstAttribute="leading" secondItem="J8h-LW-22Q" secondAttribute="leading" constant="35" id="2Po-4D-2sp"/>
                             <constraint firstItem="bNp-Td-vTQ" firstAttribute="top" secondItem="ef1-SO-rVr" secondAttribute="bottom" constant="50" id="5Yd-OC-iPP"/>
                             <constraint firstItem="J8h-LW-22Q" firstAttribute="trailing" secondItem="ef1-SO-rVr" secondAttribute="trailing" constant="30" id="IbD-Xb-SAS"/>
-                            <constraint firstItem="cSp-Kc-n5F" firstAttribute="top" secondItem="J8h-LW-22Q" secondAttribute="top" constant="16" id="Uz8-Rb-Oe8"/>
                             <constraint firstItem="ef1-SO-rVr" firstAttribute="leading" secondItem="J8h-LW-22Q" secondAttribute="leading" constant="30" id="cwP-VD-BVL"/>
                             <constraint firstItem="ef1-SO-rVr" firstAttribute="top" secondItem="pCO-4J-CYj" secondAttribute="bottom" constant="30" id="jLp-8T-phL"/>
                             <constraint firstItem="J8h-LW-22Q" firstAttribute="trailing" secondItem="bNp-Td-vTQ" secondAttribute="trailing" constant="35" id="rA5-x6-mzD"/>
                             <constraint firstItem="pCO-4J-CYj" firstAttribute="top" secondItem="J8h-LW-22Q" secondAttribute="top" constant="80" id="sDg-nm-CpG"/>
-                            <constraint firstItem="J8h-LW-22Q" firstAttribute="trailing" secondItem="cSp-Kc-n5F" secondAttribute="trailing" constant="16" id="uog-D1-fFd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z8e-FV-9h3"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TournamentDetailsVC: UIViewController {
+class TournamentDetailsVC: BaseVC {
     @IBOutlet weak var lblAbout:UILabel!
     @IBOutlet weak var lblDateTime:UILabel!
     @IBOutlet weak var lblRegisterBefore:UILabel!

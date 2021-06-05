@@ -107,8 +107,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hH4-iP-r9U" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="160" width="341" height="80"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="swyng_logo" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-kD-qc1">
-                                    <rect key="frame" x="10" y="-19" width="99" height="118"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" image="SWYNG Logo_Square 1" translatesAutoresizingMaskIntoConstraints="NO" id="0g4-kD-qc1">
+                                    <rect key="frame" x="10" y="5" width="99" height="70"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hFP-Ib-et8">
                                     <rect key="frame" x="301" y="25" width="30" height="30"/>
@@ -134,10 +134,12 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="0g4-kD-qc1" firstAttribute="top" secondItem="hH4-iP-r9U" secondAttribute="top" constant="5" id="83z-7x-8hm"/>
                                 <constraint firstItem="hFP-Ib-et8" firstAttribute="leading" secondItem="79M-qQ-vCp" secondAttribute="trailing" constant="5" id="BMK-bR-RRT"/>
                                 <constraint firstItem="hFP-Ib-et8" firstAttribute="centerY" secondItem="hH4-iP-r9U" secondAttribute="centerY" id="Pry-kZ-XCd"/>
                                 <constraint firstAttribute="trailing" secondItem="hFP-Ib-et8" secondAttribute="trailing" constant="10" id="ZLh-Fc-H0b"/>
                                 <constraint firstItem="79M-qQ-vCp" firstAttribute="leading" secondItem="0g4-kD-qc1" secondAttribute="trailing" constant="10" id="e9a-r1-dtB"/>
+                                <constraint firstAttribute="bottom" secondItem="0g4-kD-qc1" secondAttribute="bottom" constant="5" id="f4D-ZX-SW6"/>
                                 <constraint firstItem="0g4-kD-qc1" firstAttribute="centerY" secondItem="hH4-iP-r9U" secondAttribute="centerY" id="hXz-PK-gTU"/>
                                 <constraint firstItem="79M-qQ-vCp" firstAttribute="centerY" secondItem="hH4-iP-r9U" secondAttribute="centerY" id="iXt-bM-cbl"/>
                                 <constraint firstAttribute="height" constant="80" id="mYJ-LZ-ang"/>
@@ -187,16 +189,22 @@
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="p3W-Kj-cyI" secondAttribute="trailing" constant="15" id="cYM-zD-eyD"/>
                 <constraint firstItem="p3W-Kj-cyI" firstAttribute="top" secondItem="VXr-Tz-HHm" secondAttribute="top" constant="15" id="tzC-BM-ob6"/>
             </constraints>
+            <connections>
+                <outlet property="contactUsView" destination="v8A-Gn-CfK" id="UPP-Zd-vCs"/>
+                <outlet property="logoutView" destination="EHu-3j-aTq" id="e9W-nz-stn"/>
+                <outlet property="sharingView" destination="hH4-iP-r9U" id="bXd-4G-0QN"/>
+                <outlet property="socialMediaView" destination="k9v-sr-1Me" id="1sE-IN-bwu"/>
+            </connections>
             <point key="canvasLocation" x="179.0625" y="225.52816901408451"/>
         </collectionReusableView>
     </objects>
     <resources>
+        <image name="SWYNG Logo_Square 1" width="282" height="86"/>
         <image name="call" width="30" height="30"/>
         <image name="email" width="30" height="30"/>
         <image name="facebook" width="30" height="30"/>
         <image name="instagram" width="30" height="30"/>
         <image name="share" width="30" height="30"/>
-        <image name="swyng_logo" width="281" height="118"/>
         <image name="twitter" width="30" height="30"/>
         <image name="whatsapp" width="30" height="30"/>
         <image name="youtube" width="30" height="30"/>

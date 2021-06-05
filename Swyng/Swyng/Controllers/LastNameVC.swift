@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LastNameVC: UIViewController {
+class LastNameVC: BaseVC {
     @IBOutlet weak var txtfLastName:FirstResponderField!
     var registerData:RegisterParams?
     override func viewDidLoad() {

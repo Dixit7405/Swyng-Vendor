@@ -8,8 +8,7 @@
 import UIKit
 import WebKit
 
-class TournamentCMSVC: UIViewController {
-    @IBOutlet weak var lblTitle:UILabel!
+class TournamentCMSVC: BaseVC {
     @IBOutlet weak var viewWebContainer:UIView!
     @IBOutlet weak var viewUploadFiles:UIView!
     @IBOutlet weak var lblUploadTime:UILabel!
@@ -28,14 +27,10 @@ class TournamentCMSVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.layoutIfNeeded()
+        let name = ApplicationManager.sportType == .tournaments ? "SWYNG Badminton Open Tournament" : "Swyng WTF Run"
         switch pageType {
         case .fixture:
-            lblTitle.text = """
-                            SWYNG Badminton
-                            Open
-                            Tournament
-                            Fixtures & Schedule
-                            """
+            headerView.lblHeader.text = "\(name) Fixtures & Schedule"
             lblUploadTime.text = """
                                 Please upload the fixtures & schedule by
                                 08.00 PM Sat 21 Mar 2020.
@@ -44,11 +39,7 @@ class TournamentCMSVC: UIViewController {
             lblUploadType.text = "Upload A PDF Document Only"
             btnUpload.setTitle("Upload Fixtures & Schedule", for: .normal)
         case .results:
-            lblTitle.text = """
-                            SWYNG Badminton
-                            Open Tournament
-                            Results
-                            """
+            headerView.lblHeader.text = "\(name) Results"
             lblUploadTime.text = """
                                 Please upload the results by
                                 08.00 PM Sat 21 Mar 2020.
@@ -57,11 +48,7 @@ class TournamentCMSVC: UIViewController {
             lblUploadType.text = "Upload A PDF Document Only"
             btnUpload.setTitle("Upload Results", for: .normal)
         case .gallery:
-            lblTitle.text = """
-                            SWYNG Badminton
-                            Open Tournament
-                            Photo Gallery
-                            """
+            headerView.lblHeader.text = "\(name) Photo Gallery"
             lblUploadTime.text = ""
             lblUploadType.text = "Upload .png or .jpeg images Only"
             btnUpload.setTitle("Upload Photos", for: .normal)

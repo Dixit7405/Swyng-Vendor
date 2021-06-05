@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EmailVC: UIViewController {
+class EmailVC: BaseVC {
     @IBOutlet weak var txtfEmail:FirstResponderField!
     override func viewDidLoad() {
         super.viewDidLoad()
