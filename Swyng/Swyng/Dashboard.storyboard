@@ -629,7 +629,7 @@ REVOLUTION
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ERO-Dy-vK9" kind="relationship" relationship="rootViewController" id="MR5-OT-PLM"/>
+                        <segue destination="Zrd-n2-oaG" kind="relationship" relationship="rootViewController" id="XnP-8s-DlP"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ITS-2z-r7K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -756,7 +756,7 @@ REVOLUTION
                                         <rect key="frame" x="160" y="0.0" width="160" height="200"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account Info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojj-gu-iAF">
-                                        <rect key="frame" x="30" y="151" width="205" height="42"/>
+                                        <rect key="frame" x="30" y="150.5" width="207.5" height="42.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="36"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -784,22 +784,22 @@ REVOLUTION
                                 <rect key="frame" x="0.0" y="200" width="320" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxk-pn-a7r">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="267"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="269"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="W6c-qG-eIO">
-                                                <rect key="frame" x="50" y="20" width="220" height="222"/>
+                                                <rect key="frame" x="50" y="20" width="220" height="224"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dsr-Ic-Z1e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="220" height="48.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-Zc-B59">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KBJ-KN-CBK" customClass="CustomField" customModule="Swyng" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="14" width="220" height="34"/>
+                                                                <rect key="frame" x="0.0" y="14.5" width="220" height="34"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -810,16 +810,16 @@ REVOLUTION
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sgH-86-jDR">
-                                                        <rect key="frame" x="0.0" y="58" width="220" height="48"/>
+                                                        <rect key="frame" x="0.0" y="58.5" width="220" height="48.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWm-JD-4wM">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bso-bG-w7T" customClass="CustomField" customModule="Swyng" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="14" width="220" height="34"/>
+                                                                <rect key="frame" x="0.0" y="14.5" width="220" height="34"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -830,16 +830,16 @@ REVOLUTION
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RFa-Ul-45y">
-                                                        <rect key="frame" x="0.0" y="116" width="220" height="48"/>
+                                                        <rect key="frame" x="0.0" y="117" width="220" height="48.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U5d-Uw-1Ve">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ycf-Xi-RhN" customClass="CustomField" customModule="Swyng" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="14" width="220" height="34"/>
+                                                                <rect key="frame" x="0.0" y="14.5" width="220" height="34"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -850,16 +850,16 @@ REVOLUTION
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y9p-3f-nGf">
-                                                        <rect key="frame" x="0.0" y="174" width="220" height="48"/>
+                                                        <rect key="frame" x="0.0" y="175.5" width="220" height="48.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKC-JQ-jLH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="220" height="14.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ihx-c5-AZu" customClass="CustomField" customModule="Swyng" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="14" width="220" height="34"/>
+                                                                <rect key="frame" x="0.0" y="14.5" width="220" height="34"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -930,7 +930,7 @@ REVOLUTION
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zd-PV-Icb">
-                                <rect key="frame" x="174" y="16" width="130" height="35"/>
+                                <rect key="frame" x="175" y="16" width="129" height="35"/>
                                 <color key="backgroundColor" name="appBlue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="G7K-Ph-Sxy"/>
@@ -1038,7 +1038,7 @@ REVOLUTION
                                         <rect key="frame" x="130" y="0.0" width="190" height="200"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner With Us" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7uO-Rp-Y1m">
-                                        <rect key="frame" x="30" y="151" width="254.5" height="42"/>
+                                        <rect key="frame" x="30" y="150.5" width="255" height="42.5"/>
                                         <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="36"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -1509,6 +1509,7 @@ REVOLUTION
                         <outlet property="collectionView" destination="AXD-JK-vyG" id="Ya2-3V-J7h"/>
                         <outlet property="nslcCollectionHeight" destination="FZf-Cr-rOL" id="yT4-dw-VlL"/>
                         <outlet property="nslcSubCatHeight" destination="TBL-Io-xWK" id="YBT-DK-k8u"/>
+                        <outlet property="stackView" destination="b4a-ye-9hr" id="dPM-Qe-f8Q"/>
                         <outlet property="viewSubCategorySeprator" destination="EsJ-Yj-DUs" id="jqG-HU-vCl"/>
                     </connections>
                 </viewController>
@@ -1606,10 +1607,10 @@ REVOLUTION
                                 <rect key="frame" x="0.0" y="200" width="320" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JpL-Fd-wNW">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2449.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="2453.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mdi-as-shD">
-                                                <rect key="frame" x="16" y="0.0" width="288" height="2349.5"/>
+                                                <rect key="frame" x="16" y="0.0" width="288" height="2353.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KzX-wx-iDH">
                                                         <rect key="frame" x="0.0" y="0.0" width="288" height="50"/>
@@ -1780,25 +1781,25 @@ Koramangala Bengaluru</string>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dq6-0V-0lV">
-                                                        <rect key="frame" x="0.0" y="372" width="288" height="570.5"/>
+                                                        <rect key="frame" x="0.0" y="372" width="288" height="574.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruA-QN-syc">
-                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="560"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="564"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oCj-O7-tFZ">
-                                                                        <rect key="frame" x="0.0" y="10" width="288" height="540"/>
+                                                                        <rect key="frame" x="0.0" y="10" width="288" height="544"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WGk-ez-goI">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="184"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="288" height="188"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i8C-Cl-1Vg">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="184"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="188"/>
                                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                                         <color key="textColor" name="textBlack"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v5-i3-AtY">
-                                                                                        <rect key="frame" x="144" y="0.0" width="144" height="184"/>
+                                                                                        <rect key="frame" x="144" y="0.0" width="144" height="188"/>
                                                                                         <string key="text">Cancelation 
 Charges</string>
                                                                                         <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
@@ -1808,7 +1809,7 @@ Charges</string>
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="qyd-WY-Y2C">
-                                                                                <rect key="frame" x="0.0" y="189" width="288" height="56"/>
+                                                                                <rect key="frame" x="0.0" y="193" width="288" height="56"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bC1-fF-F5B">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="56"/>
@@ -1827,7 +1828,7 @@ Charges</string>
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Csb-5D-jwO">
-                                                                                <rect key="frame" x="0.0" y="250" width="288" height="112"/>
+                                                                                <rect key="frame" x="0.0" y="254" width="288" height="112"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjH-ns-fT2">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="112"/>
@@ -1847,7 +1848,7 @@ Thu 28 Oct 2019 &amp; before
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="CHG-Ly-OgK">
-                                                                                <rect key="frame" x="0.0" y="367" width="288" height="112"/>
+                                                                                <rect key="frame" x="0.0" y="371" width="288" height="112"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rnb-NF-dKN">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="112"/>
@@ -1867,7 +1868,7 @@ Thu 28 Oct 2019 &amp; before
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ee6-2w-dB2">
-                                                                                <rect key="frame" x="0.0" y="484" width="288" height="56"/>
+                                                                                <rect key="frame" x="0.0" y="488" width="288" height="56"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kuf-Fu-sN1">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="56"/>
@@ -1897,7 +1898,7 @@ Thu 28 Oct 2019 &amp; before
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1yD-v7-Qle">
-                                                                <rect key="frame" x="0.0" y="570" width="288" height="0.5"/>
+                                                                <rect key="frame" x="0.0" y="574" width="288" height="0.5"/>
                                                                 <color key="backgroundColor" name="textBlack"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="0.5" id="caS-dS-n4A"/>
@@ -1906,7 +1907,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YEa-dG-maz">
-                                                        <rect key="frame" x="0.0" y="952.5" width="288" height="115.5"/>
+                                                        <rect key="frame" x="0.0" y="956.5" width="288" height="115.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyu-de-Kaj" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="65"/>
@@ -1968,7 +1969,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dT8-S2-wUa" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1078" width="288" height="231"/>
+                                                        <rect key="frame" x="0.0" y="1082" width="288" height="231"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vuY-dK-Lr6">
                                                                 <rect key="frame" x="10" y="10" width="268" height="211"/>
@@ -2032,7 +2033,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Srb-TR-UzK" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1319" width="288" height="206"/>
+                                                        <rect key="frame" x="0.0" y="1323" width="288" height="206"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kpW-w2-Zn2">
                                                                 <rect key="frame" x="10" y="10" width="268" height="186"/>
@@ -2088,7 +2089,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RQ0-bs-UT5" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="1535" width="288" height="206"/>
+                                                        <rect key="frame" x="0.0" y="1539" width="288" height="206"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="0Ku-ED-3Rb">
                                                                 <rect key="frame" x="10" y="10" width="268" height="186"/>
@@ -2144,14 +2145,14 @@ Thu 28 Oct 2019 &amp; before
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYT-dR-V9E">
-                                                        <rect key="frame" x="0.0" y="1751" width="288" height="0.5"/>
+                                                        <rect key="frame" x="0.0" y="1755" width="288" height="0.5"/>
                                                         <color key="backgroundColor" name="textBlack"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="0.5" id="JR0-oy-a1B"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uur-32-svu">
-                                                        <rect key="frame" x="0.0" y="1761.5" width="288" height="150.5"/>
+                                                        <rect key="frame" x="0.0" y="1765.5" width="288" height="150.5"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wb-nE-08I">
                                                                 <rect key="frame" x="0.0" y="0.0" width="288" height="140"/>
@@ -2273,7 +2274,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLS-qv-a2I">
-                                                        <rect key="frame" x="0.0" y="1922" width="288" height="427.5"/>
+                                                        <rect key="frame" x="0.0" y="1926" width="288" height="427.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QBA-r2-jcE">
                                                                 <rect key="frame" x="0.0" y="15" width="288" height="407.5"/>
@@ -2487,13 +2488,13 @@ Thu 28 Oct 2019 &amp; before
                                 <rect key="frame" x="0.0" y="200" width="320" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlI-WV-Pfu">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1800.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1807"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vb5-TE-tw3">
-                                                <rect key="frame" x="25" y="25" width="270" height="1681.5"/>
+                                                <rect key="frame" x="25" y="25" width="270" height="1688"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mp7-2m-WQD">
-                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="103.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="104"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8xN-NS-1Qn">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2515,7 +2516,7 @@ Thu 28 Oct 2019 &amp; before
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qs-Zt-8T4">
-                                                                <rect key="frame" x="0.0" y="21.5" width="270" height="82"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="270" height="82.5"/>
                                                                 <string key="text">It is your responsibility to check this TOS periodically for changes. Your continued use of the Services following the posting of any changes to this TOS constitutes acceptance of those changes.</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" name="textBlack"/>
@@ -2527,7 +2528,7 @@ Thu 28 Oct 2019 &amp; before
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="jJC-lF-Lao">
-                                                        <rect key="frame" x="0.0" y="123.5" width="270" height="54.5"/>
+                                                        <rect key="frame" x="0.0" y="124" width="270" height="54.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Viq-zm-v2v">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2549,7 +2550,7 @@ Thu 28 Oct 2019 &amp; before
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feV-8a-HQ4">
-                                                                <rect key="frame" x="0.0" y="21.5" width="240.5" height="33"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="235" height="33"/>
                                                                 <string key="text">Sunday 01 Nov 2019, 05 AM to 10 AM
 Reporting Time : 05 AM</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
@@ -2562,7 +2563,7 @@ Reporting Time : 05 AM</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Nvc-bb-r8Y">
-                                                        <rect key="frame" x="0.0" y="198" width="270" height="38"/>
+                                                        <rect key="frame" x="0.0" y="198.5" width="270" height="38"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3dF-AT-37F">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2584,7 +2585,7 @@ Reporting Time : 05 AM</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06 PM Sunday 01 Nov 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vyi-EY-HU9">
-                                                                <rect key="frame" x="0.0" y="21.5" width="176" height="16.5"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="172" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" name="textBlack"/>
                                                                 <nil key="highlightedColor"/>
@@ -2595,7 +2596,7 @@ Reporting Time : 05 AM</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="gyj-HP-NNO">
-                                                        <rect key="frame" x="0.0" y="256" width="270" height="79.5"/>
+                                                        <rect key="frame" x="0.0" y="256.5" width="270" height="79.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pjo-80-2SS">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2617,7 +2618,7 @@ Reporting Time : 05 AM</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-tG-46e">
-                                                                <rect key="frame" x="0.0" y="16.5" width="212" height="33"/>
+                                                                <rect key="frame" x="0.0" y="16.5" width="207.5" height="33"/>
                                                                 <string key="text">Decathlon Sarjapur Road,
 Carmelaram, Bengaluru - 560 035</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
@@ -2645,7 +2646,7 @@ Carmelaram, Bengaluru - 560 035</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="boj-M7-Eq0">
-                                                        <rect key="frame" x="0.0" y="355.5" width="270" height="70.5"/>
+                                                        <rect key="frame" x="0.0" y="356" width="270" height="71"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9KD-ai-Dqf">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2667,7 +2668,7 @@ Carmelaram, Bengaluru - 560 035</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPE-cH-ndF">
-                                                                <rect key="frame" x="0.0" y="21.5" width="156.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="150" height="49.5"/>
                                                                 <string key="text">Men’s Open - Rs. 400
 Mixed Open - Rs. 800
 Women’s Open - Rs. 400</string>
@@ -2681,7 +2682,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Pvc-tR-LWB">
-                                                        <rect key="frame" x="0.0" y="446" width="270" height="54.5"/>
+                                                        <rect key="frame" x="0.0" y="447" width="270" height="54.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TRz-Rv-hYb">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2703,7 +2704,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KvV-Vz-WJ4">
-                                                                <rect key="frame" x="0.0" y="21.5" width="216" height="33"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="210" height="33"/>
                                                                 <string key="text">5K Run, 10K Run, 10K Run(Timed)
 5K Run, 10K Run, 10K Run(Timed)</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
@@ -2716,7 +2717,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LSL-Ty-Ux6">
-                                                        <rect key="frame" x="0.0" y="520.5" width="270" height="185"/>
+                                                        <rect key="frame" x="0.0" y="521.5" width="270" height="186"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JxW-SM-vSc">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2738,7 +2739,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eny-2l-vIy">
-                                                                <rect key="frame" x="0.0" y="21.5" width="268.5" height="163.5"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="263" height="164.5"/>
                                                                 <string key="text">- It is your responsibility to check this TOS 
 - periodically for changes. Your continued use of - the Services following the posting of any 
 - changes to this TOS constitutes acceptance of 
@@ -2755,7 +2756,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rge-kk-LFJ">
-                                                        <rect key="frame" x="0.0" y="725.5" width="270" height="185"/>
+                                                        <rect key="frame" x="0.0" y="727.5" width="270" height="186"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mB4-D8-CHx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2777,7 +2778,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPv-hX-uwJ">
-                                                                <rect key="frame" x="0.0" y="21.5" width="268.5" height="163.5"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="263" height="164.5"/>
                                                                 <string key="text">- It is your responsibility to check this TOS 
 - periodically for changes. Your continued use of - the Services following the posting of any 
 - changes to this TOS constitutes acceptance of 
@@ -2794,7 +2795,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="gWp-46-Ged">
-                                                        <rect key="frame" x="0.0" y="930.5" width="270" height="282.5"/>
+                                                        <rect key="frame" x="0.0" y="933.5" width="270" height="284"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-iR-1LU">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2816,7 +2817,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HXf-ax-jIg">
-                                                                <rect key="frame" x="0.0" y="21.5" width="268.5" height="261"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="270" height="262.5"/>
                                                                 <string key="text">- It is your responsibility to check this TOS 
    Periodically for changes. Your continued use of - the Services following the posting of any 
    Changes to this TOS constitutes acceptance of 
@@ -2836,7 +2837,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rxP-aZ-MUX">
-                                                        <rect key="frame" x="0.0" y="1233" width="270" height="185"/>
+                                                        <rect key="frame" x="0.0" y="1237.5" width="270" height="186"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="b6P-Wx-WBu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2858,7 +2859,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9u-Vq-4Ph">
-                                                                <rect key="frame" x="0.0" y="21.5" width="268.5" height="163.5"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="263" height="164.5"/>
                                                                 <string key="text">- It is your responsibility to check this TOS 
 - periodically for changes. Your continued use of - the Services following the posting of any 
 - changes to this TOS constitutes acceptance of 
@@ -2875,7 +2876,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UQJ-rK-GB5">
-                                                        <rect key="frame" x="0.0" y="1438" width="270" height="103.5"/>
+                                                        <rect key="frame" x="0.0" y="1443.5" width="270" height="104"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dfd-Hs-ewR">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="16.5"/>
@@ -2897,7 +2898,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYz-7m-4Ho">
-                                                                <rect key="frame" x="0.0" y="21.5" width="270" height="82"/>
+                                                                <rect key="frame" x="0.0" y="21.5" width="270" height="82.5"/>
                                                                 <string key="text">It is your responsibility to check this TOS periodically for changes. Your continued use of the Services following the posting of any changes to this TOS constitutes acceptance of those changes.</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" name="textBlack"/>
@@ -2909,7 +2910,7 @@ Women’s Open - Rs. 400</string>
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZBO-Dx-GD2">
-                                                        <rect key="frame" x="0.0" y="1561.5" width="270" height="120"/>
+                                                        <rect key="frame" x="0.0" y="1567.5" width="270" height="120.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="h1h-2R-lOe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="270" height="33"/>
@@ -2931,7 +2932,7 @@ Women’s Open - Rs. 400</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeJ-CZ-F9e">
-                                                                <rect key="frame" x="0.0" y="38" width="270" height="82"/>
+                                                                <rect key="frame" x="0.0" y="38" width="270" height="82.5"/>
                                                                 <string key="text">It is your responsibility to check this TOS periodically for changes. Your continued use of the Services following the posting of any changes to this TOS constitutes acceptance of those changes.</string>
                                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                 <color key="textColor" name="textBlack"/>
@@ -2945,7 +2946,7 @@ Women’s Open - Rs. 400</string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-M4-6Kz" customClass="ShadowButton" customModule="Swyng" customModuleProvider="target">
-                                                <rect key="frame" x="50" y="1726.5" width="220" height="44"/>
+                                                <rect key="frame" x="50" y="1733" width="220" height="44"/>
                                                 <color key="backgroundColor" name="appBlue"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="44" id="JsE-Jp-m1l"/>
@@ -3037,10 +3038,10 @@ Women’s Open - Rs. 400</string>
                                 <rect key="frame" x="0.0" y="200" width="320" height="368"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1IB-Os-BZ8">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="373"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="373.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVB-ue-7h9">
-                                                <rect key="frame" x="36" y="302" width="248" height="56"/>
+                                                <rect key="frame" x="36" y="302" width="248" height="56.5"/>
                                                 <string key="text">* Participant players/teams names are listed in alphabetical 
 order and the order is not the seeding for the tournament</string>
                                                 <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="12"/>
@@ -3626,16 +3627,9 @@ Tournaments</string>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fv-lh-QF3">
                                         <rect key="frame" x="16" y="16" width="20" height="22"/>
-                                        <state key="normal" image="menu_arrow"/>
+                                        <state key="normal" image="back"/>
                                         <connections>
-                                            <action selector="btnLeftMenuPressed:" destination="ERO-Dy-vK9" eventType="touchUpInside" id="6Vt-Gl-e3D"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0y8-Qy-0Ag">
-                                        <rect key="frame" x="282" y="16" width="22" height="22"/>
-                                        <state key="normal" image="menu"/>
-                                        <connections>
-                                            <action selector="btnFilterPressed:" destination="ERO-Dy-vK9" eventType="touchUpInside" id="l0Y-WP-uh0"/>
+                                            <action selector="backButtonPressed:" destination="ERO-Dy-vK9" eventType="touchUpInside" id="bwA-o3-FdN"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="daQ-uZ-wIW">
@@ -3673,7 +3667,6 @@ Tournaments</string>
                                     <constraint firstItem="H6T-kj-XF1" firstAttribute="centerY" secondItem="rnI-gx-gZN" secondAttribute="centerY" id="0n2-8g-d9U"/>
                                     <constraint firstItem="daQ-uZ-wIW" firstAttribute="top" secondItem="CpD-fI-x73" secondAttribute="bottom" constant="5" id="0nG-33-sPf"/>
                                     <constraint firstItem="s6u-Q2-BMd" firstAttribute="trailing" secondItem="VZr-d8-DNU" secondAttribute="trailing" id="ByG-yQ-Slm"/>
-                                    <constraint firstAttribute="trailing" secondItem="0y8-Qy-0Ag" secondAttribute="trailing" constant="16" id="EJh-Gz-tjI"/>
                                     <constraint firstItem="5Fv-lh-QF3" firstAttribute="leading" secondItem="rnI-gx-gZN" secondAttribute="leading" constant="16" id="G6U-MP-4dw"/>
                                     <constraint firstItem="3It-Qn-TWh" firstAttribute="bottom" secondItem="CpD-fI-x73" secondAttribute="bottom" id="Icq-vL-BFg"/>
                                     <constraint firstAttribute="trailing" secondItem="daQ-uZ-wIW" secondAttribute="trailing" id="Iy3-VG-yh7"/>
@@ -3686,13 +3679,12 @@ Tournaments</string>
                                     <constraint firstAttribute="bottom" secondItem="daQ-uZ-wIW" secondAttribute="bottom" id="iUo-bA-bsa"/>
                                     <constraint firstAttribute="height" constant="200" id="kct-oD-DTy"/>
                                     <constraint firstItem="3It-Qn-TWh" firstAttribute="top" secondItem="CpD-fI-x73" secondAttribute="top" id="tC5-ou-tyO"/>
-                                    <constraint firstItem="0y8-Qy-0Ag" firstAttribute="centerY" secondItem="5Fv-lh-QF3" secondAttribute="centerY" id="y8h-sh-UcP"/>
                                     <constraint firstItem="daQ-uZ-wIW" firstAttribute="leading" secondItem="rnI-gx-gZN" secondAttribute="leading" id="zRg-ej-upK"/>
                                     <constraint firstAttribute="trailing" secondItem="H6T-kj-XF1" secondAttribute="trailing" id="zTR-NY-qie"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="elQ-IR-YVX">
-                                <rect key="frame" x="0.0" y="200" width="320" height="319"/>
+                                <rect key="frame" x="0.0" y="200" width="320" height="368"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcommingCourtBookingCell" rowHeight="108" id="bGM-Qx-bQ9" customClass="UpcommingCourtBookingCell" customModule="Swyng" customModuleProvider="target">
@@ -3715,6 +3707,9 @@ Tournaments</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="tournamentView" destination="dus-o2-WT6" id="RNj-T2-sSO"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -3739,11 +3734,12 @@ Tournaments</string>
                     <connections>
                         <outlet property="lblNonSelectedTab" destination="CpD-fI-x73" id="ONN-2G-boh"/>
                         <outlet property="lblSelectedTab" destination="s6u-Q2-BMd" id="I5T-m6-KxY"/>
+                        <outlet property="tableView" destination="elQ-IR-YVX" id="0jz-Wy-ytq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8P-NZ-MaO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1997" y="1419"/>
+            <point key="canvasLocation" x="3743" y="1793"/>
         </scene>
         <!--TournamentCMSVC-->
         <scene sceneID="CCc-cu-kbD">
@@ -4598,24 +4594,24 @@ order and the order is not the seeding for the tournament</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nha-JH-L99">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="CwZ-IZ-Mfh">
-                                    <size key="itemSize" width="375" height="573"/>
+                                    <size key="itemSize" width="313" height="524"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TournamentGridCell" id="w87-Zi-xaL" customClass="TournamentGridCell" customModule="Swyng" customModuleProvider="target">
-                                        <rect key="frame" x="-27.5" y="0.0" width="375" height="573"/>
+                                        <rect key="frame" x="3.5" y="0.0" width="313" height="524"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DZg-oD-osX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="573"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="524"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2467589" translatesAutoresizingMaskIntoConstraints="NO" id="FTt-ub-idV">
-                                                    <rect key="frame" x="5" y="5" width="365" height="563"/>
+                                                    <rect key="frame" x="5" y="5" width="303" height="514"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="10"/>
@@ -4623,23 +4619,23 @@ order and the order is not the seeding for the tournament</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5cF-aO-08i" customClass="ShadowView" customModule="Swyng" customModuleProvider="target">
-                                                    <rect key="frame" x="25" y="521" width="325" height="40"/>
+                                                    <rect key="frame" x="25" y="472" width="263" height="40"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6hr-RX-Tnf">
-                                                            <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="263" height="40"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YOu-db-seG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="263" height="40"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yuL-l7-KQQ">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="189.5" height="40"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="153.5" height="40"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                             <state key="normal" title="Get Details ">
                                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
                                                                         </button>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPy-2d-rvz">
-                                                                            <rect key="frame" x="189.5" y="0.0" width="135.5" height="40"/>
+                                                                            <rect key="frame" x="153.5" y="0.0" width="109.5" height="40"/>
                                                                             <color key="backgroundColor" name="appBlue"/>
                                                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                                                             <state key="normal" title="Register">
@@ -4681,19 +4677,19 @@ order and the order is not the seeding for the tournament</string>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4LS-RO-2Mv">
-                                                    <rect key="frame" x="25" y="361.5" width="325" height="149.5"/>
+                                                    <rect key="frame" x="25" y="279" width="263" height="183"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Mtv-rF-eEe">
-                                                            <rect key="frame" x="0.0" y="0.0" width="285" height="149.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="223" height="183"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QoF-WI-PZz">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" name="textBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCD-uE-X7S">
-                                                                    <rect key="frame" x="0.0" y="21.5" width="214" height="42"/>
+                                                                    <rect key="frame" x="0.0" y="21.5" width="205" height="42.5"/>
                                                                     <string key="text">SWYNG Badminton Open 
 Tournament</string>
                                                                     <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
@@ -4701,25 +4697,25 @@ Tournament</string>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sun 01 Nov 2019, Sarjapur Road" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7j2-DJ-Pd6">
-                                                                    <rect key="frame" x="0.0" y="68.5" width="202" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="69" width="202" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" name="textBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Men’s Open, Mixed Open, Women’s Open" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFP-71-NYw">
-                                                                    <rect key="frame" x="0.0" y="90" width="251.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="90.5" width="159.5" height="33"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" name="textBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register before 06.00 PM Fri 28 Oct 2019" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iz-Eh-p5u">
-                                                                    <rect key="frame" x="0.0" y="111.5" width="259.5" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="128.5" width="202.5" height="33"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" name="textBlack"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120 players have registered" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5j-Z7-6AH">
-                                                                    <rect key="frame" x="0.0" y="133" width="173" height="16.5"/>
+                                                                    <rect key="frame" x="0.0" y="166.5" width="173" height="16.5"/>
                                                                     <fontDescription key="fontDescription" name="Roboto-Medium" family="Roboto" pointSize="14"/>
                                                                     <color key="textColor" name="textBlack"/>
                                                                     <nil key="highlightedColor"/>
@@ -4727,7 +4723,7 @@ Tournament</string>
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QxV-Kt-5m0">
-                                                            <rect key="frame" x="285" y="30" width="40" height="90"/>
+                                                            <rect key="frame" x="223" y="46.5" width="40" height="90"/>
                                                             <subviews>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5l0-hH-2Bd">
                                                                     <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -4800,7 +4796,7 @@ Tournament</string>
                                                 <constraint firstAttribute="bottom" secondItem="FTt-ub-idV" secondAttribute="bottom" constant="5" id="w6I-kU-H3I"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="375" height="573"/>
+                                        <size key="customSize" width="313" height="524"/>
                                         <connections>
                                             <outlet property="imgTournament" destination="FTt-ub-idV" id="7ec-xg-luT"/>
                                             <outlet property="lblAddressTime" destination="7j2-DJ-Pd6" id="ksv-fY-Id9"/>
@@ -4837,7 +4833,7 @@ Tournament</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08C-NJ-beF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3463" y="2113"/>
+            <point key="canvasLocation" x="2107.5" y="1405.9859154929577"/>
         </scene>
         <!--All SportsVC-->
         <scene sceneID="J3U-lt-zEe">
@@ -5722,6 +5718,117 @@ Hoodi, Whitefield, Bengaluru</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pwB-JQ-Lpm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1309" y="1407"/>
+        </scene>
+        <!--Upcoming TournamentVC-->
+        <scene sceneID="6T3-9C-lyK">
+            <objects>
+                <viewController storyboardIdentifier="UpcomingTournamentVC" id="LsE-H8-qCq" customClass="UpcomingTournamentVC" customModule="SwyngUser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRZ-vb-gvt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="trQ-pe-238">
+                                <rect key="frame" x="0.0" y="200" width="320" height="368"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UpcommingCourtBookingCell" rowHeight="128" id="Srd-Wh-MIe" customClass="UpcommingCourtBookingCell" customModule="SwyngUser" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="320" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Srd-Wh-MIe" id="nFN-Na-goe">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OuD-kc-yOO" customClass="TournamentListView" customModule="Swyng" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="10" width="290" height="108"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="OuD-kc-yOO" secondAttribute="trailing" constant="15" id="3G4-2x-a4w"/>
+                                                <constraint firstItem="OuD-kc-yOO" firstAttribute="top" secondItem="nFN-Na-goe" secondAttribute="top" constant="10" id="3vu-KZ-eef"/>
+                                                <constraint firstItem="OuD-kc-yOO" firstAttribute="leading" secondItem="nFN-Na-goe" secondAttribute="leading" constant="15" id="GNE-c5-9fm"/>
+                                                <constraint firstAttribute="bottom" secondItem="OuD-kc-yOO" secondAttribute="bottom" constant="10" id="Vzk-D5-sgM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="viewBg" destination="OuD-kc-yOO" id="YBk-Tl-qUT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LsE-H8-qCq" id="dKT-l2-XxB"/>
+                                    <outlet property="delegate" destination="LsE-H8-qCq" id="ZyS-2T-uL7"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PaN-Sk-ybG" customClass="ShadowView" customModule="SwyngUser" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="header_tournaments" translatesAutoresizingMaskIntoConstraints="NO" id="tcC-74-HBK">
+                                        <rect key="frame" x="120" y="0.0" width="200" height="200"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwQ-2P-kKD">
+                                        <rect key="frame" x="30" y="108.5" width="213.5" height="84.5"/>
+                                        <string key="text">Upcoming
+Tournaments</string>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="36"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMr-6R-wnC">
+                                        <rect key="frame" x="16" y="16" width="20" height="22"/>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="btnLeftBar:" destination="LsE-H8-qCq" eventType="touchUpInside" id="BbG-oi-amk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJN-EN-LCb">
+                                        <rect key="frame" x="282" y="16" width="22" height="22"/>
+                                        <state key="normal" image="menu"/>
+                                        <connections>
+                                            <action selector="filterPressed:" destination="LsE-H8-qCq" eventType="touchUpInside" id="48c-Jh-NuI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tcC-74-HBK" secondAttribute="trailing" id="1CA-zX-Jot"/>
+                                    <constraint firstItem="lMr-6R-wnC" firstAttribute="leading" secondItem="PaN-Sk-ybG" secondAttribute="leading" constant="16" id="DAL-2r-mA4"/>
+                                    <constraint firstItem="IJN-EN-LCb" firstAttribute="centerY" secondItem="lMr-6R-wnC" secondAttribute="centerY" id="HsO-xi-izd"/>
+                                    <constraint firstItem="tcC-74-HBK" firstAttribute="centerY" secondItem="PaN-Sk-ybG" secondAttribute="centerY" id="PrK-jN-gbf"/>
+                                    <constraint firstAttribute="trailing" secondItem="IJN-EN-LCb" secondAttribute="trailing" constant="16" id="ato-Hw-jhW"/>
+                                    <constraint firstAttribute="height" constant="200" id="fQv-dI-9mm"/>
+                                    <constraint firstAttribute="bottom" secondItem="IwQ-2P-kKD" secondAttribute="bottom" constant="7" id="oEx-SX-Joh"/>
+                                    <constraint firstItem="lMr-6R-wnC" firstAttribute="top" secondItem="PaN-Sk-ybG" secondAttribute="top" constant="16" id="rF9-jD-LgA"/>
+                                    <constraint firstItem="IwQ-2P-kKD" firstAttribute="leading" secondItem="PaN-Sk-ybG" secondAttribute="leading" constant="30" id="rwO-MU-BPs"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IwQ-2P-kKD" secondAttribute="trailing" constant="10" id="tZC-aS-c2b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="slB-mB-ySJ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="trQ-pe-238" firstAttribute="top" secondItem="PaN-Sk-ybG" secondAttribute="bottom" id="cJq-zH-41k"/>
+                            <constraint firstItem="trQ-pe-238" firstAttribute="leading" secondItem="slB-mB-ySJ" secondAttribute="leading" id="fl5-vj-8ik"/>
+                            <constraint firstItem="PaN-Sk-ybG" firstAttribute="leading" secondItem="slB-mB-ySJ" secondAttribute="leading" id="gTZ-yA-cYX"/>
+                            <constraint firstAttribute="trailing" secondItem="PaN-Sk-ybG" secondAttribute="trailing" id="kLa-dc-71B"/>
+                            <constraint firstAttribute="bottom" secondItem="trQ-pe-238" secondAttribute="bottom" id="mzV-R6-XqW"/>
+                            <constraint firstItem="PaN-Sk-ybG" firstAttribute="top" secondItem="slB-mB-ySJ" secondAttribute="top" id="tHn-Lb-Dut"/>
+                            <constraint firstAttribute="trailing" secondItem="trQ-pe-238" secondAttribute="trailing" id="uQ7-OX-QWm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="trQ-pe-238" id="F0c-Oc-siw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="90x-3T-2wH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1119" y="2855"/>
         </scene>
     </scenes>
     <resources>

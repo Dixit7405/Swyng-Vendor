@@ -58,7 +58,8 @@ extension TournamentGridVC:UICollectionViewDelegate,UICollectionViewDataSource,U
 extension TournamentGridVC{
     private func getAllTournaments(){
         startActivityIndicator()
-        Webservices().request(with: [:], method: .get, endPoint: EndPoints.getTournaments, type: CommonResponse<[Tournaments]>.self, failer: failureBlock()) {[weak self] (success) in
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.getUpPastTournaments + "upcoming", type: CommonResponse<[Tournaments]>.self, failer: failureBlock()) {[weak self] (success) in
             guard let self = self else {return}
             guard let response = success as? CommonResponse<[Tournaments]> else {return}
             if let data = self.successBlock(response: response){
@@ -73,5 +74,9 @@ extension TournamentGridVC{
 extension TournamentGridVC{
     override func didApplyFilter(filter: Filter) {
         print("Filter pressed")
+        if filter.gallery == false{
+            let vc:UpcomingTournamentVC = .controller()
+            tabBarController?.viewControllers?[2].navigationController?.viewControllers = [vc]
+        }
     }
 }

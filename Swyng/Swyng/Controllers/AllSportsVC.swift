@@ -19,7 +19,11 @@ class AllSportsVC: BaseVC {
     let disposeBag = DisposeBag()
     var arrAllCenters:[SportCenters] = []
     var arrSportCenters:[SportCenters] = []
+    var filterSports:[Sports] = []
     var timer = Timer()
+    var loadMore = false
+    var offset = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -38,7 +42,7 @@ extension AllSportsVC{
     }
     
     @IBAction func btnRightMenuPressed(_ sender:UIButton){
-        rightBarPressed()
+        rightBarPressed(forSportCenter: true)
     }
 }
 
@@ -58,6 +62,14 @@ extension AllSportsVC{
         }
         .disposed(by: disposeBag)
         tblAllSports.rx.setDelegate(self).disposed(by: disposeBag)
+    }
+}
+
+//MARK: - FILTER DELEGATE
+extension AllSportsVC{
+    override func didApplyFilter(filter: Filter) {
+        filterSports = filter.sport
+        getAllSportCenters()
     }
 }
 
@@ -132,10 +144,16 @@ extension AllSportsVC:UITableViewDelegate, UITableViewDataSource{
 extension AllSportsVC{
     private func getAllSportCenters(){
         startActivityIndicator()
+//        let params:[String:Any] = [Parameters.offset:"",
+//                                   Parameters.size:10,
+//                                   Parameters.sport:filterSports.compactMap({$0.id}),
+//                                   Parameters.location:[]]
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
-        Webservices().request(with: params, method: .post, endPoint: EndPoints.getSportCenters, type: CommonResponse<[SportCenters]>.self, failer: failureBlock()) {[weak self] success in
+        loadMore = false
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.getAllSports, type: CommonResponse<[SportCenters]>.self, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
             if let response = success as? CommonResponse<[SportCenters]>, let data = self.successBlock(response: response){
+                self.loadMore = true
                 self.arrAllCenters = data
                 self.arrSportCenters = data
                 self.tblAllSports.reloadData()
@@ -151,6 +169,16 @@ extension AllSportsVC{
                 self.arrSportCenters = data
                 self.tblAllSports.reloadData()
             }
+        }
+    }
+}
+
+//MARK: - SCROLLVIEW DELEGATE
+extension AllSportsVC{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (scrollView.contentOffset.y + scrollView.bounds.size.height) >= scrollView.contentSize.height, loadMore{
+            offset += 10
+            getAllSportCenters()
         }
     }
 }

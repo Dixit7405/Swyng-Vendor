@@ -8,7 +8,7 @@
 import UIKit
 
 @objc class Filter:NSObject{
-    var sport:Sports?
+    var sport:[Sports] = []
     var category:String?
     var gallery:Bool?
     var filter:Bool?
@@ -28,21 +28,23 @@ class SportsFilterVC: BaseVC {
     @IBOutlet weak var btnByDate:UIButton!
     @IBOutlet weak var nslcSubCatHeight:NSLayoutConstraint!
     @IBOutlet weak var viewSubCategorySeprator:UIView!
+    @IBOutlet weak var stackView:UIStackView!
     
     var sportsArr:[Sports] = []
-    var selectedIndex:Int?{
+    var selectedIndex:[Int] = []{
         didSet{
-            btnApplySelection.backgroundColor = selectedIndex != nil ? UIColor.AppColor.themeColor : UIColor.white
-            btnApplySelection.setTitleColor(selectedIndex != nil ? UIColor.white : UIColor.black, for: .normal)
-            btnApplySelection.isUserInteractionEnabled = selectedIndex != nil
+            btnApplySelection.backgroundColor = selectedIndex.count != 0 ? UIColor.AppColor.themeColor : UIColor.white
+            btnApplySelection.setTitleColor(selectedIndex.count != 0 ? UIColor.white : UIColor.black, for: .normal)
+            btnApplySelection.isUserInteractionEnabled = selectedIndex.count != 0
             
-            btnAllSports.backgroundColor = selectedIndex == nil ? UIColor.AppColor.themeColor : UIColor.white
-            btnAllSports.setTitleColor(selectedIndex == nil ? UIColor.white : UIColor.black, for: .normal)
+            btnAllSports.backgroundColor = selectedIndex.count == 0 ? UIColor.AppColor.themeColor : UIColor.white
+            btnAllSports.setTitleColor(selectedIndex.count == 0 ? UIColor.white : UIColor.black, for: .normal)
         }
     }
     
     var selectedSubCategory:Int?
     var showSubCategory = false
+    var forSportCenter = false
     
     weak var delegate:SportsFilterDelegate?
     
@@ -50,7 +52,7 @@ class SportsFilterVC: BaseVC {
         super.viewDidLoad()
         view.layoutIfNeeded()
         collectionView.reloadData()
-        selectedIndex = nil
+        selectedIndex = []
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         collectionView.addObserver(self, forKeyPath: #keyPath(UICollectionView.contentSize), options: [NSKeyValueObservingOptions.new], context: nil)
         
@@ -59,6 +61,8 @@ class SportsFilterVC: BaseVC {
         
         viewSubCategorySeprator.isHidden = !showSubCategory
         collectionSubCategory.isHidden = !showSubCategory
+        
+        stackView.isHidden = forSportCenter
         getSportsList()
         // Do any additional setup after loading the view.
     }
@@ -68,12 +72,18 @@ class SportsFilterVC: BaseVC {
 //MARK: - ACTION METHODS
 extension SportsFilterVC{
     @IBAction func btnApplySelectionPressed(_ sender:UIButton){
-        guard let index = selectedIndex else {
+        guard selectedIndex.count != 0 else {
             showAlertWith(message: "Please select sport for apply filter")
             return}
         navigationController?.popViewController(animated: true){ [unowned self] in
             let filter = Filter()
-            filter.sport = sportsArr[index]
+            var arr:[Sports] = []
+            for i in 0..<sportsArr.count{
+                if selectedIndex.contains(i){
+                    arr.append(sportsArr[i])
+                }
+            }
+            filter.sport = arr
             filter.gallery = btnListGrid.isSelected
             filter.filter = btnByDate.isSelected
             self.delegate?.didApplyFilter(filter: filter)
@@ -85,7 +95,7 @@ extension SportsFilterVC{
     }
     
     @IBAction func btnAllSportsPressed(_ sender:UIButton){
-        selectedIndex = nil
+        selectedIndex = []
         collectionView.reloadData()
     }
     
@@ -122,7 +132,7 @@ extension SportsFilterVC:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CityCell", for: indexPath) as! CityCell
         cell.lblCityName.text = sportsArr[indexPath.item].name
-        cell.isSelected = indexPath.item == (collectionView == self.collectionView ? selectedIndex : selectedSubCategory)
+        cell.isSelected = selectedIndex.contains(indexPath.item)
         cell.layoutIfNeeded()
         return cell
     }
@@ -134,7 +144,12 @@ extension SportsFilterVC:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView{
-            selectedIndex = indexPath.item
+            if selectedIndex.contains(indexPath.item){
+                selectedIndex.removeAll(where: {$0 == indexPath.item})
+            }
+            else{
+                selectedIndex.append(indexPath.item)
+            }
         }
         else{
             selectedSubCategory = indexPath.item

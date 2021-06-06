@@ -301,10 +301,11 @@ extension UIViewController{
     }
     
     
-    @objc func rightBarPressed(){
+    @objc func rightBarPressed(forSportCenter:Bool = false){
         let vc:SportsFilterVC = SportsFilterVC.controller()
         vc.delegate = self
         vc.showSubCategory = false
+        vc.forSportCenter = forSportCenter
         vc.modalPresentationStyle = .fullScreen
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -423,6 +424,9 @@ extension UIViewController{
 extension UIViewController:AccountMenuDelegate{
     func didSelectMenu(option: EventMenuOptions) {
         switch option {
+        case .sportsTournaments:
+            let vc:TournamentListVC = .controller()
+            navigationController?.pushViewController(vc, animated: true)
         default:
             break
         }

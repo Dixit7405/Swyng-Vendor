@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +16,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TournamentListView" customModule="Swyng" customModuleProvider="target">
             <connections>
+                <outlet property="lblAddress" destination="MFA-AI-rPW" id="7Yf-ON-nDt"/>
+                <outlet property="lblDateTime" destination="Ifo-gB-nIB" id="l5T-jk-PdG"/>
+                <outlet property="lblOpenFor" destination="kgA-Em-fZa" id="zWS-JH-G4y"/>
+                <outlet property="lblTournamentName" destination="7bf-Zd-0T1" id="wOR-k5-oxL"/>
                 <outlet property="view" destination="iN0-l3-epB" id="dFu-Zw-eif"/>
             </connections>
         </placeholder>
@@ -31,7 +35,7 @@
                             <rect key="frame" x="15" y="10" width="290" height="56"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-gB-nIB">
-                                    <rect key="frame" x="0.0" y="3.5" width="80" height="49"/>
+                                    <rect key="frame" x="0.0" y="3.5" width="80" height="49.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="uMS-Hl-O2c"/>
                                     </constraints>
@@ -53,19 +57,19 @@
                                     <rect key="frame" x="101" y="0.0" width="189" height="56"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWYNG Whitefield" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-Zd-0T1">
-                                            <rect key="frame" x="0.0" y="0.0" width="135" height="19"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="130.5" height="19"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sarjapur Road" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFA-AI-rPW">
-                                            <rect key="frame" x="0.0" y="21" width="90" height="16.5"/>
+                                            <rect key="frame" x="0.0" y="21" width="88" height="16.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton - Court 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Em-fZa">
-                                            <rect key="frame" x="0.0" y="39.5" width="128.5" height="16.5"/>
+                                            <rect key="frame" x="0.0" y="39.5" width="124.5" height="16.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>

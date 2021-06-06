@@ -51,7 +51,6 @@ class AppUtilities{
     static func setRootController(){
         guard let window = AppUtilities.getMainWindow() else {return}
         if ApplicationManager.authToken != nil{
-            ApplicationManager.sportType = .run
             let vc = TabbarVC()
             window.rootViewController = vc
             

@@ -52,6 +52,10 @@ struct Parameters {
     static let id = "id"
     static let key = "key"
     static let tournamentCategoryId = "tournament_category_id"
+    static let offset = "offset"
+    static let size = "size"
+    static let sport = "sport"
+    static let location = "location"
 }
 
 struct EndPoints {
@@ -81,6 +85,8 @@ struct EndPoints {
     static let searchSportCenter = "mobile/sport-center/search"
     static let getParticipantList = "mobile/tournament/get/tournamentParticipants"
     static let addPartipant = "mobile/tournament/create/tournamentParticipants"
+    static let getSportCenterByFilter = "mobile/sport-center/filter"
+    static let getUpPastTournaments = "mobile/tournament/get/"
 }
 
 class Webservices {

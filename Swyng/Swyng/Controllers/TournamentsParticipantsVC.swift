@@ -32,11 +32,6 @@ class TournamentsParticipantsVC: BaseVC {
         getTournamentCategories()
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        getParticipantList()
-    }
 }
 
 //MARK: - CUSTOM METHODS
@@ -77,6 +72,7 @@ extension TournamentsParticipantsVC:UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selected = indexPath.item
         collectionView.reloadData()
+        getParticipantList()
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -133,6 +129,7 @@ extension TournamentsParticipantsVC{
             if let data = self.successBlock(response: response){
                 self.arrCategories = data
                 self.collectionView.reloadData()
+                self.getParticipantList()
             }
         }
     }
@@ -140,7 +137,8 @@ extension TournamentsParticipantsVC{
     private func getParticipantList(){
         startActivityIndicator()
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
-                                   Parameters.id:tournamentId]
+                                   Parameters.id:tournamentId,
+                                   Parameters.tournamentCategoryId:arrCategories[selected].tournamentCategoryId ?? 0]
         Webservices().request(with: params, method: .post, endPoint: EndPoints.getParticipantList, type: CommonResponse<[Participants]>.self, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
             if let response = success as? CommonResponse<[Participants]>, let data = self.successBlock(response: response){

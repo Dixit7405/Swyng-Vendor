@@ -53,6 +53,7 @@
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
 		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
 		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
+		1BB755BA266D3C42000B9942 /* UpcomingTournamentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */; };
 		1BC19BF92663733F007A6D93 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BF82663733F007A6D93 /* OptionsCell.swift */; };
 		1BC19BFB26639EDA007A6D93 /* TournamentsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */; };
 		1BEFE63E266551D1004A2965 /* AllSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE63D266551D1004A2965 /* AllSportsVC.swift */; };
@@ -174,6 +175,7 @@
 		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
 		1BA0DADA266654AF008E85B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngCMSUnitTest.swift; sourceTree = "<group>"; };
+		1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTournamentVC.swift; sourceTree = "<group>"; };
 		1BC19BF82663733F007A6D93 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsType.swift; sourceTree = "<group>"; };
 		1BEFE63D266551D1004A2965 /* AllSportsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSportsVC.swift; sourceTree = "<group>"; };
@@ -461,6 +463,7 @@
 				1B7ADBD526596BCD00C4AEF9 /* TournamentDetailsVC.swift */,
 				1B7ADBD726596BCD00C4AEF9 /* TournamentGalleryVC.swift */,
 				1B7ADBD326596BCC00C4AEF9 /* TournamentListVC.swift */,
+				1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */,
 				1B7ADBD426596BCC00C4AEF9 /* TournamentRegisterVC.swift */,
 				1B7ADBD826596BCE00C4AEF9 /* TournamentsParticipantsVC.swift */,
 				1B704431265A158A00EE0FCF /* TournamentStatisticsVC.swift */,
@@ -753,6 +756,7 @@
 				1BF2B7DF265A9FDD00570756 /* TournamentGridVC.swift in Sources */,
 				1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */,
 				1BF44C312656DB3700A2E75E /* ShadowView.swift in Sources */,
+				1BB755BA266D3C42000B9942 /* UpcomingTournamentVC.swift in Sources */,
 				1BF2B7E6265ACAB800570756 /* UINavigationController+Extension.swift in Sources */,
 				1BEFE640266551FD004A2965 /* AllSportsCell.swift in Sources */,
 				1BF44C1B2656DB1600A2E75E /* UIViewController+Extension.swift in Sources */,
