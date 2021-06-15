@@ -5,6 +5,8 @@
 
 import Foundation
 
+
+
 struct Tournaments : Codable {
 
         let aboutOrganizer : String?

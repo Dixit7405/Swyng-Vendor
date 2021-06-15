@@ -69,7 +69,7 @@ extension AllSportsVC{
 extension AllSportsVC{
     override func didApplyFilter(filter: Filter) {
         filterSports = filter.sport
-        getAllSportCenters()
+        filterSportCenters()
     }
 }
 
@@ -150,7 +150,25 @@ extension AllSportsVC{
 //                                   Parameters.location:[]]
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
         loadMore = false
-        Webservices().request(with: params, method: .post, endPoint: EndPoints.getAllSports, type: CommonResponse<[SportCenters]>.self, failer: failureBlock()) {[weak self] success in
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.getSportCenters, type: CommonResponse<[SportCenters]>.self, failer: failureBlock()) {[weak self] success in
+            guard let self = self else {return}
+            if let response = success as? CommonResponse<[SportCenters]>, let data = self.successBlock(response: response){
+                self.loadMore = true
+                self.arrAllCenters = data
+                self.arrSportCenters = data
+                self.tblAllSports.reloadData()
+            }
+        }
+    }
+    
+    private func filterSportCenters(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.offset:"",
+                                   Parameters.size:10,
+                                   Parameters.sport:filterSports.compactMap({$0.id}),
+                                   Parameters.location:[]]
+        loadMore = false
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.getSportCenterByFilter, type: CommonResponse<[SportCenters]>.self, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
             if let response = success as? CommonResponse<[SportCenters]>, let data = self.successBlock(response: response){
                 self.loadMore = true

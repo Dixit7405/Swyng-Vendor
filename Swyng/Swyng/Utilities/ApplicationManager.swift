@@ -7,6 +7,11 @@
 
 import Foundation
 
+enum SportType {
+    case tournaments
+    case run
+}
+
 class ApplicationManager {
     static var authToken:String?{
         set{
@@ -31,10 +36,32 @@ class ApplicationManager {
     }
     
     static var firebaseToken = ""
-    enum SportType {
-        case tournaments
-        case run
-    }
+    
     
     static var sportType:SportType = .tournaments
+    
+    static var selectedSport:Sports?{
+        set{
+            if let sport = newValue{
+                DefaultsManager.saveData(data: sport, type: Sports.self, key: DefaultsManager.DefaultKeys.selectedSport)
+            }
+        }
+        get{
+            DefaultsManager.getData(type: Sports.self, key: DefaultsManager.DefaultKeys.selectedSport)
+        }
+    }
+    
+    static var selectedCenter:SportCenters?{
+        set{
+            if let center = newValue{
+                DefaultsManager.saveData(data: center, type: SportCenters.self, key: DefaultsManager.DefaultKeys.selectedCenter)
+            }
+        }
+        get{
+            DefaultsManager.getData(type: SportCenters.self, key: DefaultsManager.DefaultKeys.selectedCenter)
+        }
+    }
+    
+    static var tournament:Tournaments?
+    static var runs:Run?
 }

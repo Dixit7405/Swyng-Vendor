@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -53,9 +53,11 @@
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
 		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
 		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
+		1BAD09582671378000524901 /* AppInvokeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAD09572671378000524901 /* AppInvokeSDK.xcframework */; };
 		1BB755BA266D3C42000B9942 /* UpcomingTournamentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */; };
 		1BC19BF92663733F007A6D93 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BF82663733F007A6D93 /* OptionsCell.swift */; };
 		1BC19BFB26639EDA007A6D93 /* TournamentsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */; };
+		1BE7643D26762FA500132D68 /* Run.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE7643C26762FA400132D68 /* Run.swift */; };
 		1BEFE63E266551D1004A2965 /* AllSportsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE63D266551D1004A2965 /* AllSportsVC.swift */; };
 		1BEFE640266551FD004A2965 /* AllSportsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE63F266551FD004A2965 /* AllSportsCell.swift */; };
 		1BEFE642266552CB004A2965 /* SportsCenterDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEFE641266552CB004A2965 /* SportsCenterDetailsVC.swift */; };
@@ -175,9 +177,11 @@
 		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
 		1BA0DADA266654AF008E85B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngCMSUnitTest.swift; sourceTree = "<group>"; };
+		1BAD09572671378000524901 /* AppInvokeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppInvokeSDK.xcframework; sourceTree = "<group>"; };
 		1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTournamentVC.swift; sourceTree = "<group>"; };
 		1BC19BF82663733F007A6D93 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
 		1BC19BFA26639EDA007A6D93 /* TournamentsType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentsType.swift; sourceTree = "<group>"; };
+		1BE7643C26762FA400132D68 /* Run.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Run.swift; sourceTree = "<group>"; };
 		1BEFE63D266551D1004A2965 /* AllSportsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSportsVC.swift; sourceTree = "<group>"; };
 		1BEFE63F266551FD004A2965 /* AllSportsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSportsCell.swift; sourceTree = "<group>"; };
 		1BEFE641266552CB004A2965 /* SportsCenterDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SportsCenterDetailsVC.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BAD09582671378000524901 /* AppInvokeSDK.xcframework in Frameworks */,
 				B8F4EB1D7EE22AC694A9328C /* Pods_Swyng.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +415,7 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BE7643C26762FA400132D68 /* Run.swift */,
 				1B8043AA2667FA51003F8012 /* Sport.swift */,
 				1BEFE64726655EA9004A2965 /* Gallery.swift */,
 				1B1E552D26669DBF008C8A1E /* Participants.swift */,
@@ -530,6 +536,7 @@
 		D5343F90F3CB91888395E4AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1BAD09572671378000524901 /* AppInvokeSDK.xcframework */,
 				31ECF40D7FB15A9FE0F38AA6 /* Pods_Swyng.framework */,
 				F1090DB167A15F0630487634 /* Pods_SwyngTests.framework */,
 			);
@@ -769,6 +776,7 @@
 				1BEFE63E266551D1004A2965 /* AllSportsVC.swift in Sources */,
 				1BEFE64826655EA9004A2965 /* Gallery.swift in Sources */,
 				1BF44C182656DB1600A2E75E /* CustomField.swift in Sources */,
+				1BE7643D26762FA500132D68 /* Run.swift in Sources */,
 				1BFA54EA265772D3008BCC57 /* EmailVC.swift in Sources */,
 				1B7ADBE326596C1800C4AEF9 /* UpcommingCourtBookingCell.swift in Sources */,
 				1BF44BEB2656D1DD00A2E75E /* ViewController.swift in Sources */,
@@ -1031,6 +1039,10 @@
 				CODE_SIGN_ENTITLEMENTS = Swyng/Swyng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A288Y32693;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Swyng/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1053,6 +1065,10 @@
 				CODE_SIGN_ENTITLEMENTS = Swyng/Swyng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A288Y32693;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Swyng/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (

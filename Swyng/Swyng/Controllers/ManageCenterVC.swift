@@ -27,12 +27,12 @@ class ManageCenterVC: BaseVC {
     
     func setupView(){
         viewModel.centerData.bind(to: tableView.rx.items(cellIdentifier: "OptionContainerCell", cellType: OptionContainerCell.self)){index,model,cell in
-            cell.optionView.lblTitle.text = model
+            cell.optionView.lblTitle.text = model.centerTitle
             cell.optionView.selected = self.viewModel.selectedCenters.value.contains(index)
 
         }.disposed(by: disposeBag)
         viewModel.sportData.bind(to: collectionView.rx.items(cellIdentifier: "CityCell", cellType: CityCell.self)){ index, model, cell in
-            cell.optionView.lblTitle.text = model
+            cell.optionView.lblTitle.text = model.name
             cell.optionView.selected = self.viewModel.selectedSpors.value.contains(index)
         }.disposed(by: disposeBag)
         
@@ -54,7 +54,35 @@ class ManageCenterVC: BaseVC {
         
         btnApply.rx.tap.subscribe(onNext: {
             
+            guard let sportIndex = self.viewModel.selectedSpors.value.first,
+                  let centerIndex = self.viewModel.selectedCenters.value.first
+            else {
+                self.viewModel.alertMessage.accept("Please select sport and center")
+                return
+            }
+            
+            ApplicationManager.selectedSport = self.viewModel.sportData.value[sportIndex]
+            ApplicationManager.selectedCenter = self.viewModel.centerData.value[centerIndex]
+            
+            if ApplicationManager.selectedSport?.name == "Running"{
+                ApplicationManager.sportType = .run
+            }
+            else{
+                ApplicationManager.sportType = .tournaments
+            }
+            
+            AppUtilities.setRootController()
         }).disposed(by: disposeBag)
+        
+        self.startActivityIndicator()
+        viewModel.getSportsList(failure: failureBlock()) {[weak self] response in
+            self?.stopActivityIndicator()
+        }
+        
+        self.startActivityIndicator()
+        viewModel.getAllSportCenters(failureBlock: failureBlock()) {[weak self] response in
+            self?.stopActivityIndicator()
+        }
     }
 
 }

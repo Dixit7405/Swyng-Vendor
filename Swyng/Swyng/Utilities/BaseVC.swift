@@ -12,6 +12,12 @@ class BaseVC:UIViewController{
     
     @IBOutlet weak var headerView:HeaderView!
     
+    var sportType:SportType{
+        get{
+            return ApplicationManager.sportType
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

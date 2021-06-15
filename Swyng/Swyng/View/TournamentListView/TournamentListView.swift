@@ -19,10 +19,21 @@ class TournamentListView:UIView{
     var tournament:Tournaments?{
         didSet{
             lblDateTime.text = tournament?.dates?.first?.toCustomDate(.dayWithNextLine)
-            lblTournamentName.text = tournament?.eventName
+            lblTournamentName.text = tournament?.tournamentName
             lblAddress.text = tournament?.venueAddress
             
             let openFor = categories.filter({tournament?.categoryId?.contains(($0.tournamentCategoryId ?? 0).toString()) ?? false})
+            lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
+        }
+    }
+    
+    var runs:Run?{
+        didSet{
+            lblDateTime.text = runs?.dates?.first?.toCustomDate(.dayWithNextLine)
+            lblTournamentName.text = runs?.runName
+            lblAddress.text = runs?.venueAddress
+            
+            let openFor = categories.filter({runs?.category?.contains(($0.tournamentCategoryId ?? 0)) ?? false})
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
         }
     }

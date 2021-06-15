@@ -32,10 +32,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="85"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tda-ir-qYr">
-                            <rect key="frame" x="15" y="10" width="290" height="56"/>
+                            <rect key="frame" x="15" y="10" width="290" height="65"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ifo-gB-nIB">
-                                    <rect key="frame" x="0.0" y="3.5" width="80" height="49.5"/>
+                                    <rect key="frame" x="0.0" y="8" width="80" height="49.5"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="80" id="uMS-Hl-O2c"/>
                                     </constraints>
@@ -47,16 +47,16 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hsh-K1-0nC">
-                                    <rect key="frame" x="90" y="2.5" width="1" height="51"/>
+                                    <rect key="frame" x="90" y="3" width="1" height="59"/>
                                     <color key="backgroundColor" name="textBlack"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="1" id="WiB-hU-NHs"/>
                                     </constraints>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GVe-aq-Ar3">
-                                    <rect key="frame" x="101" y="0.0" width="189" height="56"/>
+                                    <rect key="frame" x="101" y="4.5" width="189" height="56"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWYNG Whitefield" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-Zd-0T1">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SWYNG Whitefield" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bf-Zd-0T1">
                                             <rect key="frame" x="0.0" y="0.0" width="130.5" height="19"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="16"/>
                                             <color key="textColor" name="textBlack"/>
@@ -68,7 +68,7 @@
                                             <color key="textColor" name="textBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton - Court 4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Em-fZa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Badminton - Court 4" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Em-fZa">
                                             <rect key="frame" x="0.0" y="39.5" width="124.5" height="16.5"/>
                                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="14"/>
                                             <color key="textColor" name="textBlack"/>
@@ -86,7 +86,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Tda-ir-qYr" secondAttribute="trailing" constant="15" id="4Xo-At-L48"/>
                         <constraint firstItem="Tda-ir-qYr" firstAttribute="top" secondItem="dPu-gs-Dmv" secondAttribute="top" constant="10" id="TAY-X5-mBb"/>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Tda-ir-qYr" secondAttribute="bottom" constant="10" id="svG-Lv-Pba"/>
+                        <constraint firstAttribute="bottom" secondItem="Tda-ir-qYr" secondAttribute="bottom" constant="10" id="svG-Lv-Pba"/>
                         <constraint firstItem="Tda-ir-qYr" firstAttribute="leading" secondItem="dPu-gs-Dmv" secondAttribute="leading" constant="15" id="y67-hK-tBx"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>

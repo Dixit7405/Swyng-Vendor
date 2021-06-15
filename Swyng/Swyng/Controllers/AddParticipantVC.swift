@@ -116,8 +116,7 @@ extension AddParticipantVC{
                                    Parameters.mobileNo:txtfMobile1.text!,
                                    Parameters.token:ApplicationManager.authToken ?? "",
                                    Parameters.tournamentCategoryId:arrCategories[selected].tournamentCategoryId ?? 0,
-                                   Parameters.id:tournamentId,
-                                   Parameters.tournamentCategoryId:arrCategories[selected].tournamentCategoryId ?? 0]
+                                   Parameters.id:tournamentId]
         if !forSingle{
             params[Parameters.fname1] = txtfFname2.text!
             params[Parameters.lname1] = txtfLname2.text!

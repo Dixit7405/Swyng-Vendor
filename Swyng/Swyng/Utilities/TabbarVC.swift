@@ -38,7 +38,7 @@ class TabbarVC: UITabBarController {
             self.viewControllers?.append(nav3)
         }
         else{
-            let vc3:TournamentListVC = .controller()
+            let vc3:TournamentGridVC = .controller()
             let nav3 = NavController(rootViewController: vc3)
             nav3.setNavigationBarHidden(true, animated: false)
             let tabbar3 = UITabBarItem(title: nil, image: #imageLiteral(resourceName: "marathon 2"), selectedImage: #imageLiteral(resourceName: "marathon 2"))

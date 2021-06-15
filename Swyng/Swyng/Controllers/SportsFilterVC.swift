@@ -33,9 +33,12 @@ class SportsFilterVC: BaseVC {
     var sportsArr:[Sports] = []
     var selectedIndex:[Int] = []{
         didSet{
-            btnApplySelection.backgroundColor = selectedIndex.count != 0 ? UIColor.AppColor.themeColor : UIColor.white
-            btnApplySelection.setTitleColor(selectedIndex.count != 0 ? UIColor.white : UIColor.black, for: .normal)
-            btnApplySelection.isUserInteractionEnabled = selectedIndex.count != 0
+            if forSportCenter{
+                setApplyEnabled(selectedIndex.count != 0)
+            }
+            else{
+                setApplyEnabled(true)
+            }
             
             btnAllSports.backgroundColor = selectedIndex.count == 0 ? UIColor.AppColor.themeColor : UIColor.white
             btnAllSports.setTitleColor(selectedIndex.count == 0 ? UIColor.white : UIColor.black, for: .normal)
@@ -69,12 +72,22 @@ class SportsFilterVC: BaseVC {
 
 }
 
+//MARK: - CUSTOM METHODS
+extension SportsFilterVC{
+    private func setApplyEnabled(_ enable:Bool){
+        btnApplySelection.backgroundColor = enable ? UIColor.AppColor.themeColor : UIColor.white
+        btnApplySelection.setTitleColor(enable ? UIColor.white : UIColor.black, for: .normal)
+        btnApplySelection.isUserInteractionEnabled = enable
+    }
+}
+
 //MARK: - ACTION METHODS
 extension SportsFilterVC{
     @IBAction func btnApplySelectionPressed(_ sender:UIButton){
-        guard selectedIndex.count != 0 else {
+        if selectedIndex.count == 0, forSportCenter {
             showAlertWith(message: "Please select sport for apply filter")
-            return}
+            return
+        }
         navigationController?.popViewController(animated: true){ [unowned self] in
             let filter = Filter()
             var arr:[Sports] = []

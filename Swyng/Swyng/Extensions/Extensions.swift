@@ -131,11 +131,11 @@ extension String {
     }
     
     var toDate:String{
-        return self.convertDate(format: DateFormats.serverDate.rawValue).toDate(format: DateFormats.shortDate.rawValue)
+        return self.convertDate(format: DateFormats.serverDate).toDate(format: DateFormats.shortDate.rawValue)
     }
     
     func toCustomDate(from fromFormat:DateFormats = DateFormats.serverDate, _ toFormat:DateFormats) -> String{
-        return self.convertDate(format: fromFormat.rawValue).toDate(format: toFormat.rawValue)
+        return self.convertDate(format: fromFormat).toDate(format: toFormat.rawValue)
     }
     
     var doubleValue:Double{

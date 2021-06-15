@@ -87,6 +87,8 @@ struct EndPoints {
     static let addPartipant = "mobile/tournament/create/tournamentParticipants"
     static let getSportCenterByFilter = "mobile/sport-center/filter"
     static let getUpPastTournaments = "mobile/tournament/get/"
+    static let filterTournaments = "mobile/tournament/filter"
+    static let getUpPastRuns = "mobile/run/get/"
 }
 
 class Webservices {

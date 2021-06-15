@@ -12,7 +12,7 @@ class TournamentStatisticsVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament" : "Swyng WTF Run"
+        headerView.lblHeader.text = sportType == .tournaments ? ApplicationManager.tournament?.tournamentName : ApplicationManager.runs?.runName
         
         // Do any additional setup after loading the view.
     }

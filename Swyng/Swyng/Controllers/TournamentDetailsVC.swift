@@ -24,10 +24,16 @@ class TournamentDetailsVC: BaseVC {
     @IBOutlet weak var lblEventsFromHeader:UILabel!
     
     var tournament:Tournaments?
+    var runs:Run?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupData()
+        if runs != nil{
+            setupRunspData()
+        }
+        else{
+            setuTournamentpData()
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -35,9 +41,9 @@ class TournamentDetailsVC: BaseVC {
 
 //MARK: - CUSTOM FUNCTIONS
 extension TournamentDetailsVC{
-    private func setupData(){
+    private func setuTournamentpData(){
         lblAbout.text = tournament?.aboutTournament
-        let startDate = tournament?.dates?.first?.convertDate(format: "yyyy-MM-dd").toDate(format: "EEEE dd MMM yyyy") ?? ""
+        let startDate = tournament?.dates?.first?.toCustomDate(.withDay) ?? ""
         let startTime = tournament?.eventStartTime ?? ""
         let reportTime = tournament?.reportingTime ?? ""
         lblDateTime.text = startDate + " " + startTime + "\n" + reportTime
@@ -53,6 +59,26 @@ extension TournamentDetailsVC{
 //        lblPastUpcomingEventsFrom.text = tournament.
         lblAboutOrganizationHeader.text = "About " + (tournament?.organizer ?? "")
         lblEventsFromHeader.text = "Past/Upcomming events from " + (tournament?.organizer ?? "")
+    }
+    
+    private func setupRunspData(){
+        lblAbout.text = runs?.aboutRun
+        let startDate = runs?.dates?.first?.toCustomDate(.withDay) ?? ""
+        let startTime = runs?.eventStartTime ?? ""
+        let reportTime = runs?.reportingTime ?? ""
+        lblDateTime.text = startDate + " " + startTime + "\n" + reportTime
+        lblRegisterBefore.text = runs?.registerBeforeFromStartTime
+        lblVenue.text = (runs?.venueAddress ?? "") + (tournament?.venue ?? "")
+        lblParticipationFees.text = ""//runs?.participationFee
+        lblRewards.text = ""//runs?.rewards
+        lblTournamentsInfo.text = runs?.runInformation
+        lblPleaseNote.text = runs?.pleaseNote
+        lblFAQ.text = runs?.frequentlyAsked
+        lblTerms.text = runs?.termsAndCondition
+        lblAboutOrganization.text = runs?.aboutOrganizer
+//        lblPastUpcomingEventsFrom.text = tournament.
+        lblAboutOrganizationHeader.text = "About " + (runs?.organizer ?? "")
+        lblEventsFromHeader.text = "Past/Upcomming events from " + (runs?.organizer ?? "")
     }
 }
 

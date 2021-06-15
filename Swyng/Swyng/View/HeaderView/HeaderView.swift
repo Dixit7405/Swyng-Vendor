@@ -37,7 +37,8 @@ class HeaderView: UIView {
     }
     
     private func setupPageData(){
-        imgHeader.image = ApplicationManager.sportType == .tournaments ? #imageLiteral(resourceName: "6") : #imageLiteral(resourceName: "runs")
+        imgHeader.setImage(from: ApplicationManager.tournament?.headerImage)
+        lblHeader.text = ApplicationManager.tournament?.tournamentName
     }
     
     private func commonInit(){

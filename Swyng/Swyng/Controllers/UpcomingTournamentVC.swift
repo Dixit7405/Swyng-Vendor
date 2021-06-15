@@ -9,11 +9,27 @@ import UIKit
 
 class UpcomingTournamentVC: BaseVC {
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var lblHeaderName:UILabel!
+    @IBOutlet weak var imgHeader:UIImageView!
     
     var tournaments:[Tournaments] = []
+    var runs:[Run] = []
     var arrCategories:[TournamentsType] = []
+    var filter:Filter?{
+        didSet{
+            self.filterTournamentData()
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        if sportType == .tournaments{
+            lblHeaderName.text = "Upcomming Tournaments"
+            imgHeader.image = #imageLiteral(resourceName: "header_tournaments")
+        }
+        else{
+            lblHeaderName.text = "Upcoming Runs"
+            imgHeader.image = #imageLiteral(resourceName: "header_run")
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -50,14 +66,22 @@ extension UpcomingTournamentVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UpcommingCourtBookingCell", for: indexPath) as! UpcommingCourtBookingCell
-        
+        cell.tournamentView.categories = arrCategories
         cell.tournamentView.tournament = tournaments[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
-        vc.tournament = tournaments[indexPath.row]
+        
+        if sportType == .tournaments{
+            vc.tournament = tournaments[indexPath.row]
+            ApplicationManager.tournament = tournaments[indexPath.row]
+        }
+        else{
+            vc.runs = runs[indexPath.row]
+            ApplicationManager.runs = runs[indexPath.row]
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -68,7 +92,12 @@ extension UpcomingTournamentVC{
         super.didApplyFilter(filter: filter)
         if filter.gallery == true{
             let vc:TournamentGridVC = .controller()
-            tabBarController?.viewControllers?[2].navigationController?.viewControllers = [vc]
+            vc.filter = filter
+            (tabBarController?.viewControllers?[2] as! NavController).viewControllers = [vc]
+        }
+        else{
+            self.filter = filter
+            self.filterTournamentData()
         }
     }
 }
@@ -95,7 +124,54 @@ extension UpcomingTournamentVC{
             guard let response = success as? CommonResponse<[TournamentsType]> else {return}
             if let data = self.successBlock(response: response){
                 self.arrCategories = data
-                self.getAllTournaments()
+                if self.sportType == .tournaments{
+                    if self.filter == nil{
+                        self.getAllTournaments()
+                    }
+                    else{
+                        self.filterTournamentData()
+                    }
+                }
+                else{
+                    if self.filter == nil{
+                        self.getUpcomingRuns()
+                    }
+                    else{
+                        self.filterTournamentData()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func filterTournamentData(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
+                                   Parameters.sport:filter?.sport.compactMap({$0.id}) ?? [],
+                                   Parameters.offset:0,
+                                   Parameters.size:10]
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.filterTournaments, type: CommonResponse<PagingData<Tournaments>>.self, failer: failureBlock()) {[weak self] (success) in
+            guard let self = self else {return}
+            guard let response = success as? CommonResponse<PagingData<Tournaments>> else {return}
+            if let data = self.successBlock(response: response){
+                self.tournaments = data.data ?? []
+                if self.filter?.filter == true{
+                    self.tournaments.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func getUpcomingRuns(){
+        let endPoint = EndPoints.getUpPastRuns + "upcoming"
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
+        self.startActivityIndicator()
+        Webservices().request(with: params, method: .post, endPoint: endPoint, type: CommonResponse<[Run]>.self, failer: failureBlock()) {[weak self] success in
+            guard let self = self else {return}
+            if let response = success as? CommonResponse<[Run]>, let data = self.successBlock(response: response){
+                self.runs = data
+                self.tableView.reloadData()
             }
         }
     }
