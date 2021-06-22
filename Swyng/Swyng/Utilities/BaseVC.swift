@@ -18,6 +18,12 @@ class BaseVC:UIViewController{
         }
     }
     
+    var isTournament:Bool{
+        get{
+            return ApplicationManager.sportType == .tournaments
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -100,6 +100,12 @@ extension UITextField{
         self.text = ""
         self.attributedPlaceholder = NSAttributedString(string: message, attributes: [NSAttributedString.Key.foregroundColor:UIColor.red])
     }
+    
+    var isEmpty:Bool{
+        get{
+            return self.text == nil || self.text?.trim() == ""
+        }
+    }
 }
 
 extension String {

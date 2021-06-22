@@ -16,11 +16,12 @@ class TournamentListView:UIView{
     @IBOutlet weak var lblOpenFor:UILabel!
     
     var categories:[TournamentsType] = []
+    var runsCategories:[RunsCategory] = []
     var tournament:Tournaments?{
         didSet{
             lblDateTime.text = tournament?.dates?.first?.toCustomDate(.dayWithNextLine)
             lblTournamentName.text = tournament?.tournamentName
-            lblAddress.text = tournament?.venueAddress
+            lblAddress.text = tournament?.venue
             
             let openFor = categories.filter({tournament?.categoryId?.contains(($0.tournamentCategoryId ?? 0).toString()) ?? false})
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
@@ -33,7 +34,7 @@ class TournamentListView:UIView{
             lblTournamentName.text = runs?.runName
             lblAddress.text = runs?.venueAddress
             
-            let openFor = categories.filter({runs?.category?.contains(($0.tournamentCategoryId ?? 0)) ?? false})
+            let openFor = runsCategories.filter({runs?.category?.contains(($0.runCategoriesId ?? 0)) ?? false})
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
         }
     }

@@ -33,10 +33,24 @@ class AddParticipantVC: BaseVC {
     
     var selected = 0
     var arrCategories:[TournamentsType] = []
+    var category:TournamentsType?
+    var runCategory:RunsCategory?
+    var categoryId:Int?
+    var isSecondParticipantAdded:Bool{
+        get{
+            return isTournament ? category?.isSingle != true : false//txtfFname2.text != "" && txtfLname2.text != "" && txtfEmail2.text != "" && txtfMobile2.text != ""
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament Participants" : "Swyng WTF Run Participants"
+//        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament Participants" : "Swyng WTF Run Participants"
         collectionView.addObserver(self, forKeyPath: #keyPath(UICollectionView.contentSize), options: .new, context: nil)
+        if isTournament{
+            stackParticipant2.isHidden = category?.isSingle == true
+        }
+        else{
+            stackParticipant2.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -47,8 +61,8 @@ class AddParticipantVC: BaseVC {
 //MARK: - ACTION METHODS
 extension AddParticipantVC{
     @IBAction func btnAddParticipant(_ sender:UIButton){
-        if isValidFields(isSingle: true){
-            addParticipant(forSingle: true)
+        if isValidFields(isSingle: !isSecondParticipantAdded){
+            addParticipant(forSingle: !isSecondParticipantAdded)
         }
     }
     
@@ -110,12 +124,12 @@ extension AddParticipantVC:UICollectionViewDelegate, UICollectionViewDataSource,
 extension AddParticipantVC{
     private func addParticipant(forSingle:Bool = true){
         startActivityIndicator()
+        var endPoints = EndPoints.addPartipant
         var params:[String:Any] = [Parameters.fname:txtfFname1.text!,
                                    Parameters.lname:txtfLname1.text!,
                                    Parameters.email:txtfEmail1.text!,
                                    Parameters.mobileNo:txtfMobile1.text!,
                                    Parameters.token:ApplicationManager.authToken ?? "",
-                                   Parameters.tournamentCategoryId:arrCategories[selected].tournamentCategoryId ?? 0,
                                    Parameters.id:tournamentId]
         if !forSingle{
             params[Parameters.fname1] = txtfFname2.text!
@@ -123,7 +137,14 @@ extension AddParticipantVC{
             params[Parameters.email1] = txtfEmail2.text!
             params[Parameters.mobileNo1] = txtfMobile2.text!
         }
-        Webservices().request(with: params, method: .post, endPoint: EndPoints.addPartipant, type: CommonResponse<Participants>.self, failer: failureBlock()) {[weak self] success in
+        if isTournament{
+            params[Parameters.tournamentCategoryId] = categoryId ?? 0
+        }
+        else{
+            endPoints = EndPoints.addRunsPartipant
+            params[Parameters.runsCategoryId] = categoryId ?? 0
+        }
+        Webservices().request(with: params, method: .post, endPoint: endPoints, type: CommonResponse<Participants>.self, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
             if let response = success as? CommonResponse<Participants>, let _ = self.successBlock(response: response){
                 self.showAlertWith(message: response.message ?? "", okPressed: {

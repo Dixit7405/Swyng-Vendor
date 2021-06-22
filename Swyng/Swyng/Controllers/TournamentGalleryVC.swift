@@ -13,7 +13,6 @@ class TournamentGalleryVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerView.lblHeader.text = ApplicationManager.sportType == .tournaments ? "Swyng Badminton Open Tournament Gallery" : "Swyng WTF Run Gallery"
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         view.layoutIfNeeded()
         // Do any additional setup after loading the view.

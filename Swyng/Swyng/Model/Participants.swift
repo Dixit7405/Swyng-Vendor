@@ -24,6 +24,8 @@ struct Participants : Codable {
     let updatedAt : String?
     let updatedBy : Int?
     let updatedByTblUser : UpdatedByTblUser?
+    let runId : Int?
+    let runCategoryId : Int?
     
     enum CodingKeys: String, CodingKey {
         case createdAt = "createdAt"
@@ -43,6 +45,8 @@ struct Participants : Codable {
         case updatedAt = "updatedAt"
         case updatedBy = "updatedBy"
         case updatedByTblUser = "updatedBy_tbl_user"
+        case runId = "run_id"
+        case runCategoryId = "run_category_id"
     }
     
     init(from decoder: Decoder) throws {
@@ -63,6 +67,8 @@ struct Participants : Codable {
         tournamentId = try values.decodeIfPresent(Int.self, forKey: .tournamentId)
         updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
         updatedBy = try values.decodeIfPresent(Int.self, forKey: .updatedBy)
+        runId = try values.decodeIfPresent(Int.self, forKey: .runId)
+        runCategoryId = try values.decodeIfPresent(Int.self, forKey: .runCategoryId)
         updatedByTblUser = try values.decodeIfPresent(UpdatedByTblUser.self, forKey: .updatedByTblUser)
     }
     

@@ -11,7 +11,6 @@ class TournamentListVC: BaseVC {
     @IBOutlet weak var lblSelectedTab:UILabel!
     @IBOutlet weak var lblNonSelectedTab:UILabel!
     @IBOutlet weak var tableView:UITableView!
-    let isTournament = ApplicationManager.sportType == .tournaments
     var pastName = ""
     var upcomming = ""
     var isUpcoming = true

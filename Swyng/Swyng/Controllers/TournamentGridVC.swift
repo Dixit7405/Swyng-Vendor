@@ -14,9 +14,16 @@ class TournamentGridVC: BaseVC {
     var runs:[Run] = []
     var filter:Filter?{
         didSet{
-            filterTournamentData()
+            if isTournament{
+                filterTournamentData()
+            }
+            else{
+                getUpcomingRuns()
+            }
         }
     }
+    var arrCategories:[TournamentsType] = []
+    var arrRunsCategories:[RunsCategory] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,16 +36,11 @@ class TournamentGridVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if sportType == .tournaments{
-            if filter == nil{
-                getAllTournaments()
-            }
-            else{
-                filterTournamentData()
-            }
+        if isTournament{
+            getTournamentCategories()
         }
         else{
-            getUpcomingRuns()
+            getRunsCategories()
         }
         navigationController?.setNavigationBarHidden(false, animated: true)
         self.collectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredVertically, animated: true)
@@ -64,11 +66,14 @@ extension TournamentGridVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TournamentGridCell", for: indexPath) as! TournamentGridCell
         if sportType == .tournaments{
+            cell.categories = arrCategories
             cell.tournament = tournaments[indexPath.item]
         }
         else{
+            cell.runsCategories = arrRunsCategories
             cell.runs = runs[indexPath.row]
         }
+        cell.delegate = self
         return cell
     }
     
@@ -93,6 +98,42 @@ extension TournamentGridVC:UICollectionViewDelegate,UICollectionViewDataSource,U
 
 //MARK: - API SERVICES
 extension TournamentGridVC{
+    private func getTournamentCategories(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
+        Webservices().request(with: params, method: .get, endPoint: EndPoints.getTournamentTypes, type: CommonResponse<[TournamentsType]>.self, failer: failureBlock()) { success in
+            guard let response = success as? CommonResponse<[TournamentsType]> else {return}
+            if let data = self.successBlock(response: response){
+                self.arrCategories = data
+                if self.filter == nil{
+                    self.getAllTournaments()
+                }
+                else{
+                    self.filterTournamentData()
+                }
+            }
+        }
+    }
+    
+    private func getRunsCategories(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
+        Webservices().request(with: params, method: .get, endPoint: EndPoints.getRunsCategory, type: CommonResponse<[RunsCategory]>.self, failer: failureBlock()) { success in
+            guard let response = success as? CommonResponse<[RunsCategory]> else {return}
+            if let data = self.successBlock(response: response){
+                self.arrRunsCategories = data
+                if self.filter == nil{
+                    self.getUpcomingRuns()
+                }
+                else{
+                    self.getUpcomingRuns()
+                }
+                
+            }
+        }
+    }
+    
+    
     private func getAllTournaments(){
         startActivityIndicator()
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
@@ -152,5 +193,32 @@ extension TournamentGridVC{
             self.filter = filter
             filterTournamentData()
         }
+    }
+}
+
+//MARK: - TournamentCellDelegate
+extension TournamentGridVC:TournamentGridDelegate{
+    func didTapRegister(run: Run?) {
+        let vc:TournamentRegisterVC = TournamentRegisterVC.controller()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapDetails(run: Run?) {
+        let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
+        vc.runs = run
+        ApplicationManager.runs = run
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapRegister(tournament: Tournaments?) {
+        let vc:TournamentRegisterVC = TournamentRegisterVC.controller()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func didTapDetails(tournament: Tournaments?) {
+        let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
+        vc.tournament = tournament
+        ApplicationManager.tournament = tournament
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

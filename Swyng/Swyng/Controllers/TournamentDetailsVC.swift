@@ -22,6 +22,12 @@ class TournamentDetailsVC: BaseVC {
     @IBOutlet weak var lblPastUpcomingEventsFrom:UILabel!
     @IBOutlet weak var lblAboutOrganizationHeader:UILabel!
     @IBOutlet weak var lblEventsFromHeader:UILabel!
+    @IBOutlet weak var lblAboutTitle:UILabel!
+    @IBOutlet weak var lblTournamentInfoTitle:UILabel!
+    @IBOutlet weak var stackBidCollection:UIStackView!
+    @IBOutlet weak var stackRouteMap:UIStackView!
+    @IBOutlet weak var lblBidCollection:UILabel!
+    @IBOutlet weak var lblRouteMap:UILabel!
     
     var tournament:Tournaments?
     var runs:Run?
@@ -42,6 +48,8 @@ class TournamentDetailsVC: BaseVC {
 //MARK: - CUSTOM FUNCTIONS
 extension TournamentDetailsVC{
     private func setuTournamentpData(){
+        stackRouteMap.isHidden = true
+        stackBidCollection.isHidden = true
         lblAbout.text = tournament?.aboutTournament
         let startDate = tournament?.dates?.first?.toCustomDate(.withDay) ?? ""
         let startTime = tournament?.eventStartTime ?? ""
@@ -62,6 +70,12 @@ extension TournamentDetailsVC{
     }
     
     private func setupRunspData(){
+        stackRouteMap.isHidden = false
+        stackBidCollection.isHidden = false
+        lblBidCollection.text = runs?.bidCollection
+        lblRouteMap.text = runs?.routeMap
+        lblAboutTitle.text = "About \(runs?.runName ?? "")"
+        lblTournamentInfoTitle.text = "Run Information"
         lblAbout.text = runs?.aboutRun
         let startDate = runs?.dates?.first?.toCustomDate(.withDay) ?? ""
         let startTime = runs?.eventStartTime ?? ""
@@ -69,8 +83,8 @@ extension TournamentDetailsVC{
         lblDateTime.text = startDate + " " + startTime + "\n" + reportTime
         lblRegisterBefore.text = runs?.registerBeforeFromStartTime
         lblVenue.text = (runs?.venueAddress ?? "") + (tournament?.venue ?? "")
-        lblParticipationFees.text = ""//runs?.participationFee
-        lblRewards.text = ""//runs?.rewards
+        lblParticipationFees.text = runs?.participationFees?.toString()
+        lblRewards.text = runs?.rewards
         lblTournamentsInfo.text = runs?.runInformation
         lblPleaseNote.text = runs?.pleaseNote
         lblFAQ.text = runs?.frequentlyAsked
@@ -88,5 +102,21 @@ extension TournamentDetailsVC{
     @IBAction func btnRegisterPressed(_ sender:UIButton){
         let vc:TournamentRegisterVC = TournamentRegisterVC.controller()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func btnMapTapped(_ sender:UIButton){
+        if isTournament{
+            guard let url = URL(string: tournament?.venueGoogleMap ?? "") else {return}
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else{
+            guard let url = URL(string: runs?.venueGoogleMap ?? "") else {return}
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func btnRouteMapTapped(_ sender:UIButton){
+        guard let url = URL(string: runs?.routeMap ?? "") else {return}
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }

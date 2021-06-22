@@ -15,9 +15,15 @@ class UpcomingTournamentVC: BaseVC {
     var tournaments:[Tournaments] = []
     var runs:[Run] = []
     var arrCategories:[TournamentsType] = []
+    var arrRunsCategories:[RunsCategory] = []
     var filter:Filter?{
         didSet{
-            self.filterTournamentData()
+            if isTournament{
+                self.filterTournamentData()
+            }
+            else{
+                self.getUpcomingRuns()
+            }
         }
     }
     override func viewDidLoad() {
@@ -35,8 +41,21 @@ class UpcomingTournamentVC: BaseVC {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if arrCategories.count == 0{
-            getTournamentCategories()
+        if isTournament{
+            if arrCategories.count == 0{
+                getTournamentCategories()
+            }
+            else{
+                getAllTournaments()
+            }
+        }
+        else{
+            if arrRunsCategories.count == 0{
+                getRunsCategories()
+            }
+            else{
+                getUpcomingRuns()
+            }
         }
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
@@ -61,20 +80,26 @@ extension UpcomingTournamentVC{
 //MARK: - TABLEVIEW DELEGATES
 extension UpcomingTournamentVC:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tournaments.count
+        return isTournament ? tournaments.count : runs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UpcommingCourtBookingCell", for: indexPath) as! UpcommingCourtBookingCell
-        cell.tournamentView.categories = arrCategories
-        cell.tournamentView.tournament = tournaments[indexPath.row]
+        if isTournament{
+            cell.tournamentView.categories = arrCategories
+            cell.tournamentView.tournament = tournaments[indexPath.row]
+        }
+        else{
+            cell.tournamentView.runsCategories = arrRunsCategories
+            cell.tournamentView.runs = runs[indexPath.row]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
         
-        if sportType == .tournaments{
+        if isTournament{
             vc.tournament = tournaments[indexPath.row]
             ApplicationManager.tournament = tournaments[indexPath.row]
         }
@@ -124,22 +149,31 @@ extension UpcomingTournamentVC{
             guard let response = success as? CommonResponse<[TournamentsType]> else {return}
             if let data = self.successBlock(response: response){
                 self.arrCategories = data
-                if self.sportType == .tournaments{
-                    if self.filter == nil{
-                        self.getAllTournaments()
-                    }
-                    else{
-                        self.filterTournamentData()
-                    }
+                if self.filter == nil{
+                    self.getAllTournaments()
                 }
                 else{
-                    if self.filter == nil{
-                        self.getUpcomingRuns()
-                    }
-                    else{
-                        self.filterTournamentData()
-                    }
+                    self.filterTournamentData()
                 }
+                
+            }
+        }
+    }
+    
+    private func getRunsCategories(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
+        Webservices().request(with: params, method: .get, endPoint: EndPoints.getRunsCategory, type: CommonResponse<[RunsCategory]>.self, failer: failureBlock()) { success in
+            guard let response = success as? CommonResponse<[RunsCategory]> else {return}
+            if let data = self.successBlock(response: response){
+                self.arrRunsCategories = data
+                if self.filter == nil{
+                    self.getUpcomingRuns()
+                }
+                else{
+                    self.getUpcomingRuns()
+                }
+                
             }
         }
     }

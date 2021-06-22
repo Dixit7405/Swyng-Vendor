@@ -11,6 +11,7 @@
 		1B397130266AA45000F8C530 /* OptionContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39712F266AA45000F8C530 /* OptionContainerCell.swift */; };
 		1B397132266AA64800F8C530 /* ManageCenterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B397131266AA64800F8C530 /* ManageCenterVC.swift */; };
 		1B397134266AA74300F8C530 /* ManageCenterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B397133266AA74300F8C530 /* ManageCenterVM.swift */; };
+		1B4C2B51267DE02100D73E99 /* RunsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4C2B50267DE02100D73E99 /* RunsCategory.swift */; };
 		1B55F2EC2658D64700626A23 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B55F2EB2658D64700626A23 /* Dashboard.storyboard */; };
 		1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5ED9FD266406F8005FBC6F /* CMSData.swift */; };
 		1B659B8626615A9600B6AF9A /* Sports.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B659B8526615A9600B6AF9A /* Sports.swift */; };
@@ -133,6 +134,7 @@
 		1B39712F266AA45000F8C530 /* OptionContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionContainerCell.swift; sourceTree = "<group>"; };
 		1B397131266AA64800F8C530 /* ManageCenterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCenterVC.swift; sourceTree = "<group>"; };
 		1B397133266AA74300F8C530 /* ManageCenterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageCenterVM.swift; sourceTree = "<group>"; };
+		1B4C2B50267DE02100D73E99 /* RunsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunsCategory.swift; sourceTree = "<group>"; };
 		1B55F2EB2658D64700626A23 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1B5ED9FD266406F8005FBC6F /* CMSData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CMSData.swift; sourceTree = "<group>"; };
 		1B659B8526615A9600B6AF9A /* Sports.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sports.swift; sourceTree = "<group>"; };
@@ -415,6 +417,7 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B4C2B50267DE02100D73E99 /* RunsCategory.swift */,
 				1BE7643C26762FA400132D68 /* Run.swift */,
 				1B8043AA2667FA51003F8012 /* Sport.swift */,
 				1BEFE64726655EA9004A2965 /* Gallery.swift */,
@@ -763,6 +766,7 @@
 				1BF2B7DF265A9FDD00570756 /* TournamentGridVC.swift in Sources */,
 				1B5ED9FE266406F8005FBC6F /* CMSData.swift in Sources */,
 				1BF44C312656DB3700A2E75E /* ShadowView.swift in Sources */,
+				1B4C2B51267DE02100D73E99 /* RunsCategory.swift in Sources */,
 				1BB755BA266D3C42000B9942 /* UpcomingTournamentVC.swift in Sources */,
 				1BF2B7E6265ACAB800570756 /* UINavigationController+Extension.swift in Sources */,
 				1BEFE640266551FD004A2965 /* AllSportsCell.swift in Sources */,
