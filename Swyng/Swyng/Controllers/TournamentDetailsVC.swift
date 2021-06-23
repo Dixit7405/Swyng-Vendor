@@ -28,6 +28,8 @@ class TournamentDetailsVC: BaseVC {
     @IBOutlet weak var stackRouteMap:UIStackView!
     @IBOutlet weak var lblBidCollection:UILabel!
     @IBOutlet weak var lblRouteMap:UILabel!
+    @IBOutlet weak var btnRegister:UIButton!
+    
     
     var tournament:Tournaments?
     var runs:Run?
@@ -36,6 +38,7 @@ class TournamentDetailsVC: BaseVC {
         super.viewDidLoad()
         if runs != nil{
             setupRunspData()
+            btnRegister.isHidden = true
         }
         else{
             setuTournamentpData()

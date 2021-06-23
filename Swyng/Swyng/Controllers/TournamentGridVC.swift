@@ -18,7 +18,7 @@ class TournamentGridVC: BaseVC {
                 filterTournamentData()
             }
             else{
-                getUpcomingRuns()
+                filterRunsData()
             }
         }
     }
@@ -126,7 +126,7 @@ extension TournamentGridVC{
                     self.getUpcomingRuns()
                 }
                 else{
-                    self.getUpcomingRuns()
+                    self.filterRunsData()
                 }
                 
             }
@@ -166,6 +166,25 @@ extension TournamentGridVC{
         }
     }
     
+    private func filterRunsData(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
+                                   Parameters.sport:filter?.sport.compactMap({$0.id}) ?? [],
+                                   Parameters.offset:0,
+                                   Parameters.size:10]
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.filterRuns, type: CommonResponse<PagingData<Run>>.self, failer: failureBlock()) {[weak self] (success) in
+            guard let self = self else {return}
+            guard let response = success as? CommonResponse<PagingData<Run>> else {return}
+            if let data = self.successBlock(response: response){
+                self.runs = data.data ?? []
+                if self.filter?.filter == true{
+                    self.runs.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
+                }
+                self.collectionView.reloadData()
+            }
+        }
+    }
+    
     private func getUpcomingRuns(){
         let endPoint = EndPoints.getUpPastRuns + "upcoming"
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? ""]
@@ -191,7 +210,12 @@ extension TournamentGridVC{
         }
         else{
             self.filter = filter
-            filterTournamentData()
+            if isTournament{
+                filterTournamentData()
+            }
+            else{
+                filterRunsData()
+            }
         }
     }
 }

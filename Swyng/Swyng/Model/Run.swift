@@ -40,7 +40,9 @@ struct Run : Codable {
         let venueGoogleMap : String?
     let runResult:String?
     let rewards:String?
-
+    let runPublished:String?
+    let fixerAndSchedulePdf:String?
+    
         enum CodingKeys: String, CodingKey {
                 case aboutOrganizer = "aboutOrganizer"
                 case aboutRun = "aboutRun"
@@ -75,6 +77,8 @@ struct Run : Codable {
             case runResult = "runResult"
             case participationFees = "participationFees"
             case rewards = "rewards"
+            case runPublished = "runPublished"
+            case fixerAndSchedulePdf = "fixerAndSchedulePdf"
         }
     
         init(from decoder: Decoder) throws {
@@ -112,6 +116,8 @@ struct Run : Codable {
             runResult = try values.decodeIfPresent(String.self, forKey: .runResult)
             participationFees = try values.decodeIfPresent(Double.self, forKey: .participationFees)
             rewards = try values.decodeIfPresent(String.self, forKey: .rewards)
+            runPublished = try values.decodeIfPresent(String.self, forKey: .runPublished)
+            fixerAndSchedulePdf = try values.decodeIfPresent(String.self, forKey: .fixerAndSchedulePdf)
         }
 
 }

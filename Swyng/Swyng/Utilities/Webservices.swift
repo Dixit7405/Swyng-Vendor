@@ -48,6 +48,7 @@ struct Parameters {
     static let cityId = "cityId"
     static let tournamentResult = "tournamentResult"
     static let runResult = "runResult"
+    static let runPublished = "runPublished"
     static let fixerAndSchedulePdf = "fixerAndSchedulePdf"
     static let image = "image"
     static let id = "id"
@@ -76,6 +77,7 @@ struct EndPoints {
     static let uploadRunResult = "run/update/run-result"
     static let uploadTournamentFixture = "tournament/update/tournamentFixerSchedule"
     static let uploadTournamentGallery = "tournament/update/tournamentGallery"
+    static let uploadRunsPublished = "run/update/run-published"
     static let getTournamentTypes = "tournamentCategory/getAll"
     static let getRunsCategory = "runCategory/getAll"
     static let paymentPolicy = "rules/paymentPolicy/getAll"
@@ -94,6 +96,7 @@ struct EndPoints {
     static let getSportCenterByFilter = "mobile/sport-center/filter"
     static let getUpPastTournaments = "mobile/tournament/get/"
     static let filterTournaments = "mobile/tournament/filter"
+    static let filterRuns = "mobile/run/filter"
     static let getUpPastRuns = "mobile/run/get/"
 }
 

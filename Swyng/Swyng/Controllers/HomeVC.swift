@@ -8,10 +8,24 @@
 import UIKit
 
 class HomeVC: BaseVC {
-
+    @IBOutlet weak var selectedCenterView:OptionView!
+    @IBOutlet weak var selectedSportView:OptionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if ApplicationManager.sportType == nil{
+            let vc:ManageCenterVC = .controller()
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            return
+        }
+        selectedCenterView.lblTitle.text = ApplicationManager.selectedCenter?.centerTitle
+        selectedSportView.lblTitle.text = ApplicationManager.selectedSport?.name
+    }
 }

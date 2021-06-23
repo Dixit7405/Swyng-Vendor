@@ -14,7 +14,7 @@ class BaseVC:UIViewController{
     
     var sportType:SportType{
         get{
-            return ApplicationManager.sportType
+            return ApplicationManager.sportType ?? .tournaments
         }
     }
     

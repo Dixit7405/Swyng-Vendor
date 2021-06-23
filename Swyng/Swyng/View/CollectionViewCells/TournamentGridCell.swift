@@ -22,6 +22,7 @@ class TournamentGridCell: UICollectionViewCell {
     @IBOutlet weak var lblRegisterBefore:UILabel!
     @IBOutlet weak var lblPlayerCount:UILabel!
     @IBOutlet weak var imgTournament:UIImageView!
+    @IBOutlet weak var viewButtons:UIView!
     weak var delegate:TournamentGridDelegate?
     
     var categories:[TournamentsType] = []
@@ -36,6 +37,7 @@ class TournamentGridCell: UICollectionViewCell {
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
             lblRegisterBefore.text = "Register before \(tournament?.registerBeforeFromStartTime ?? "")"
             lblPlayerCount.text = "\(tournament?.noOfPlayers ?? 0) players have registerd"
+            viewButtons.isHidden = false
         }
     }
     
@@ -49,6 +51,7 @@ class TournamentGridCell: UICollectionViewCell {
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
             lblRegisterBefore.text = "Register before \(runs?.registerBeforeFromStartTime ?? "")"
             lblPlayerCount.text = "\(0) players have registerd"
+            viewButtons.isHidden = true
         }
     }
     

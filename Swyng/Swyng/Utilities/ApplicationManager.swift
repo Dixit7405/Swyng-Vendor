@@ -38,7 +38,19 @@ class ApplicationManager {
     static var firebaseToken = ""
     
     
-    static var sportType:SportType = .tournaments
+    static var sportType:SportType?{
+        set{
+            if let sport = newValue{
+                UserDefaults.standard.setValue(sport == .tournaments ? 1 : 2, forKey: DefaultsManager.DefaultKeys.sportType)
+            }
+        }
+        get{
+            if let type = UserDefaults.standard.value(forKey: DefaultsManager.DefaultKeys.sportType) as? Int{
+                return type == 1 ? .tournaments : .run
+            }
+            return nil
+        }
+    }
     
     static var selectedSport:Sports?{
         set{

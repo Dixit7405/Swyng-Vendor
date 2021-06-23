@@ -22,7 +22,7 @@ class UpcomingTournamentVC: BaseVC {
                 self.filterTournamentData()
             }
             else{
-                self.getUpcomingRuns()
+                self.filterRunsData()
             }
         }
     }
@@ -36,11 +36,7 @@ class UpcomingTournamentVC: BaseVC {
             lblHeaderName.text = "Upcoming Runs"
             imgHeader.image = #imageLiteral(resourceName: "header_run")
         }
-        // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        
         if isTournament{
             if arrCategories.count == 0{
                 getTournamentCategories()
@@ -57,6 +53,12 @@ class UpcomingTournamentVC: BaseVC {
                 getUpcomingRuns()
             }
         }
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
@@ -122,7 +124,12 @@ extension UpcomingTournamentVC{
         }
         else{
             self.filter = filter
-            self.filterTournamentData()
+            if isTournament{
+                self.filterTournamentData()
+            }
+            else{
+                self.filterRunsData()
+            }
         }
     }
 }
@@ -171,7 +178,7 @@ extension UpcomingTournamentVC{
                     self.getUpcomingRuns()
                 }
                 else{
-                    self.getUpcomingRuns()
+                    self.filterRunsData()
                 }
                 
             }
@@ -191,6 +198,25 @@ extension UpcomingTournamentVC{
                 self.tournaments = data.data ?? []
                 if self.filter?.filter == true{
                     self.tournaments.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func filterRunsData(){
+        startActivityIndicator()
+        let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
+                                   Parameters.sport:filter?.sport.compactMap({$0.id}) ?? [],
+                                   Parameters.offset:0,
+                                   Parameters.size:10]
+        Webservices().request(with: params, method: .post, endPoint: EndPoints.filterRuns, type: CommonResponse<PagingData<Run>>.self, failer: failureBlock()) {[weak self] (success) in
+            guard let self = self else {return}
+            guard let response = success as? CommonResponse<PagingData<Run>> else {return}
+            if let data = self.successBlock(response: response){
+                self.runs = data.data ?? []
+                if self.filter?.filter == true{
+                    self.runs.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
                 }
                 self.tableView.reloadData()
             }

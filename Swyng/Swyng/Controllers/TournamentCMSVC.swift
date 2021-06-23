@@ -19,6 +19,7 @@ class TournamentCMSVC: BaseVC {
         case fixture
         case results
         case gallery
+        case published
     }
     
     var pageType:PageType = .fixture
@@ -50,7 +51,7 @@ class TournamentCMSVC: BaseVC {
                                 """
             lblUploadType.text = "Upload A PDF Document Only"
             btnUpload.setTitle("Upload Fixtures & Schedule", for: .normal)
-            fileString = isTournament ? tournament?.fixerAndSchedulePdf : ""
+            fileString = isTournament ? tournament?.fixerAndSchedulePdf : runs?.fixerAndSchedulePdf
         case .results:
             headerView.lblHeader.text = "\(name) Results"
             lblUploadTime.text = """
@@ -60,23 +61,36 @@ class TournamentCMSVC: BaseVC {
                                 """
             lblUploadType.text = "Upload A PDF Document Only"
             btnUpload.setTitle("Upload Results", for: .normal)
-            fileString = isTournament ? tournament?.tournamentResult : ""
+            fileString = isTournament ? tournament?.tournamentResult : runs?.runResult
         case .gallery:
             headerView.lblHeader.text = "\(name) Photo Gallery"
             lblUploadTime.text = ""
             lblUploadType.text = "Upload .png or .jpeg images Only"
             btnUpload.setTitle("Upload Photos", for: .normal)
+            fileString = isTournament ? tournament?.galleryImage : runs?.galleryImage
+        case .published:
+            headerView.lblHeader.text = "\(name) Published"
+            lblUploadTime.text = """
+                                Please upload the published by
+                                \(time).
+                                Thank you!
+                                """
+            lblUploadType.text = "Upload A PDF Document Only"
+            btnUpload.setTitle("Upload Results", for: .normal)
+            fileString = isTournament ? tournament?.tournamentPublished : runs?.runPublished
         }
         if let fileString = fileString{
-            if pageType == .gallery{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { [weak self] in
-                    let vc:TournamentGalleryVC = .controller()
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                }
-                return
-            }
             viewUploadFiles.isHidden = true
             viewWebContainer.isHidden = false
+            if pageType == .gallery{
+                let imageView = UIImageView()
+                viewWebContainer.addSubview(imageView)
+                imageView.snp.makeConstraints({
+                    $0.edges.equalToSuperview()
+                })
+                imageView.setImage(from: fileString)
+                return
+            }
             let webView = WKWebView()
             viewWebContainer.addSubview(webView)
             webView.snp.makeConstraints({
@@ -158,6 +172,9 @@ extension TournamentCMSVC{
             params[Parameters.tournamentResult] = data
             endPoint = EndPoints.uploadTournamentResult
         }
+        else if pageType == .published{
+            return
+        }
         Webservices().upload(with: params, method: .post, endPoint: endPoint, type: CommonResponse<Tournaments>.self, mimeType:.pdf, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
             self.stopActivityIndicator()
@@ -176,6 +193,10 @@ extension TournamentCMSVC{
         else if pageType == .results{
             params[Parameters.runResult] = data
             endPoint = EndPoints.uploadRunResult
+        }
+        else if pageType == .published{
+            params[Parameters.runPublished] = data
+            endPoint = EndPoints.uploadRunsPublished
         }
         Webservices().upload(with: params, method: .post, endPoint: endPoint, type: CommonResponse<Run>.self, mimeType:.pdf, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
