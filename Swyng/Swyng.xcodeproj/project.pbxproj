@@ -54,6 +54,7 @@
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
 		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
 		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
+		1BA91DD9268729B0009245C4 /* TournamentGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA91DD8268729B0009245C4 /* TournamentGallery.swift */; };
 		1BAD09582671378000524901 /* AppInvokeSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAD09572671378000524901 /* AppInvokeSDK.xcframework */; };
 		1BB755BA266D3C42000B9942 /* UpcomingTournamentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */; };
 		1BC19BF92663733F007A6D93 /* OptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC19BF82663733F007A6D93 /* OptionsCell.swift */; };
@@ -179,6 +180,7 @@
 		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
 		1BA0DADA266654AF008E85B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngCMSUnitTest.swift; sourceTree = "<group>"; };
+		1BA91DD8268729B0009245C4 /* TournamentGallery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentGallery.swift; sourceTree = "<group>"; };
 		1BAD09572671378000524901 /* AppInvokeSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AppInvokeSDK.xcframework; sourceTree = "<group>"; };
 		1BB755B9266D3C41000B9942 /* UpcomingTournamentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingTournamentVC.swift; sourceTree = "<group>"; };
 		1BC19BF82663733F007A6D93 /* OptionsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCell.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1BA91DD8268729B0009245C4 /* TournamentGallery.swift */,
 				1B4C2B50267DE02100D73E99 /* RunsCategory.swift */,
 				1BE7643C26762FA400132D68 /* Run.swift */,
 				1B8043AA2667FA51003F8012 /* Sport.swift */,
@@ -837,6 +840,7 @@
 				1B7ADC03265971CA00C4AEF9 /* EventMenuSectionData.swift in Sources */,
 				1BFA54E8265772D3008BCC57 /* FirstNameVC.swift in Sources */,
 				1B7ADBE926596D0500C4AEF9 /* SportGalleryCell.swift in Sources */,
+				1BA91DD9268729B0009245C4 /* TournamentGallery.swift in Sources */,
 				1BF44C282656DB3700A2E75E /* FirstResponderField.swift in Sources */,
 				1BEFE644266558C4004A2965 /* SportCenters.swift in Sources */,
 				1B7ADBFD2659719100C4AEF9 /* AccountMenuCell.swift in Sources */,

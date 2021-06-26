@@ -64,7 +64,7 @@ extension UIViewController{
     
     
     func showMediaPickerOptions(vc:UIViewController){
-        let alert = UIAlertController(title: nil, message: "Please select option to upload your profile pic", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: nil, message: "Please select option to upload your images", preferredStyle: .actionSheet)
         let camera = UIAlertAction(title: "Camera", style: .default) { (camera) in
             self.openMediaPicker(with: .camera, vc: vc)
         }
@@ -97,6 +97,7 @@ extension UIViewController{
             let picker = UIImagePickerController()
             picker.sourceType = type
             picker.allowsEditing = true
+            
             picker.delegate = vc as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
             present(picker, animated: true, completion: nil)
         }
@@ -276,6 +277,9 @@ extension UIViewController{
         }
         
         let published = UIAlertAction(title: tournament ? "Tournament Published" : "Published", style: .default) { (button) in
+            let vc:TournamentCMSVC = TournamentCMSVC.controller()
+            vc.pageType = .published
+            self.navigationController?.pushViewController(vc, animated: true)
         }
         
         let export = UIAlertAction(title: "Export to Mail", style: .default) { (button) in

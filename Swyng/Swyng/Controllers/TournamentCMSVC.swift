@@ -7,6 +7,8 @@
 
 import UIKit
 import WebKit
+import BSImagePicker
+import Photos
 
 class TournamentCMSVC: BaseVC {
     @IBOutlet weak var viewWebContainer:UIView!
@@ -79,7 +81,7 @@ class TournamentCMSVC: BaseVC {
             btnUpload.setTitle("Upload Results", for: .normal)
             fileString = isTournament ? tournament?.tournamentPublished : runs?.runPublished
         }
-        if let fileString = fileString{
+        /*if let fileString = fileString{
             viewUploadFiles.isHidden = true
             viewWebContainer.isHidden = false
             if pageType == .gallery{
@@ -99,17 +101,49 @@ class TournamentCMSVC: BaseVC {
             if let url = URL(string: fileString){
                 webView.load(URLRequest(url: url))
             }
-        }
+        }*/
         // Do any additional setup after loading the view.
     }
     
     @IBAction func btnUploadPressed(_ sender:UIButton){
         if pageType == .gallery{
-            self.showMediaPickerOptions(vc: self)
+            uploadImages()
         }
         else{
             self.openPDFPicker(vc: self)
         }
+    }
+    
+    private func uploadImages(){
+        let imagePicker = ImagePickerController()
+
+        presentImagePicker(imagePicker, select: { (asset) in
+            // User selected an asset. Do something with it. Perhaps begin processing/upload?
+        }, deselect: { (asset) in
+            // User deselected an asset. Cancel whatever you did when asset was selected.
+        }, cancel: { (assets) in
+            // User canceled selection.
+        }, finish: { (assets) in
+            var data:[Data] = []
+            for asset in assets{
+                PHImageManager.default().requestImage(for: asset, targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: nil) { (image, info) in
+                    // Do something with image
+                    if let imageData = image?.jpegData(compressionQuality: 0.5){
+                        data.append(imageData)
+                    }
+                    if data.count == assets.count{
+                        if self.isTournament{
+                            self.uploadGalleryImages(data: data)
+                        }
+                        else{
+                            self.uploadRunsGalleryImages(data: data)
+                        }
+                    }
+                }
+                
+            }
+            // User finished selection assets.
+        })
     }
 }
 
@@ -173,7 +207,8 @@ extension TournamentCMSVC{
             endPoint = EndPoints.uploadTournamentResult
         }
         else if pageType == .published{
-            return
+            params[Parameters.tournamentPublished] = data
+            endPoint = EndPoints.uploadTournamentPublished
         }
         Webservices().upload(with: params, method: .post, endPoint: endPoint, type: CommonResponse<Tournaments>.self, mimeType:.pdf, failer: failureBlock()) {[weak self] success in
             guard let self = self else {return}
@@ -203,6 +238,38 @@ extension TournamentCMSVC{
             self.stopActivityIndicator()
             guard let response = success as? CommonResponse<Run> else {return}
             self.showAlertWith(message: response.message ?? "")
+        }
+    }
+    
+    private func uploadGalleryImages(data:[Data]){
+        let params:[String:Any] = [Parameters.id:ApplicationManager.tournament?.tournamentId ?? 0,
+                                   Parameters.gallery:data]
+        startActivityIndicator()
+        Webservices().upload(with: params, method: .post, endPoint: EndPoints.uploadTournamentGallery, type: CommonResponse<[TournamentGallery]>.self, mimeType: .image, showProgress: false, failer: failureBlock()) {[self] success in
+            stopActivityIndicator()
+            guard let response = success as? CommonResponse<[TournamentGallery]> else {return}
+            self.showAlertWith(message: response.message ?? "Images uploaded successfully", okPressed: {
+                let vc:TournamentGalleryVC = .controller()
+                navigationController?.pushViewController(vc, animated: true)
+            }){
+                print("cancel")
+            }
+        }
+    }
+    
+    private func uploadRunsGalleryImages(data:[Data]){
+        let params:[String:Any] = [Parameters.id:ApplicationManager.tournament?.tournamentId ?? 0,
+                                   Parameters.runPublished:data]
+        startActivityIndicator()
+        Webservices().upload(with: params, method: .post, endPoint: EndPoints.uploadRunsGallery, type: CommonResponse<[TournamentGallery]>.self, mimeType: .image, showProgress: false, failer: failureBlock()) {[self] success in
+            stopActivityIndicator()
+            guard let response = success as? CommonResponse<[TournamentGallery]> else {return}
+            self.showAlertWith(message: response.message ?? "Images uploaded successfully", okPressed: {
+                let vc:TournamentGalleryVC = .controller()
+                navigationController?.pushViewController(vc, animated: true)
+            }){
+                print("cancel")
+            }
         }
     }
 }

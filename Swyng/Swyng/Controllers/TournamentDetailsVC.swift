@@ -60,7 +60,8 @@ extension TournamentDetailsVC{
         lblDateTime.text = startDate + " " + startTime + "\n" + reportTime
         lblRegisterBefore.text = tournament?.registerBeforeFromStartTime
         lblVenue.text = (tournament?.venueAddress ?? "") + (tournament?.venue ?? "")
-        lblParticipationFees.text = tournament?.participationFee
+        let fees = tournament?.tblTournamentRegistrationTickets?.compactMap({($0.tournamentCategory?.name ?? "") + " - Rs. " + ($0.participationFees ?? "")}).joined(separator: "\n")
+        lblParticipationFees.text = fees
         lblRewards.text = tournament?.rewards
         lblTournamentsInfo.text = tournament?.tournamentInformation
         lblPleaseNote.text = tournament?.pleaseNote
@@ -86,7 +87,9 @@ extension TournamentDetailsVC{
         lblDateTime.text = startDate + " " + startTime + "\n" + reportTime
         lblRegisterBefore.text = runs?.registerBeforeFromStartTime
         lblVenue.text = (runs?.venueAddress ?? "") + (tournament?.venue ?? "")
-        lblParticipationFees.text = runs?.participationFees?.toString()
+        let fees = runs?.tblRunRegistrationTickets?.compactMap({($0.runCategory?.name ?? "") + " - Rs. " + ($0.participationFees ?? "")}).joined(separator: "\n")
+
+        lblParticipationFees.text = fees
         lblRewards.text = runs?.rewards
         lblTournamentsInfo.text = runs?.runInformation
         lblPleaseNote.text = runs?.pleaseNote

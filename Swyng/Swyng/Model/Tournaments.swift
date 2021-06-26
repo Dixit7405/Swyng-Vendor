@@ -49,6 +49,7 @@ struct Tournaments : Codable {
         let venueCity : Int?
         let venueGoogleMap : String?
     let tournamentPublished:String?
+    let tblTournamentRegistrationTickets:[TournamentTicket]?
 
         enum CodingKeys: String, CodingKey {
                 case aboutOrganizer = "aboutOrganizer"
@@ -91,6 +92,7 @@ struct Tournaments : Codable {
                 case venueCity = "venue_city"
                 case venueGoogleMap = "venue_google_map"
             case tournamentPublished = "tournamentPublished"
+            case tblTournamentRegistrationTickets = "tbl_tournament_registration_tickets"
         }
     
         init(from decoder: Decoder) throws {
@@ -135,6 +137,62 @@ struct Tournaments : Codable {
                 venueCity = try values.decodeIfPresent(Int.self, forKey: .venueCity)
                 venueGoogleMap = try values.decodeIfPresent(String.self, forKey: .venueGoogleMap)
             tournamentPublished = try values.decodeIfPresent(String.self, forKey: .tournamentPublished)
+            tblTournamentRegistrationTickets = try values.decodeIfPresent([TournamentTicket].self, forKey: .tblTournamentRegistrationTickets)
+        }
+
+}
+
+
+struct TournamentTicket : Codable {
+
+        let allowedEntries : Int?
+        let createdAt : String?
+        let eventName : String?
+        let genderAllowed : String?
+        let id : Int?
+        let isBookingAvailable : Bool?
+        let isDeleted : Bool?
+        let noOfPlayers : Int?
+        let participationFees : String?
+        let rewards : String?
+        let tournamentCategory : TournamentCategory?
+        let tournamentCategoryId : Int?
+        let tournamentId : Int?
+        let updatedAt : String?
+
+        enum CodingKeys: String, CodingKey {
+                case allowedEntries = "allowedEntries"
+                case createdAt = "createdAt"
+                case eventName = "eventName"
+                case genderAllowed = "genderAllowed"
+                case id = "id"
+                case isBookingAvailable = "isBookingAvailable"
+                case isDeleted = "isDeleted"
+                case noOfPlayers = "noOfPlayers"
+                case participationFees = "participationFees"
+                case rewards = "rewards"
+                case tournamentCategory = "tournament_category"
+                case tournamentCategoryId = "tournament_category_id"
+                case tournamentId = "tournament_id"
+                case updatedAt = "updatedAt"
+        }
+    
+        init(from decoder: Decoder) throws {
+                let values = try decoder.container(keyedBy: CodingKeys.self)
+                allowedEntries = try values.decodeIfPresent(Int.self, forKey: .allowedEntries)
+                createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
+                eventName = try values.decodeIfPresent(String.self, forKey: .eventName)
+                genderAllowed = try values.decodeIfPresent(String.self, forKey: .genderAllowed)
+                id = try values.decodeIfPresent(Int.self, forKey: .id)
+                isBookingAvailable = try values.decodeIfPresent(Bool.self, forKey: .isBookingAvailable)
+                isDeleted = try values.decodeIfPresent(Bool.self, forKey: .isDeleted)
+                noOfPlayers = try values.decodeIfPresent(Int.self, forKey: .noOfPlayers)
+                participationFees = try values.decodeIfPresent(String.self, forKey: .participationFees)
+                rewards = try values.decodeIfPresent(String.self, forKey: .rewards)
+                tournamentCategory = try values.decodeIfPresent(TournamentCategory.self, forKey: .tournamentCategory)
+                tournamentCategoryId = try values.decodeIfPresent(Int.self, forKey: .tournamentCategoryId)
+                tournamentId = try values.decodeIfPresent(Int.self, forKey: .tournamentId)
+                updatedAt = try values.decodeIfPresent(String.self, forKey: .updatedAt)
         }
 
 }

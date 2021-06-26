@@ -30,13 +30,14 @@ class TournamentGridCell: UICollectionViewCell {
     var tournament:Tournaments?{
         didSet{
             lblCategory.text = "Tournament"
-            lblName.text = tournament?.eventName
+            lblName.text = tournament?.tournamentName
             let startDate = tournament?.dates?.first?.toCustomDate(.withDay) ?? ""
             lblAddressTime.text = startDate + " " + (tournament?.venueAddress ?? "")
             let openFor = categories.filter({tournament?.categoryId?.contains(($0.tournamentCategoryId ?? 0).toString()) ?? false})
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
             lblRegisterBefore.text = "Register before \(tournament?.registerBeforeFromStartTime ?? "")"
             lblPlayerCount.text = "\(tournament?.noOfPlayers ?? 0) players have registerd"
+            imgTournament.setImage(from: ImageBase.imagePath + (tournament?.thumbnailImage ?? ""))
             viewButtons.isHidden = false
         }
     }
@@ -51,6 +52,7 @@ class TournamentGridCell: UICollectionViewCell {
             lblOpenFor.text = openFor.compactMap({$0.name}).joined(separator: ", ")
             lblRegisterBefore.text = "Register before \(runs?.registerBeforeFromStartTime ?? "")"
             lblPlayerCount.text = "\(0) players have registerd"
+            imgTournament.setImage(from: ImageBase.imagePath + (runs?.thumbnailImage ?? ""))
             viewButtons.isHidden = true
         }
     }

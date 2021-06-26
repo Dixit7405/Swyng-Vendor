@@ -11,11 +11,15 @@ struct CommonResponse<T:Codable> : Codable {
     let message : String?
     let success : Bool?
     let suceess : Bool?
+    let filesPath : FilesPath?
+    let path : String?
     enum CodingKeys: String, CodingKey {
         case data = "data"
         case message = "message"
         case success = "success"
         case suceess = "suceess"
+        case filesPath = "filesPath"
+        case path = "path"
     }
     
     init(from decoder: Decoder) throws {
@@ -29,6 +33,9 @@ struct CommonResponse<T:Codable> : Codable {
             success = try values.decodeIfPresent(Bool.self, forKey: .suceess)
         }
         suceess = try values.decodeIfPresent(Bool.self, forKey: .suceess)
+        filesPath = try values.decodeIfPresent(FilesPath.self, forKey: .filesPath)
+        path = try values.decodeIfPresent(String.self, forKey: .path)
+        ImageBase.commonPath = path ?? ""
     }
     
 }
@@ -54,3 +61,32 @@ struct PagingData<T:Codable>:Codable {
         data = try values.decodeIfPresent([T].self, forKey: .data)
     }
 }
+
+struct FilesPath : Codable {
+    
+    let fixerAndSchedulePath : String?
+    let galleryPath : String?
+    let publishedPath : String?
+    let resultPath : String?
+    
+    enum CodingKeys: String, CodingKey {
+        case fixerAndSchedulePath = "fixerAndSchedulePath"
+        case galleryPath = "galleryPath"
+        case publishedPath = "publishedPath"
+        case resultPath = "resultPath"
+    }
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        fixerAndSchedulePath = try values.decodeIfPresent(String.self, forKey: .fixerAndSchedulePath)
+        galleryPath = try values.decodeIfPresent(String.self, forKey: .galleryPath)
+        publishedPath = try values.decodeIfPresent(String.self, forKey: .publishedPath)
+        resultPath = try values.decodeIfPresent(String.self, forKey: .resultPath)
+        ImageBase.fixerAndSchedulePath = fixerAndSchedulePath ?? ""
+        ImageBase.galleryPath = galleryPath ?? ""
+        ImageBase.publishedPath = publishedPath ?? ""
+        ImageBase.resultPath = resultPath ?? ""
+    }
+    
+}
+

@@ -11,20 +11,8 @@ import Alamofire
 import KDCircularProgress
 
 var authorization = ""
-let baseURL = "http://ec2-54-234-213-111.compute-1.amazonaws.com/"
-let imageBase = "http://ec2-54-234-213-111.compute-1.amazonaws.com/"
-
-enum ImageBaseURL:String{
-    case tournamentImage = "tournamentsFiles/tournamentImage/"
-    case tournamentResult = "tournamentsFiles/tournamentResult/"
-    case tournamentFixture = "tournamentsFiles/tournamentFixerAndSchedule/"
-    
-    var value: String {
-            get {
-                return imageBase + self.rawValue
-            }
-        }
-}
+let baseURL = "http://localhost:20049/"//"http://ec2-54-234-213-111.compute-1.amazonaws.com/"
+let imageBase = "http://localhost:20049"//"http://ec2-54-234-213-111.compute-1.amazonaws.com/"
 
 typealias FailureBlock = ((String, Int?) -> Void)
 
@@ -59,6 +47,10 @@ struct Parameters {
     static let size = "size"
     static let sport = "sport"
     static let location = "location"
+    static let gallery = "gallery"
+    static let tournament_id = "tournament_id"
+    static let run_id = "run_id"
+    static let tournamentPublished = "tournamentPublished"
 }
 
 struct EndPoints {
@@ -74,9 +66,13 @@ struct EndPoints {
     static let getAllSports = "sport/getAllSports"
     static let createParticipant = "tournament/create/tournamentParticipants"
     static let uploadTournamentResult = "tournament/update/tournamentResult"
+    static let uploadTournamentPublished = "tournament/update/tournamentPublished"
     static let uploadRunResult = "run/update/run-result"
     static let uploadTournamentFixture = "tournament/update/tournamentFixerSchedule"
-    static let uploadTournamentGallery = "tournament/update/tournamentGallery"
+    static let uploadTournamentGallery = "tournament/update/gallery"
+    static let uploadRunsGallery = "run/update/gallery"
+    static let getRunsGallery = "run/get/gallery"
+    static let getTournamentGallery = "tournament/get/gallery"
     static let uploadRunsPublished = "run/update/run-published"
     static let getTournamentTypes = "tournamentCategory/getAll"
     static let getRunsCategory = "runCategory/getAll"
@@ -109,7 +105,7 @@ class Webservices {
     
     enum MimeType:String {
         case pdf = "application/pdf"
-        case image = "image/png"
+        case image = "image/jpg"
     }
     init() {
         base = baseURL
@@ -236,6 +232,14 @@ class Webservices {
                 }else if let data = value as? Data, key == "music"{
                     multipartFormData.append(data, withName: "file", fileName: "\(Date()).mp3", mimeType: "audio/mpeg")
                 }*/
+                else if let imageToUpload = value as? [Data]{
+                    let count = imageToUpload.count
+
+                    for i in 0..<count{
+                        multipartFormData.append(imageToUpload[i], withName: "\(key)[\(i)]", fileName: "photo\(i).jpeg" , mimeType: mimeType.rawValue)
+                        
+                    }
+                }
                 else{
                     let data = String(describing: value)
                     multipartFormData.append(Data((data).utf8), withName: key)
