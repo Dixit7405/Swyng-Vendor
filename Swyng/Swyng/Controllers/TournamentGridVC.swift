@@ -82,14 +82,12 @@ extension TournamentGridVC:UICollectionViewDelegate,UICollectionViewDataSource,U
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
+        let vc:TournamentStatisticsVC = .controller()
         if sportType == .tournaments{
-            vc.tournament = tournaments[indexPath.row]
             ApplicationManager.tournament = tournaments[indexPath.row]
         }
         else{
             ApplicationManager.runs = runs[indexPath.row]
-            vc.runs = runs[indexPath.row]
         }
         navigationController?.pushViewController(vc, animated: true)
     }

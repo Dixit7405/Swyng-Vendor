@@ -38,7 +38,7 @@ class TournamentGridCell: UICollectionViewCell {
             lblRegisterBefore.text = "Register before \(tournament?.registerBeforeFromStartTime ?? "")"
             lblPlayerCount.text = "\(tournament?.noOfPlayers ?? 0) players have registerd"
             imgTournament.setImage(from: ImageBase.imagePath + (tournament?.thumbnailImage ?? ""))
-            viewButtons.isHidden = false
+            viewButtons.isHidden = true
         }
     }
     

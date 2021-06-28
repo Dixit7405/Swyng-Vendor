@@ -54,15 +54,15 @@ class ManageCenterVC: BaseVC {
         
         btnApply.rx.tap.subscribe(onNext: {
             
-            guard let sportIndex = self.viewModel.selectedSpors.value.first,
-                  let centerIndex = self.viewModel.selectedCenters.value.first
+            guard let sportIndex = self.viewModel.selectedSpors.value.first
+//                  let centerIndex = self.viewModel.selectedCenters.value.first
             else {
                 self.viewModel.alertMessage.accept("Please select sport and center")
                 return
             }
             
             ApplicationManager.selectedSport = self.viewModel.sportData.value[sportIndex]
-            ApplicationManager.selectedCenter = self.viewModel.centerData.value[centerIndex]
+//            ApplicationManager.selectedCenter = self.viewModel.centerData.value[centerIndex]
             
             if ApplicationManager.selectedSport?.name == "Running"{
                 ApplicationManager.sportType = .run

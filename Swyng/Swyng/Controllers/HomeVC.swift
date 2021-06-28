@@ -28,4 +28,13 @@ class HomeVC: BaseVC {
         selectedCenterView.lblTitle.text = ApplicationManager.selectedCenter?.centerTitle
         selectedSportView.lblTitle.text = ApplicationManager.selectedSport?.name
     }
+    
+    @IBAction func btnMenuTapped(_ sender:UIBarButtonItem){
+        dropdownPressed()
+    }
+    
+    @IBAction func btnFilterPressed(_ sender:UIBarButtonItem){
+        let vc:ManageCenterVC = .controller()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

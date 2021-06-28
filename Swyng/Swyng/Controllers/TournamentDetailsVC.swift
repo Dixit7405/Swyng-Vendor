@@ -38,11 +38,11 @@ class TournamentDetailsVC: BaseVC {
         super.viewDidLoad()
         if runs != nil{
             setupRunspData()
-            btnRegister.isHidden = true
         }
         else{
             setuTournamentpData()
         }
+        btnRegister.isHidden = true
         // Do any additional setup after loading the view.
     }
     

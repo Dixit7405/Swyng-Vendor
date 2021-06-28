@@ -223,7 +223,7 @@ extension TournamentCMSVC{
         var endPoint = ""
         if pageType == .fixture{
             params[Parameters.fixerAndSchedulePdf] = data
-            endPoint = EndPoints.uploadTournamentFixture
+            endPoint = EndPoints.createRunSchedule
         }
         else if pageType == .results{
             params[Parameters.runResult] = data
@@ -258,7 +258,7 @@ extension TournamentCMSVC{
     }
     
     private func uploadRunsGalleryImages(data:[Data]){
-        let params:[String:Any] = [Parameters.id:ApplicationManager.tournament?.tournamentId ?? 0,
+        let params:[String:Any] = [Parameters.id:ApplicationManager.runs?.id ?? 0,
                                    Parameters.runPublished:data]
         startActivityIndicator()
         Webservices().upload(with: params, method: .post, endPoint: EndPoints.uploadRunsGallery, type: CommonResponse<[TournamentGallery]>.self, mimeType: .image, showProgress: false, failer: failureBlock()) {[self] success in

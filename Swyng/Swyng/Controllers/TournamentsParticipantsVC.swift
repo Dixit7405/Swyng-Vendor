@@ -117,7 +117,7 @@ extension TournamentsParticipantsVC:UITableViewDelegate,UITableViewDataSource{
             let participant = arrParticipants[indexPath.row]
             cell.viewParticipant1.backgroundColor = UIColor.white
             cell.lblParticipant1.textColor = UIColor.AppColor.appBlack
-            let hidePart2 = isTournament ? arrCategories[selected].isSingle == true : arrRunsCategory[selected].isSingle == true//(participant.fname1 == "" && participant.lname1 == "") || (participant.fname1 == nil && participant.lname1 == nil)
+            let hidePart2 = isTournament ? arrCategories[selected].isSingle == true : true//(participant.fname1 == "" && participant.lname1 == "") || (participant.fname1 == nil && participant.lname1 == nil)
             cell.viewParticipant2.isHidden = hidePart2
             cell.lblIndex.text = "\(indexPath.row + 1)"
             cell.lblParticipant1.text = getFullname(participant: participant)
