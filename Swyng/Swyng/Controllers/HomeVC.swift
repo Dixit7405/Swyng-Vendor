@@ -14,6 +14,7 @@ class HomeVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.addLeftBarButton()
         // Do any additional setup after loading the view.
     }
 
@@ -30,7 +31,7 @@ class HomeVC: BaseVC {
     }
     
     @IBAction func btnMenuTapped(_ sender:UIBarButtonItem){
-        dropdownPressed()
+        
     }
     
     @IBAction func btnFilterPressed(_ sender:UIBarButtonItem){
