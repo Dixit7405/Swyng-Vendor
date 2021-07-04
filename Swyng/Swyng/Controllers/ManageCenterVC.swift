@@ -15,6 +15,7 @@ class ManageCenterVC: BaseVC {
     @IBOutlet weak var nslcTableHeight:NSLayoutConstraint!
     @IBOutlet weak var nslcCollectionHeight:NSLayoutConstraint!
     @IBOutlet weak var btnApply:UIButton!
+    
     var viewModel = ManageCenterVM()
     var disposeBag = DisposeBag()
     
@@ -54,24 +55,37 @@ class ManageCenterVC: BaseVC {
         
         btnApply.rx.tap.subscribe(onNext: {
             
-            guard let sportIndex = self.viewModel.selectedSpors.value.first
-//                  let centerIndex = self.viewModel.selectedCenters.value.first
-            else {
-                self.viewModel.alertMessage.accept("Please select sport and center")
-                return
+//            guard self.viewModel.selectedSpors.value.count != 0,
+//                  self.viewModel.selectedCenters.value.count != 0
+//            else {
+//                self.viewModel.alertMessage.accept("Please select sport and center")
+//                return
+//            }
+            
+            var arrSports:[Sports] = []
+            for index in 0..<self.viewModel.sportData.value.count{
+                if self.viewModel.selectedSpors.value.contains(index){
+                    arrSports.append(self.viewModel.sportData.value[index])
+                }
             }
             
-            ApplicationManager.selectedSport = self.viewModel.sportData.value[sportIndex]
-//            ApplicationManager.selectedCenter = self.viewModel.centerData.value[centerIndex]
+            var arrCenters:[SportCenters] = []
+            for index in 0..<self.viewModel.centerData.value.count{
+                if self.viewModel.selectedCenters.value.contains(index){
+                    arrCenters.append(self.viewModel.centerData.value[index])
+                }
+            }
             
-            if ApplicationManager.selectedSport?.name == "Running"{
-                ApplicationManager.sportType = .run
+            ApplicationManager.selectedSport = arrSports
+            ApplicationManager.selectedCenter = arrCenters
+            
+            if self.isModal{
+                self.dismiss(animated: true, completion: nil)
             }
             else{
-                ApplicationManager.sportType = .tournaments
+                self.navigationController?.popViewController(animated: true)
             }
             
-            AppUtilities.setRootController()
         }).disposed(by: disposeBag)
         
         self.startActivityIndicator()
@@ -98,15 +112,15 @@ extension ManageCenterVC{
 //MARK: - TABLEVIEW DELEGATE
 extension ManageCenterVC:UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*if viewModel.selectedCenters.value.contains(indexPath.row){
+        if viewModel.selectedCenters.value.contains(indexPath.row){
             var myVal = viewModel.selectedCenters.value
             myVal.removeAll(where: {$0 == indexPath.row})
             viewModel.selectedCenters.accept(myVal)
         }
         else{
             viewModel.selectedCenters.accept(viewModel.selectedCenters.value + [indexPath.row])
-        }*/
-        viewModel.selectedCenters.accept([indexPath.row])
+        }
+//        viewModel.selectedCenters.accept([indexPath.row])
         viewModel.centerData.accept(viewModel.centerData.value)
     }
 }
@@ -114,15 +128,15 @@ extension ManageCenterVC:UITableViewDelegate{
 //MARK: - COLLECTION DELEGATE
 extension ManageCenterVC:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        /*if viewModel.selectedSpors.value.contains(indexPath.item){
+        if viewModel.selectedSpors.value.contains(indexPath.item){
             var myVal = viewModel.selectedSpors.value
             myVal.removeAll(where: {$0 == indexPath.row})
             viewModel.selectedSpors.accept(myVal)
         }
         else{
             viewModel.selectedSpors.accept(viewModel.selectedSpors.value + [indexPath.item])
-        }*/
-        viewModel.selectedSpors.accept([indexPath.item])
+        }
+//        viewModel.selectedSpors.accept([indexPath.item])
         viewModel.sportData.accept(viewModel.sportData.value)
     }
 }

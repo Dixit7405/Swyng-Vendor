@@ -15,6 +15,8 @@ class DefaultsManager{
         static let selectedSport = "SelectedSport"
         static let selectedCenter = "SelectedCenter"
         static let sportType = "SportType"
+        static let cityId = "CityId"
+        static let selectedCity = "SelectedCity"
     }
 //    
 //    static var userData:Register?{
@@ -28,9 +30,8 @@ class DefaultsManager{
         do {
             let encoder = JSONEncoder()
             guard let dt = try? encoder.encode(data) else {return}
-            if let json = try JSONSerialization.jsonObject(with: dt, options: .allowFragments) as? [String:Any]{
-                UserDefaults.standard.setValue(json, forKey: key)
-            }
+            let json = try JSONSerialization.jsonObject(with: dt, options: .allowFragments)
+            UserDefaults.standard.setValue(json, forKey: key)
             
         } catch {
             print(error.localizedDescription)

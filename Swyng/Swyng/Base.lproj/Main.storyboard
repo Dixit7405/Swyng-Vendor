@@ -382,14 +382,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OV9-Yx-HeF">
-                                <rect key="frame" x="76" y="112" width="223" height="443"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OV9-Yx-HeF">
+                                <rect key="frame" x="76" y="118.5" width="223" height="430.5"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plant" translatesAutoresizingMaskIntoConstraints="NO" id="UBy-yV-pR3">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="18" y="0.0" width="187.5" height="187.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UBy-yV-pR3" secondAttribute="height" multiplier="1:1" id="qYo-Dc-QPY"/>
+                                        </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.75" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3s-eT-iDF">
-                                        <rect key="frame" x="0.0" y="210" width="223" height="233"/>
+                                        <rect key="frame" x="0.0" y="197.5" width="223" height="233"/>
                                         <string key="text">WELCOME
 TO SWYNG!
 
@@ -402,7 +405,7 @@ STARTED.</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-Kh-HQR">
-                                <rect key="frame" x="299" y="515" width="40" height="40"/>
+                                <rect key="frame" x="299" y="509" width="40" height="40"/>
                                 <state key="normal" image="btnNext"/>
                                 <connections>
                                     <segue destination="VQD-8O-bQC" kind="presentation" modalPresentationStyle="fullScreen" id="H7H-Ki-cnR"/>
@@ -413,6 +416,7 @@ STARTED.</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OV9-Yx-HeF" firstAttribute="centerX" secondItem="wFf-HY-kKf" secondAttribute="centerX" id="2n8-Ux-yae"/>
+                            <constraint firstItem="UBy-yV-pR3" firstAttribute="width" secondItem="wFf-HY-kKf" secondAttribute="width" multiplier="0.5" id="DEZ-DR-6dz"/>
                             <constraint firstItem="nS4-Kh-HQR" firstAttribute="bottom" secondItem="OV9-Yx-HeF" secondAttribute="bottom" id="qBg-jz-gBw"/>
                             <constraint firstItem="OV9-Yx-HeF" firstAttribute="centerY" secondItem="wFf-HY-kKf" secondAttribute="centerY" id="uxb-CA-64P"/>
                             <constraint firstItem="nS4-Kh-HQR" firstAttribute="leading" secondItem="OV9-Yx-HeF" secondAttribute="trailing" id="ze2-ho-b5Z"/>

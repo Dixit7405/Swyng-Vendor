@@ -97,6 +97,12 @@ struct EndPoints {
     static let getRegisterCount = "mobile/tournament/get/count"
     static let getRunsRegisterCount = "mobile/tournament/get/run/count"
     static let createRunSchedule = "run/update/run-schedule"
+    static let getTournamentRegistrations = "mobile/tournament/get/user/registration-list"
+    static let getRunsRegistrations = "mobile/run/get/user/registration-list"
+    static let tournamentRegistrationData = "mobile/tournament/get/user/registration-data"
+    static let runRegistrationData = "mobile/run/get/user/registration-data"
+    static let cancelTicket = "mobile/tournament/cancel/tournament-ticket"
+    static let cancelRunsTicket = "mobile/run/cancel/run-ticket"
 }
 
 class Webservices {

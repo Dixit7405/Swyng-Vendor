@@ -37,4 +37,32 @@ class BaseVC:UIViewController{
         }
     }
     
+    @IBAction func btnCallPressed(_ sender:UIButton){
+        if let url = URL(string: "tel://+919108475471"){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func btnEmailPressed(_ sender:UIButton){
+        if let url = URL(string: "mailto:hello@swyng.in"){
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func btnWhatsappPressed(_ sender:UIButton){
+        let phoneNumber =  "+919108475471" // you need to change this number
+        let appURL = URL(string: "https://api.whatsapp.com/send?phone=\(phoneNumber)")!
+        if UIApplication.shared.canOpenURL(appURL) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+            }
+            else {
+                UIApplication.shared.openURL(appURL)
+            }
+        } else {
+            self.showAlertWith(message: "Whatsapp is not installed.")
+        }
+
+    }
+    
 }

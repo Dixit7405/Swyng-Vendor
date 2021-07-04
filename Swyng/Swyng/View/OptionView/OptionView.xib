@@ -30,7 +30,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9bt-MS-Vkc">
-                            <rect key="frame" x="5" y="0.0" width="310" height="100"/>
+                            <rect key="frame" x="10" y="0.0" width="300" height="100"/>
                             <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="18"/>
                             <color key="textColor" name="textBlack"/>
                             <nil key="highlightedColor"/>
@@ -38,10 +38,10 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="9bt-MS-Vkc" firstAttribute="leading" secondItem="bjG-sv-uPZ" secondAttribute="leading" constant="5" id="FXU-dE-TKt"/>
+                        <constraint firstItem="9bt-MS-Vkc" firstAttribute="leading" secondItem="bjG-sv-uPZ" secondAttribute="leading" constant="10" id="FXU-dE-TKt"/>
                         <constraint firstItem="9bt-MS-Vkc" firstAttribute="top" secondItem="bjG-sv-uPZ" secondAttribute="top" id="H5B-Em-Eld"/>
                         <constraint firstAttribute="bottom" secondItem="9bt-MS-Vkc" secondAttribute="bottom" id="cLS-PP-1Lf"/>
-                        <constraint firstAttribute="trailing" secondItem="9bt-MS-Vkc" secondAttribute="trailing" constant="5" id="ood-VT-H3T"/>
+                        <constraint firstAttribute="trailing" secondItem="9bt-MS-Vkc" secondAttribute="trailing" constant="10" id="ood-VT-H3T"/>
                     </constraints>
                 </view>
             </subviews>

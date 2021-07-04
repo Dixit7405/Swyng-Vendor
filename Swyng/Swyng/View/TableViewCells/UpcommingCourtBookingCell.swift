@@ -9,6 +9,7 @@ import UIKit
 
 class UpcommingCourtBookingCell: UITableViewCell {
     @IBOutlet weak var tournamentView:TournamentListView!
+    @IBOutlet weak var cancelledView:UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -48,10 +48,11 @@ class AppUtilities{
     }
     
     
-    static func setRootController(){
+    static func setRootController(setIndex:Int = 0){
         guard let window = AppUtilities.getMainWindow() else {return}
         if ApplicationManager.authToken != nil{
             let vc = TabbarVC()
+            vc.selectedIndex = setIndex
             window.rootViewController = vc
             
         }
@@ -62,7 +63,16 @@ class AppUtilities{
         }
     }
     
-    
+    static func logoutUser(){
+        ApplicationManager.authToken = nil
+        ApplicationManager.profileData = nil
+        ApplicationManager.runs = nil
+        ApplicationManager.tournament = nil
+        ApplicationManager.selectedCenter = nil
+        ApplicationManager.selectedSport = nil
+        ApplicationManager.profileData = nil
+        ApplicationManager.sportType = nil
+    }
     
     func getSizeText(size:Double) -> String{
         if size > 1048576{

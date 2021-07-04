@@ -9,6 +9,7 @@ import UIKit
 
 class FirstNameVC: BaseVC {
     @IBOutlet weak var txtfFirstName:FirstResponderField!
+    var registerData:RegisterParams?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,8 @@ class FirstNameVC: BaseVC {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? LastNameVC{
-            let data = RegisterParams()
-            data.firstName = txtfFirstName.text
-            vc.registerData = data
+            registerData?.firstName = txtfFirstName.text
+            vc.registerData = registerData
         }
     }
 }

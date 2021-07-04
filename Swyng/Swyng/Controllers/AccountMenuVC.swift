@@ -16,6 +16,7 @@ protocol AccountMenuDelegate:AnyObject {
 
 class AccountMenuVC: BaseVC {
     @IBOutlet weak var collectionView:UICollectionView!
+    @IBOutlet weak var btnCity:UIButton!
     
     var arrOptions:[EventMenuOptions] = [.home,
                                          .accountInfo,
@@ -23,6 +24,8 @@ class AccountMenuVC: BaseVC {
                                          .manageCenters,
                                          .sportsTournaments,
                                          .tournamenRegistrations,
+                                         .runs,
+                                         .runRegistrations,
                                          .cancelRules,
                                          .paymentPolicy,
                                          .aboutSwyngs,
@@ -41,6 +44,11 @@ class AccountMenuVC: BaseVC {
         
         setupCollectionView()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        btnCity.setTitle(ApplicationManager.selectedCity?.name, for: .normal)
     }
     
 }
@@ -64,6 +72,7 @@ extension AccountMenuVC{
             else{
                 let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "EventMenuFooter", for: indexPath) as! EventMenuFooter
                 cell.kind = kind
+                cell.controller = self
                 return cell
             }
             
@@ -108,6 +117,12 @@ extension AccountMenuVC{
 extension AccountMenuVC{
     @IBAction func btnBackPressed(_ sender:UIButton){
         self.dismissLeft()
+    }
+    
+    @IBAction func btnCitySelectionTapped(_ sender:UIButton){
+        let vc:CitySelectionVC = .controller(storyId: StoryboardIds.main)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 

@@ -36,6 +36,8 @@ struct Category : Codable {
         let registeredTickets : Int?
         let totalAmount : Int?
         let totalTickets : Int?
+    let amount : String?
+    let name : String?
 
         enum CodingKeys: String, CodingKey {
                 case categoryId = "CategoryId"
@@ -43,6 +45,8 @@ struct Category : Codable {
                 case registeredTickets = "RegisteredTickets"
                 case totalAmount = "TotalAmount"
                 case totalTickets = "TotalTickets"
+            case amount = "amount"
+            case name = "name"
         }
     
         init(from decoder: Decoder) throws {
@@ -52,6 +56,8 @@ struct Category : Codable {
                 registeredTickets = try values.decodeIfPresent(Int.self, forKey: .registeredTickets)
                 totalAmount = try values.decodeIfPresent(Int.self, forKey: .totalAmount)
                 totalTickets = try values.decodeIfPresent(Int.self, forKey: .totalTickets)
+            amount = try values.decodeIfPresent(String.self, forKey: .amount)
+            name = try values.decodeIfPresent(String.self, forKey: .name)
         }
 
 }

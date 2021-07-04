@@ -103,12 +103,12 @@ extension TournamentGridVC{
             guard let response = success as? CommonResponse<[TournamentsType]> else {return}
             if let data = self.successBlock(response: response){
                 self.arrCategories = data
-                if self.filter == nil{
-                    self.getAllTournaments()
-                }
-                else{
+//                if self.filter == nil{
+//                    self.getAllTournaments()
+//                }
+//                else{
                     self.filterTournamentData()
-                }
+//                }
             }
         }
     }
@@ -120,12 +120,12 @@ extension TournamentGridVC{
             guard let response = success as? CommonResponse<[RunsCategory]> else {return}
             if let data = self.successBlock(response: response){
                 self.arrRunsCategories = data
-                if self.filter == nil{
-                    self.getUpcomingRuns()
-                }
-                else{
+//                if self.filter == nil{
+//                    self.getUpcomingRuns()
+//                }
+//                else{
                     self.filterRunsData()
-                }
+//                }
                 
             }
         }
@@ -150,7 +150,7 @@ extension TournamentGridVC{
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
                                    Parameters.sport:filter?.sport.compactMap({$0.id}) ?? [],
                                    Parameters.offset:0,
-                                   Parameters.size:10]
+                                   Parameters.size:100]
         Webservices().request(with: params, method: .post, endPoint: EndPoints.filterTournaments, type: CommonResponse<PagingData<Tournaments>>.self, failer: failureBlock()) {[weak self] (success) in
             guard let self = self else {return}
             guard let response = success as? CommonResponse<PagingData<Tournaments>> else {return}
@@ -160,6 +160,14 @@ extension TournamentGridVC{
                     self.tournaments.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
                 }
                 self.collectionView.reloadData()
+                if self.tournaments.count == 0{
+                    self.collectionView.isHidden = true
+                    self.showNoDataLabel()
+                }
+                else{
+                    self.collectionView.isHidden = false
+                    self.hideNoDataLabel()
+                }
             }
         }
     }
@@ -169,7 +177,7 @@ extension TournamentGridVC{
         let params:[String:Any] = [Parameters.token:ApplicationManager.authToken ?? "",
                                    Parameters.sport:filter?.sport.compactMap({$0.id}) ?? [],
                                    Parameters.offset:0,
-                                   Parameters.size:10]
+                                   Parameters.size:100]
         Webservices().request(with: params, method: .post, endPoint: EndPoints.filterRuns, type: CommonResponse<PagingData<Run>>.self, failer: failureBlock()) {[weak self] (success) in
             guard let self = self else {return}
             guard let response = success as? CommonResponse<PagingData<Run>> else {return}
@@ -179,6 +187,14 @@ extension TournamentGridVC{
                     self.runs.sort(by: {($0.dates?.first?.convertDate(format: .serverDate) ?? Date()) > ($1.dates?.first?.convertDate(format: .serverDate) ?? Date())})
                 }
                 self.collectionView.reloadData()
+                if self.runs.count == 0{
+                    self.collectionView.isHidden = true
+                    self.showNoDataLabel()
+                }
+                else{
+                    self.collectionView.isHidden = false
+                    self.hideNoDataLabel()
+                }
             }
         }
     }
@@ -201,7 +217,7 @@ extension TournamentGridVC{
 extension TournamentGridVC{
     override func didApplyFilter(filter: Filter) {
         print("Filter pressed")
-        if filter.gallery == false{
+        if filter.gallery == true{
             let vc:UpcomingTournamentVC = .controller()
             vc.filter = filter
             (tabBarController?.viewControllers?[2] as! NavController).viewControllers = [vc]

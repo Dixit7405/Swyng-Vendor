@@ -38,10 +38,11 @@ extension UIViewController{
             }
             else{
                 self.showAlertWith(message: failure) {
-                    ApplicationManager.authToken = nil
-                    ApplicationManager.profileData = nil
+                    if status == 204{
+                        AppUtilities.logoutUser()
+                        AppUtilities.setRootController()
+                    }
                     
-                    AppUtilities.setRootController()
                 } cancelPressed: {
                     
                 }
@@ -159,17 +160,24 @@ extension UIViewController{
     
     func showNoDataLabel(){
         view.viewWithTag(100)?.removeFromSuperview()
-        let lbl = UILabel()
-        lbl.text = "Your collection is empty "
-        lbl.textColor = UIColor.lightGray
-        lbl.textAlignment = .center
-        lbl.tag = 100
-        view.addSubview(lbl)
-        lbl.snp.makeConstraints({
-            $0.leading.equalToSuperview().offset(5)
-            $0.trailing.equalToSuperview().offset(5)
-            $0.centerY.equalToSuperview()
+        let noDataView = NoDataView()
+        view.addSubview(noDataView)
+        noDataView.tag = 100
+        view.sendSubviewToBack(noDataView)
+        noDataView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
         })
+//        let lbl = UILabel()
+//        lbl.text = "No data available. please check later."
+//        lbl.textColor = UIColor.lightGray
+//        lbl.textAlignment = .center
+//        lbl.tag = 100
+//        view.addSubview(lbl)
+//        lbl.snp.makeConstraints({
+//            $0.leading.equalToSuperview().offset(5)
+//            $0.trailing.equalToSuperview().offset(5)
+//            $0.centerY.equalToSuperview()
+//        })
     }
     
     func hideNoDataLabel(){
@@ -365,6 +373,15 @@ extension UIViewController{
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0))
     }
+    
+    var isModal: Bool {
+        
+        let presentingIsModal = presentingViewController != nil
+        let presentingIsNavigation = navigationController?.presentingViewController?.presentedViewController == navigationController
+        let presentingIsTabBar = tabBarController?.presentingViewController is UITabBarController
+        
+        return presentingIsModal || presentingIsNavigation || presentingIsTabBar
+    }
 }
 
 //MARK: - Downlaod Session Delagte
@@ -429,7 +446,18 @@ extension UIViewController:AccountMenuDelegate{
     func didSelectMenu(option: EventMenuOptions) {
         switch option {
         case .sportsTournaments:
+            ApplicationManager.sportType = .tournaments
+            AppUtilities.setRootController(setIndex: 2)
+        case .runs:
+            ApplicationManager.sportType = .run
+            AppUtilities.setRootController(setIndex: 2)
+        case .tournamenRegistrations:
             let vc:TournamentListVC = .controller()
+            vc.selectedSportType = .tournaments
+            navigationController?.pushViewController(vc, animated: true)
+        case .runRegistrations:
+            let vc:TournamentListVC = .controller()
+            vc.selectedSportType = .run
             navigationController?.pushViewController(vc, animated: true)
         default:
             break
