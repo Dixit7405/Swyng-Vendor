@@ -52,6 +52,8 @@
 		1B7BDEDD266B950500EE673D /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7BDEDC266B950500EE673D /* MenuVC.swift */; };
 		1B8043AB2667FA52003F8012 /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8043AA2667FA51003F8012 /* Sport.swift */; };
 		1B8C28AF265C1269008ABA9B /* RegisterParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B8C28AE265C1269008ABA9B /* RegisterParams.swift */; };
+		1B92AE5E2692392F00F9C86E /* Favourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AE5C2692392E00F9C86E /* Favourite.swift */; };
+		1B92AE5F2692392F00F9C86E /* RegisterCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B92AE5D2692392F00F9C86E /* RegisterCount.swift */; };
 		1BA0DAD9266654AF008E85B1 /* SwyngTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */; };
 		1BA0DAE1266654CC008E85B1 /* SwyngCMSUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA0DAE0266654CC008E85B1 /* SwyngCMSUnitTest.swift */; };
 		1BA91DD9268729B0009245C4 /* TournamentGallery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA91DD8268729B0009245C4 /* TournamentGallery.swift */; };
@@ -202,6 +204,8 @@
 		1B7BDEDC266B950500EE673D /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		1B8043AA2667FA51003F8012 /* Sport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		1B8C28AE265C1269008ABA9B /* RegisterParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterParams.swift; sourceTree = "<group>"; };
+		1B92AE5C2692392E00F9C86E /* Favourite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favourite.swift; sourceTree = "<group>"; };
+		1B92AE5D2692392F00F9C86E /* RegisterCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCount.swift; sourceTree = "<group>"; };
 		1BA0DAD6266654AF008E85B1 /* SwyngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwyngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA0DAD8266654AF008E85B1 /* SwyngTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwyngTests.swift; sourceTree = "<group>"; };
 		1BA0DADA266654AF008E85B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -468,6 +472,8 @@
 		1BF44C0D2656DAA000A2E75E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1B92AE5C2692392E00F9C86E /* Favourite.swift */,
+				1B92AE5D2692392F00F9C86E /* RegisterCount.swift */,
 				1BBEBAF5269036EF0074DF60 /* CancelTicket.swift */,
 				1BBEBAF3269036EE0074DF60 /* RegistrationList.swift */,
 				1BBEBAF4269036EF0074DF60 /* TournamentRegistrationData.swift */,
@@ -819,6 +825,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B92AE5E2692392F00F9C86E /* Favourite.swift in Sources */,
 				1B397132266AA64800F8C530 /* ManageCenterVC.swift in Sources */,
 				1BFA54EB265772D3008BCC57 /* LoginVC.swift in Sources */,
 				1B7ADBDD26596BCE00C4AEF9 /* TournamentCMSVC.swift in Sources */,
@@ -878,6 +885,7 @@
 				1B659B8626615A9600B6AF9A /* Sports.swift in Sources */,
 				1BF44C2C2656DB3700A2E75E /* DefaultsManager.swift in Sources */,
 				1BFA54E9265772D3008BCC57 /* OTPVC.swift in Sources */,
+				1B92AE5F2692392F00F9C86E /* RegisterCount.swift in Sources */,
 				1BF44C292656DB3700A2E75E /* Constants.swift in Sources */,
 				1BFA54F9265775C3008BCC57 /* CommonResponse.swift in Sources */,
 				1B8043AB2667FA52003F8012 /* Sport.swift in Sources */,
@@ -1114,7 +1122,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Swyng/Swyng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = JAHM2D434B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1141,7 +1149,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Swyng/Swyng.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_TEAM = JAHM2D434B;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

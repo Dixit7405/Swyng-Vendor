@@ -27,7 +27,7 @@ struct Tournaments : Codable {
     let noOfPlayers : Int?
     let organizer : String?
     let participationFee : String?
-    //        let peopleMobileNumber : String?
+//    let peopleMobileNumber : String?
     let pleaseNote : String?
     let registerBeforeFromStartTime : String?
     let reportingTime : String?
@@ -48,51 +48,56 @@ struct Tournaments : Codable {
     let venueGoogleMap : String?
     let tournamentPublished:String?
     let tblTournamentRegistrationTickets:[TournamentTicket]?
-    
+    let tbl_favourite_tournaments:[Favourite]?
+    let tbl_tournament_registrations:[RegisterCount]?
+
     enum CodingKeys: String, CodingKey {
-        case aboutOrganizer = "aboutOrganizer"
-        case aboutTournament = "aboutTournament"
-        case allowedEntries = "allowed_entries"
-        case asPerSchedule = "as_per_schedule"
-        case categoryId = "category_id"
-        case createdAt = "createdAt"
-        case creativeFontColor = "creativeFontColor"
-        case dates = "dates"
-        case eventStartTime = "event_start_time"
-        case eventName = "eventName"
-        case fixerAndSchedulePdf = "fixerAndSchedulePdf"
-        case frequentlyAskedQuestion = "frequentlyAskedQuestion"
-        case galleryImage = "galleryImage"
-        case gender = "gender"
-        case headerImage = "headerImage"
-        case isOnlineRegistration = "is_online_registration"
-        case isDeleted = "isDeleted"
-        case noOfPlayers = "noOfPlayers"
-        case organizer = "organizer"
-        case participationFee = "participationFee"
-        //                case peopleMobileNumber = "peopleMobileNumber"
-        case pleaseNote = "pleaseNote"
-        case registerBeforeFromStartTime = "register_before_from_start_time"
-        case reportingTime = "reporting_time"
-        case rewards = "rewards"
-        case sportId = "sport_id"
-        case termsAndCondition = "termsAndCondition"
-        case thumbnailImage = "thumbnailImage"
-        case tournamentId = "tournament_id"
-        case tournamentName = "tournament_name"
-        case tournamentTicketCategory = "tournament_ticket_category"
-        case tournamentInformation = "tournamentInformation"
-        case tournamentResult = "tournamentResult"
-        case updatedAt = "updatedAt"
-        case userId = "user_id"
-        case venue = "venue"
-        case venueAddress = "venue_address"
-        case venueCity = "venue_city"
-        case venueGoogleMap = "venue_google_map"
+            case aboutOrganizer = "aboutOrganizer"
+            case aboutTournament = "aboutTournament"
+            case allowedEntries = "allowed_entries"
+            case asPerSchedule = "as_per_schedule"
+            case categoryId = "category_id"
+            case createdAt = "createdAt"
+            case creativeFontColor = "creativeFontColor"
+            case dates = "dates"
+            case eventStartTime = "event_start_time"
+            case eventName = "eventName"
+            case fixerAndSchedulePdf = "fixerAndSchedulePdf"
+            case frequentlyAskedQuestion = "frequentlyAskedQuestion"
+            case galleryImage = "galleryImage"
+            case gender = "gender"
+            case headerImage = "headerImage"
+            case isOnlineRegistration = "is_online_registration"
+            case isDeleted = "isDeleted"
+            case noOfPlayers = "noOfPlayers"
+            case organizer = "organizer"
+            case participationFee = "participationFee"
+//            case peopleMobileNumber = "peopleMobileNumber"
+            case pleaseNote = "pleaseNote"
+            case registerBeforeFromStartTime = "register_before_from_start_time"
+            case reportingTime = "reporting_time"
+            case rewards = "rewards"
+            case sportId = "sport_id"
+            case termsAndCondition = "termsAndCondition"
+            case thumbnailImage = "thumbnailImage"
+            case tournamentId = "tournament_id"
+            case tournamentName = "tournament_name"
+            case tournamentTicketCategory = "tournament_ticket_category"
+            case tournamentInformation = "tournamentInformation"
+            case tournamentResult = "tournamentResult"
+            case updatedAt = "updatedAt"
+            case userId = "user_id"
+            case venue = "venue"
+            case venueAddress = "venue_address"
+            case venueCity = "venue_city"
+            case venueGoogleMap = "venue_google_map"
         case tournamentPublished = "tournamentPublished"
         case tblTournamentRegistrationTickets = "tbl_tournament_registration_tickets"
+        case tbl_favourite_tournaments = "tbl_favourite_tournaments"
+        case tbl_tournament_registrations = "tbl_tournament_registrations"
+        
     }
-    
+
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         aboutOrganizer = try values.decodeIfPresent(String.self, forKey: .aboutOrganizer)
@@ -115,7 +120,7 @@ struct Tournaments : Codable {
         noOfPlayers = try values.decodeIfPresent(Int.self, forKey: .noOfPlayers)
         organizer = try values.decodeIfPresent(String.self, forKey: .organizer)
         participationFee = try values.decodeIfPresent(String.self, forKey: .participationFee)
-        //                peopleMobileNumber = try values.decodeIfPresent(String.self, forKey: .peopleMobileNumber)
+//        peopleMobileNumber = try values.decodeIfPresent(String.self, forKey: .peopleMobileNumber)
         pleaseNote = try values.decodeIfPresent(String.self, forKey: .pleaseNote)
         registerBeforeFromStartTime = try values.decodeIfPresent(String.self, forKey: .registerBeforeFromStartTime)
         reportingTime = try values.decodeIfPresent(String.self, forKey: .reportingTime)
@@ -136,8 +141,10 @@ struct Tournaments : Codable {
         venueGoogleMap = try values.decodeIfPresent(String.self, forKey: .venueGoogleMap)
         tournamentPublished = try values.decodeIfPresent(String.self, forKey: .tournamentPublished)
         tblTournamentRegistrationTickets = try values.decodeIfPresent([TournamentTicket].self, forKey: .tblTournamentRegistrationTickets)
+        tbl_favourite_tournaments = try values.decodeIfPresent([Favourite].self, forKey: .tbl_favourite_tournaments)
+        tbl_tournament_registrations = try values.decodeIfPresent([RegisterCount].self, forKey: .tbl_tournament_registrations)
     }
-    
+
 }
 
 

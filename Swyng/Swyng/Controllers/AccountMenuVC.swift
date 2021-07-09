@@ -67,6 +67,7 @@ extension AccountMenuVC{
             if kind == UICollectionView.elementKindSectionHeader{
                 let cell = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "EventMenuFooter", for: indexPath) as! EventMenuFooter
                 cell.kind = kind
+                cell.controller = self
                 return cell
             }
             else{
