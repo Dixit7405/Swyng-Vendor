@@ -285,12 +285,19 @@ extension UIViewController{
         }
         
         let published = UIAlertAction(title: tournament ? "Tournament Published" : "Published", style: .default) { (button) in
-            let vc:TournamentCMSVC = TournamentCMSVC.controller()
-            vc.pageType = .published
+            let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
+            
+            if ApplicationManager.sportType == .tournaments{
+                vc.tournament = ApplicationManager.tournament
+            }
+            else{
+                vc.runs = ApplicationManager.runs
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
         let export = UIAlertAction(title: "Export to Mail", style: .default) { (button) in
+            
         }
         
         alert.addAction(participant)

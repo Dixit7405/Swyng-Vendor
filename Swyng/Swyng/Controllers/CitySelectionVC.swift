@@ -14,7 +14,7 @@ class CitySelectionVC: BaseVC {
     @IBOutlet weak var btnApplySelection:UIButton!
     
     var citiesArr:[City] = []
-    var fromMenu:Bool = false
+    var fromSignup = false
     var selectedIndex:Int?{
         didSet{
             btnApplySelection.backgroundColor = selectedIndex != nil ? UIColor.AppColor.themeColor : UIColor.white
@@ -52,7 +52,7 @@ extension CitySelectionVC{
         }
         ApplicationManager.cityId = citiesArr[selectedIndex ?? 0].cityId
         ApplicationManager.selectedCity = citiesArr[selectedIndex ?? 0]
-        if self.isModal{
+        if !fromSignup{
             self.dismiss(animated: true, completion: nil)
             return
         }

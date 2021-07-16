@@ -99,14 +99,11 @@ extension UpcomingTournamentVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc:TournamentDetailsVC = TournamentDetailsVC.controller()
-        
-        if isTournament{
-            vc.tournament = tournaments[indexPath.row]
+        let vc:TournamentStatisticsVC = .controller()
+        if sportType == .tournaments{
             ApplicationManager.tournament = tournaments[indexPath.row]
         }
         else{
-            vc.runs = runs[indexPath.row]
             ApplicationManager.runs = runs[indexPath.row]
         }
         navigationController?.pushViewController(vc, animated: true)

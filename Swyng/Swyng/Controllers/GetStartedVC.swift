@@ -15,9 +15,9 @@ class GetStartedVC: BaseVC {
         // Do any additional setup after loading the view.
     }
     
-
-    @IBAction func btnNextPressed(_ sender:UIButton){
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? CitySelectionVC{
+            vc.fromSignup = true
+        }
     }
-
 }
